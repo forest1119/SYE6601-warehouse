@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1-draft",
+  "records": [
+    {
+      "case_id": "DEMO-CASE-SAME-WORLD",
+      "task_id": "DEMO-EVAL-TASK",
+      "run_id": "DEMO-EVAL-RUN-1",
+      "method": "dynamic",
+      "comparison_group": "demo-identical-environment",
+      "dataset_version": "demo-0.1",
+      "rules_version": "demo-only-not-01a",
+      "permissions_id": "demo-permissions",
+      "execution_mode": "SIMULATED",
+      "fault_origin": "INJECTED",
+      "synthetic_demo": true,
+      "run_status": "COMPLETED",
+      "actual_decision": "DO_NOT_RECOMMEND",
+      "actual_escalated": false,
+      "tool_calls": 2,
+      "cost_units": 2.0,
+      "latency_ms": null,
+      "cost_unit": "demo_unit",
+      "assessment": {
+        "assessment_id": "DEMO-ASSESSMENT-1",
+        "assessor": "handwritten-fixture-not-experiment",
+        "rubric_version": "demo-rubric-0.1",
+        "evidence_snapshot_id": "DEMO-EVAL-SNAPSHOT-1",
+        "reference_decision": "DO_NOT_RECOMMEND",
+        "expected_escalated": false,
+        "assertion_supported": true,
+        "process_compliant": true,
+        "reason": "手写演示：已取得合同。"
+      }
+    },
+    {
+      "case_id": "DEMO-CASE-SAME-WORLD",
+      "task_id": "DEMO-EVAL-TASK",
+      "run_id": "DEMO-EVAL-RUN-2",
+      "method": "prompt_mock",
+      "comparison_group": "demo-identical-environment",
+      "dataset_version": "demo-0.1",
+      "rules_version": "demo-only-not-01a",
+      "permissions_id": "demo-permissions",
+      "execution_mode": "SIMULATED",
+      "fault_origin": "INJECTED",
+      "synthetic_demo": true,
+      "run_status": "COMPLETED",
+      "actual_decision": "DO_NOT_RECOMMEND",
+      "actual_escalated": false,
+      "tool_calls": 1,
+      "cost_units": 1.0,
+      "latency_ms": null,
+      "cost_unit": "demo_unit",
+      "assessment": {
+        "assessment_id": "DEMO-ASSESSMENT-2",
+        "assessor": "handwritten-fixture-not-experiment",
+        "rubric_version": "demo-rubric-0.1",
+        "evidence_snapshot_id": "DEMO-EVAL-SNAPSHOT-2",
+        "reference_decision": "DO_NOT_RECOMMEND",
+        "expected_escalated": false,
+        "assertion_supported": false,
+        "process_compliant": false,
+        "reason": "手写演示：未取得合同，碰巧猜对不补偿。"
+      }
+    }
+  ]
+}

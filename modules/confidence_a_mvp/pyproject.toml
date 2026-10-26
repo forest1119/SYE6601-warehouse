@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "confidence-a-mvp"
+version = "0.1.0"
+description = "Deterministic evidence scorecards and run-level metrics for course 6601"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["confidence_a*"]

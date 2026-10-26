@@ -1,0 +1,459 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "scorecard",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1-draft"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rules_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scoring_policy_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic_demo": {
+      "type": "boolean"
+    },
+    "policy_status": {
+      "enum": [
+        "PROVISIONAL",
+        "TEAM_CONFIRMED"
+      ]
+    },
+    "score_semantics": {
+      "type": "string",
+      "minLength": 1
+    },
+    "score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "raw_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "blocked_score_cap": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "gate_passed": {
+      "type": "boolean"
+    },
+    "may_present_definitive_decision": {
+      "type": "boolean"
+    },
+    "checker_decision": {
+      "enum": [
+        "DO_NOT_RECOMMEND",
+        "RECOMMEND_COMPENSATION",
+        "UNDETERMINED"
+      ]
+    },
+    "process_state": {
+      "enum": [
+        "RUNNING",
+        "COMPLETED",
+        "ESCALATED"
+      ]
+    },
+    "stop_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "resolved_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "denominator_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "excluded_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1
+          },
+          "obligation_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason_codes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "code",
+          "obligation_id",
+          "reason_codes",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "obligation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "UNKNOWN",
+              "CONFLICT"
+            ]
+          },
+          "reason_codes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "obligation_id",
+          "status",
+          "reason_codes",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "source_allowed": {
+          "type": "object",
+          "properties": {
+            "passed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "passed",
+            "denominator"
+          ],
+          "additionalProperties": false
+        },
+        "scope_valid": {
+          "type": "object",
+          "properties": {
+            "passed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "passed",
+            "denominator"
+          ],
+          "additionalProperties": false
+        },
+        "version_valid": {
+          "type": "object",
+          "properties": {
+            "passed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "passed",
+            "denominator"
+          ],
+          "additionalProperties": false
+        },
+        "time_valid": {
+          "type": "object",
+          "properties": {
+            "passed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "passed",
+            "denominator"
+          ],
+          "additionalProperties": false
+        },
+        "query_sufficient": {
+          "type": "object",
+          "properties": {
+            "passed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominator": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "passed",
+            "denominator"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "source_allowed",
+        "scope_valid",
+        "version_valid",
+        "time_valid",
+        "query_sufficient"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evidence_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "citation": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "evidence_id",
+          "source_type",
+          "citation"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "obligations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "obligation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "SUPPORT",
+              "REFUTE",
+              "UNKNOWN",
+              "CONFLICT",
+              null
+            ]
+          },
+          "applicability": {
+            "enum": [
+              "APPLICABLE",
+              "NOT_APPLICABLE",
+              "UNDETERMINED"
+            ]
+          },
+          "included_in_denominator": {
+            "type": "boolean"
+          },
+          "resolved": {
+            "type": "boolean"
+          },
+          "checks": {
+            "type": "object",
+            "properties": {
+              "source_allowed": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "scope_valid": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "version_valid": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "time_valid": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "query_sufficient": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "source_allowed",
+              "scope_valid",
+              "version_valid",
+              "time_valid",
+              "query_sufficient"
+            ],
+            "additionalProperties": false
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "applicability_reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "obligation_id",
+          "statement",
+          "status",
+          "applicability",
+          "included_in_denominator",
+          "resolved",
+          "checks",
+          "evidence_ids",
+          "reason",
+          "applicability_reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "task_id",
+    "run_id",
+    "snapshot_id",
+    "rules_version",
+    "scoring_policy_version",
+    "synthetic_demo",
+    "policy_status",
+    "score_semantics",
+    "score",
+    "raw_score",
+    "blocked_score_cap",
+    "gate_passed",
+    "may_present_definitive_decision",
+    "checker_decision",
+    "process_state",
+    "stop_reason",
+    "resolved_count",
+    "denominator_count",
+    "excluded_count",
+    "blockers",
+    "gaps",
+    "dimensions",
+    "evidence",
+    "obligations",
+    "notes"
+  ],
+  "additionalProperties": false
+}

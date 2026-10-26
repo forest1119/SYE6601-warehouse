@@ -1,0 +1,180 @@
+{
+  "schema_version": "0.1-draft",
+  "task_id": "DEMO-TASK-01",
+  "run_id": "DEMO-RUN-01",
+  "snapshot_id": "DEMO-SNAPSHOT-01",
+  "rules_version": "demo-only-not-01a",
+  "synthetic_demo": true,
+  "scoring_policy_version": "equal-weight-demo-0.1",
+  "policy_status": "PROVISIONAL",
+  "score_semantics": "已建模义务的证据充分性提示；不是答案正确概率。",
+  "score": 100.0,
+  "raw_score": 100.0,
+  "blocked_score_cap": 49,
+  "gate_passed": true,
+  "may_present_definitive_decision": true,
+  "checker_decision": "RECOMMEND_COMPENSATION",
+  "process_state": "COMPLETED",
+  "stop_reason": "DEMO_CHECKER_RESOLVED",
+  "resolved_count": 5,
+  "denominator_count": 5,
+  "excluded_count": 0,
+  "blockers": [],
+  "gaps": [],
+  "dimensions": {
+    "source_allowed": {
+      "passed": 5,
+      "denominator": 5
+    },
+    "scope_valid": {
+      "passed": 5,
+      "denominator": 5
+    },
+    "version_valid": {
+      "passed": 5,
+      "denominator": 5
+    },
+    "time_valid": {
+      "passed": 5,
+      "denominator": 5
+    },
+    "query_sufficient": {
+      "passed": 5,
+      "denominator": 5
+    }
+  },
+  "obligations": [
+    {
+      "obligation_id": "DEMO-O-CONTRACT",
+      "statement": "适用合同条款允许本次事故补偿",
+      "status": "SUPPORT",
+      "applicability": "APPLICABLE",
+      "included_in_denominator": true,
+      "resolved": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "evidence_ids": [
+        "DEMO-E-CONTRACT"
+      ],
+      "reason": "联调占位：Checker声明已由适用证据查明。",
+      "applicability_reason": "仅为接入演示手写的适用义务，不代表01A正式规则。"
+    },
+    {
+      "obligation_id": "DEMO-O-DURATION",
+      "statement": "本次事故的有效时长达到适用阈值",
+      "status": "SUPPORT",
+      "applicability": "APPLICABLE",
+      "included_in_denominator": true,
+      "resolved": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "evidence_ids": [
+        "DEMO-E-DURATION"
+      ],
+      "reason": "联调占位：Checker声明已由适用证据查明。",
+      "applicability_reason": "仅为接入演示手写的适用义务，不代表01A正式规则。"
+    },
+    {
+      "obligation_id": "DEMO-O-MAINTENANCE",
+      "statement": "本次事故不存在适用的维护排除条件",
+      "status": "SUPPORT",
+      "applicability": "APPLICABLE",
+      "included_in_denominator": true,
+      "resolved": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "evidence_ids": [
+        "DEMO-E-MAINTENANCE"
+      ],
+      "reason": "联调占位：Checker声明已由适用证据查明。",
+      "applicability_reason": "仅为接入演示手写的适用义务，不代表01A正式规则。"
+    },
+    {
+      "obligation_id": "DEMO-O-CAUSE",
+      "statement": "本次事故不属于已建模的责任免责情形",
+      "status": "SUPPORT",
+      "applicability": "APPLICABLE",
+      "included_in_denominator": true,
+      "resolved": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "evidence_ids": [
+        "DEMO-E-CAUSE"
+      ],
+      "reason": "联调占位：Checker声明已由适用证据查明。",
+      "applicability_reason": "仅为接入演示手写的适用义务，不代表01A正式规则。"
+    },
+    {
+      "obligation_id": "DEMO-O-PLAN",
+      "statement": "本次事故对应套餐在适用范围内",
+      "status": "SUPPORT",
+      "applicability": "APPLICABLE",
+      "included_in_denominator": true,
+      "resolved": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "evidence_ids": [
+        "DEMO-E-PLAN"
+      ],
+      "reason": "联调占位：Checker声明已由适用证据查明。",
+      "applicability_reason": "仅为接入演示手写的适用义务，不代表01A正式规则。"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "DEMO-E-CONTRACT",
+      "source_type": "CRM_CONTRACT_DB",
+      "citation": "demo://fixture/contract（合成引用，无真实业务凭证）"
+    },
+    {
+      "evidence_id": "DEMO-E-DURATION",
+      "source_type": "MONITORING_SYSTEM",
+      "citation": "demo://fixture/duration（合成引用，无真实业务凭证）"
+    },
+    {
+      "evidence_id": "DEMO-E-MAINTENANCE",
+      "source_type": "MAINTENANCE_CALENDAR",
+      "citation": "demo://fixture/maintenance（合成引用，无真实业务凭证）"
+    },
+    {
+      "evidence_id": "DEMO-E-CAUSE",
+      "source_type": "INCIDENT_REVIEW",
+      "citation": "demo://fixture/cause（合成引用，无真实业务凭证）"
+    },
+    {
+      "evidence_id": "DEMO-E-PLAN",
+      "source_type": "PLAN_DB",
+      "citation": "demo://fixture/plan（合成引用，无真实业务凭证）"
+    }
+  ],
+  "notes": [
+    "SUPPORT 与 REFUTE 均可表示已查明。",
+    "诊断维度不重复计入总分；评分不选择工具、不生成补偿结论。",
+    "来源与时间适用性由 Checker 判断；本模块只验证其声明和引用自洽。"
+  ]
+}

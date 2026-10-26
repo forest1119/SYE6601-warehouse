@@ -1,0 +1,7 @@
+{
+  "schema_version": "0.1-draft",
+  "policy_version": "equal-weight-demo-0.1",
+  "status": "PROVISIONAL",
+  "blocked_score_cap": 49,
+  "description": "演示约定：义务等权；阻断时最多49分。非概率，非业务规则，待团队确认。"
+}

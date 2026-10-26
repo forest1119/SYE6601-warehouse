@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "runs",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1-draft"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "task_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "run_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "method": {
+            "type": "string",
+            "minLength": 1
+          },
+          "comparison_group": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dataset_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rules_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "permissions_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "execution_mode": {
+            "enum": [
+              "SIMULATED",
+              "REAL_MODEL",
+              "DETERMINISTIC"
+            ]
+          },
+          "fault_origin": {
+            "enum": [
+              "NONE",
+              "INJECTED",
+              "NATURAL"
+            ]
+          },
+          "synthetic_demo": {
+            "type": "boolean"
+          },
+          "run_status": {
+            "enum": [
+              "COMPLETED",
+              "FAILED"
+            ]
+          },
+          "actual_decision": {
+            "enum": [
+              "DO_NOT_RECOMMEND",
+              "RECOMMEND_COMPENSATION",
+              "UNDETERMINED"
+            ]
+          },
+          "actual_escalated": {
+            "type": "boolean"
+          },
+          "tool_calls": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "cost_units": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "latency_ms": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "cost_unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assessment": {
+            "type": "object",
+            "properties": {
+              "assessment_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "assessor": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rubric_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_snapshot_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reference_decision": {
+                "enum": [
+                  "DO_NOT_RECOMMEND",
+                  "RECOMMEND_COMPENSATION",
+                  "UNDETERMINED"
+                ]
+              },
+              "expected_escalated": {
+                "type": "boolean"
+              },
+              "assertion_supported": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "process_compliant": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "assessment_id",
+              "assessor",
+              "rubric_version",
+              "evidence_snapshot_id",
+              "reference_decision",
+              "expected_escalated",
+              "assertion_supported",
+              "process_compliant",
+              "reason"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "case_id",
+          "task_id",
+          "run_id",
+          "method",
+          "comparison_group",
+          "dataset_version",
+          "rules_version",
+          "permissions_id",
+          "execution_mode",
+          "fault_origin",
+          "synthetic_demo",
+          "run_status",
+          "actual_decision",
+          "actual_escalated",
+          "tool_calls",
+          "cost_units",
+          "latency_ms",
+          "cost_unit",
+          "assessment"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "records"
+  ],
+  "additionalProperties": false
+}

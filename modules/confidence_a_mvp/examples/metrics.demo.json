@@ -1,0 +1,146 @@
+{
+  "schema_version": "0.1-draft",
+  "n_records": 2,
+  "groups": [
+    {
+      "scope": {
+        "method": "dynamic",
+        "comparison_group": "demo-identical-environment",
+        "dataset_version": "demo-0.1",
+        "rules_version": "demo-only-not-01a",
+        "permissions_id": "demo-permissions",
+        "execution_mode": "SIMULATED",
+        "fault_origin": "INJECTED",
+        "synthetic_demo": true,
+        "cost_unit": "demo_unit",
+        "rubric_version": "demo-rubric-0.1"
+      },
+      "n_runs": 1,
+      "run_ids": [
+        "DEMO-EVAL-RUN-1"
+      ],
+      "terminal_accuracy": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "assertion_accuracy": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "unsupported_answer_rate": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0.0
+      },
+      "automatic_coverage": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "automatic_success_rate": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "escalation_rate": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0.0
+      },
+      "proper_escalations": 0,
+      "failed_runs": 0,
+      "costs": {
+        "tool_calls": {
+          "mean": 2,
+          "measured_count": 1,
+          "missing_count": 0
+        },
+        "cost_units": {
+          "mean": 2.0,
+          "measured_count": 1,
+          "missing_count": 0
+        },
+        "latency_ms": {
+          "mean": null,
+          "measured_count": 0,
+          "missing_count": 1
+        }
+      }
+    },
+    {
+      "scope": {
+        "method": "prompt_mock",
+        "comparison_group": "demo-identical-environment",
+        "dataset_version": "demo-0.1",
+        "rules_version": "demo-only-not-01a",
+        "permissions_id": "demo-permissions",
+        "execution_mode": "SIMULATED",
+        "fault_origin": "INJECTED",
+        "synthetic_demo": true,
+        "cost_unit": "demo_unit",
+        "rubric_version": "demo-rubric-0.1"
+      },
+      "n_runs": 1,
+      "run_ids": [
+        "DEMO-EVAL-RUN-2"
+      ],
+      "terminal_accuracy": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "assertion_accuracy": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "unsupported_answer_rate": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "automatic_coverage": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "automatic_success_rate": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0.0
+      },
+      "escalation_rate": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0.0
+      },
+      "proper_escalations": 0,
+      "failed_runs": 0,
+      "costs": {
+        "tool_calls": {
+          "mean": 1,
+          "measured_count": 1,
+          "missing_count": 0
+        },
+        "cost_units": {
+          "mean": 1.0,
+          "measured_count": 1,
+          "missing_count": 0
+        },
+        "latency_ms": {
+          "mean": null,
+          "measured_count": 0,
+          "missing_count": 1
+        }
+      }
+    }
+  ],
+  "notes": [
+    "支持性标签必须由独立评审基于本次运行证据产生，不能读取评分卡。",
+    "失败运行保留在分母；缺测成本保留 null，均值只基于已测值。",
+    "此版本不自动输出方法间增益；比较前需配对相同案例及实验条件。",
+    "合成样例只验证接口，不是实验成绩。"
+  ]
+}
