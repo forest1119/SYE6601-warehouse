@@ -1,0 +1,42 @@
+{
+  "source_type": "CRM_CONTRACT_DB",
+  "customer_id": "002",
+  "tool_status": "SUCCESS",
+  "records": [
+    {
+      "evidence_id": "contract_002",
+      "customer_id": "002",
+      "source_type": "CRM_CONTRACT_DB",
+      "scope": {
+        "customer_id": "002"
+      },
+      "version": "v1",
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_to": "2026-12-31T23:59:59Z",
+      "customer_tier": "STANDARD",
+      "plan_type": "Basic",
+      "citation": "synthetic://contracts/002",
+      "description": "Synthetic metadata only; no compensation clauses",
+      "statement": "original synthetic statement"
+    },
+    {
+      "evidence_id": "contract_002_opposite",
+      "customer_id": "002",
+      "source_type": "CRM_CONTRACT_DB",
+      "scope": {
+        "customer_id": "002"
+      },
+      "version": "v1",
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_to": "2026-12-31T23:59:59Z",
+      "customer_tier": "STANDARD",
+      "plan_type": "Basic",
+      "citation": "synthetic://contracts/002_opposite",
+      "description": "Synthetic metadata only; no compensation clauses",
+      "statement": "opposite synthetic statement"
+    }
+  ],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-10-29T02:23:56.103178+00:00"
+}

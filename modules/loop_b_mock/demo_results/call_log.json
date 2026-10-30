@@ -1,0 +1,207 @@
+[
+  {
+    "case": "contract_found",
+    "tool": "get_customer_contract",
+    "result": {
+      "source_type": "CRM_CONTRACT_DB",
+      "customer_id": "001",
+      "tool_status": "SUCCESS",
+      "records": [
+        {
+          "evidence_id": "contract_001",
+          "customer_id": "001",
+          "source_type": "CRM_CONTRACT_DB",
+          "scope": {
+            "customer_id": "001"
+          },
+          "version": "v1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "customer_tier": "VIP",
+          "plan_type": "Enterprise_Pro",
+          "citation": "synthetic://contracts/001",
+          "description": "Synthetic metadata only; no compensation clauses"
+        }
+      ],
+      "pagination_complete": true,
+      "next_page_token": null,
+      "fetched_at": "2026-10-29T02:23:56.081253+00:00"
+    },
+    "elapsed_ms": 8.489,
+    "simulated_cost_units": 1
+  },
+  {
+    "case": "contract_empty",
+    "tool": "get_customer_contract",
+    "result": {
+      "source_type": "CRM_CONTRACT_DB",
+      "customer_id": "999",
+      "tool_status": "SUCCESS",
+      "records": [],
+      "pagination_complete": true,
+      "next_page_token": null,
+      "fetched_at": "2026-10-29T02:23:56.090294+00:00"
+    },
+    "elapsed_ms": 0.387,
+    "simulated_cost_units": 1
+  },
+  {
+    "case": "maintenance_page1",
+    "tool": "list_maintenance",
+    "result": {
+      "source_type": "MAINTENANCE_CALENDAR",
+      "customer_id": "002",
+      "tool_status": "SUCCESS",
+      "records": [],
+      "pagination_complete": false,
+      "next_page_token": "page_2",
+      "fetched_at": "2026-10-29T02:23:56.091229+00:00"
+    },
+    "elapsed_ms": 7.002,
+    "simulated_cost_units": 1
+  },
+  {
+    "case": "maintenance_page2",
+    "tool": "list_maintenance",
+    "result": {
+      "source_type": "MAINTENANCE_CALENDAR",
+      "customer_id": "002",
+      "tool_status": "SUCCESS",
+      "records": [
+        {
+          "evidence_id": "maintenance_002",
+          "customer_id": "002",
+          "source_type": "MAINTENANCE_CALENDAR",
+          "scope": {
+            "customer_id": "002"
+          },
+          "version": "v1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "customer_tier": "STANDARD",
+          "plan_type": "Basic",
+          "citation": "synthetic://maintenance/002",
+          "description": "Synthetic metadata only; no compensation clauses",
+          "maintenance_start": "2026-10-20T01:00:00Z",
+          "maintenance_end": "2026-10-20T02:00:00Z"
+        }
+      ],
+      "pagination_complete": true,
+      "next_page_token": null,
+      "fetched_at": "2026-10-29T02:23:56.099251+00:00"
+    },
+    "elapsed_ms": 0.333,
+    "simulated_cost_units": 1
+  },
+  {
+    "case": "contract_403",
+    "tool": "get_customer_contract",
+    "result": {
+      "source_type": "CRM_CONTRACT_DB",
+      "customer_id": "002",
+      "tool_status": "FORBIDDEN",
+      "records": [],
+      "pagination_complete": false,
+      "next_page_token": null,
+      "fetched_at": "2026-10-29T02:23:56.100230+00:00",
+      "error_code": 403
+    },
+    "elapsed_ms": 0.016,
+    "simulated_cost_units": 1
+  },
+  {
+    "case": "contract_timeout",
+    "tool": "get_customer_contract",
+    "result": {
+      "source_type": "CRM_CONTRACT_DB",
+      "customer_id": "002",
+      "tool_status": "TIMEOUT",
+      "records": [],
+      "pagination_complete": false,
+      "next_page_token": null,
+      "fetched_at": "2026-10-29T02:23:56.101188+00:00",
+      "error_code": "SIMULATED_TIMEOUT"
+    },
+    "elapsed_ms": 0.019,
+    "simulated_cost_units": 1
+  },
+  {
+    "case": "contract_old",
+    "tool": "get_customer_contract",
+    "result": {
+      "source_type": "CRM_CONTRACT_DB",
+      "customer_id": "002",
+      "tool_status": "SUCCESS",
+      "records": [
+        {
+          "evidence_id": "contract_002",
+          "customer_id": "002",
+          "source_type": "CRM_CONTRACT_DB",
+          "scope": {
+            "customer_id": "002"
+          },
+          "version": "v0",
+          "effective_from": "2024-01-01T00:00:00Z",
+          "effective_to": "2024-12-31T23:59:59Z",
+          "customer_tier": "STANDARD",
+          "plan_type": "Basic",
+          "citation": "synthetic://contracts/002",
+          "description": "Synthetic metadata only; no compensation clauses"
+        }
+      ],
+      "pagination_complete": true,
+      "next_page_token": null,
+      "fetched_at": "2026-10-29T02:23:56.102197+00:00"
+    },
+    "elapsed_ms": 0.273,
+    "simulated_cost_units": 1
+  },
+  {
+    "case": "opposite_materials",
+    "tool": "get_customer_contract",
+    "result": {
+      "source_type": "CRM_CONTRACT_DB",
+      "customer_id": "002",
+      "tool_status": "SUCCESS",
+      "records": [
+        {
+          "evidence_id": "contract_002",
+          "customer_id": "002",
+          "source_type": "CRM_CONTRACT_DB",
+          "scope": {
+            "customer_id": "002"
+          },
+          "version": "v1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "customer_tier": "STANDARD",
+          "plan_type": "Basic",
+          "citation": "synthetic://contracts/002",
+          "description": "Synthetic metadata only; no compensation clauses",
+          "statement": "original synthetic statement"
+        },
+        {
+          "evidence_id": "contract_002_opposite",
+          "customer_id": "002",
+          "source_type": "CRM_CONTRACT_DB",
+          "scope": {
+            "customer_id": "002"
+          },
+          "version": "v1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "customer_tier": "STANDARD",
+          "plan_type": "Basic",
+          "citation": "synthetic://contracts/002_opposite",
+          "description": "Synthetic metadata only; no compensation clauses",
+          "statement": "opposite synthetic statement"
+        }
+      ],
+      "pagination_complete": true,
+      "next_page_token": null,
+      "fetched_at": "2026-10-29T02:23:56.103178+00:00"
+    },
+    "elapsed_ms": 0.328,
+    "simulated_cost_units": 1
+  }
+]

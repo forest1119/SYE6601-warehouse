@@ -1,0 +1,25 @@
+{
+  "source_type": "CRM_CONTRACT_DB",
+  "customer_id": "001",
+  "tool_status": "SUCCESS",
+  "records": [
+    {
+      "evidence_id": "contract_001",
+      "customer_id": "001",
+      "source_type": "CRM_CONTRACT_DB",
+      "scope": {
+        "customer_id": "001"
+      },
+      "version": "v1",
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_to": "2026-12-31T23:59:59Z",
+      "customer_tier": "VIP",
+      "plan_type": "Enterprise_Pro",
+      "citation": "synthetic://contracts/001",
+      "description": "Synthetic metadata only; no compensation clauses"
+    }
+  ],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-10-29T02:23:56.081253+00:00"
+}

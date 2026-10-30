@@ -1,0 +1,9 @@
+{
+  "source_type": "MAINTENANCE_CALENDAR",
+  "customer_id": "002",
+  "tool_status": "SUCCESS",
+  "records": [],
+  "pagination_complete": false,
+  "next_page_token": "page_2",
+  "fetched_at": "2026-10-29T02:23:56.091229+00:00"
+}

@@ -1,0 +1,9 @@
+{
+  "source_type": "CRM_CONTRACT_DB",
+  "customer_id": "999",
+  "tool_status": "SUCCESS",
+  "records": [],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-10-29T02:23:56.090294+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "task_id": "demo_task_001",
+  "customer_id": "002",
+  "reason": "Loop A permission-denial demonstration",
+  "missing_evidence": [
+    "适用合同"
+  ],
+  "evidence_ids": [],
+  "attempted_rounds": 1,
+  "attempted_actions": [
+    {
+      "case": "contract_403",
+      "tool": "get_customer_contract",
+      "result": {
+        "source_type": "CRM_CONTRACT_DB",
+        "customer_id": "002",
+        "tool_status": "FORBIDDEN",
+        "records": [],
+        "pagination_complete": false,
+        "next_page_token": null,
+        "fetched_at": "2026-10-29T02:23:56.100230+00:00",
+        "error_code": 403
+      },
+      "elapsed_ms": 0.016,
+      "simulated_cost_units": 1
+    }
+  ],
+  "failed_tools": [
+    "get_customer_contract"
+  ],
+  "question_for_human": "请核实缺失资料及访问权限，并提供适用于该客户和故障时段的记录。"
+}
