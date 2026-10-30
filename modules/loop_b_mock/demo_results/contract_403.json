@@ -1,0 +1,10 @@
+{
+  "source_type": "CRM_CONTRACT_DB",
+  "customer_id": "002",
+  "tool_status": "FORBIDDEN",
+  "records": [],
+  "pagination_complete": false,
+  "next_page_token": null,
+  "fetched_at": "2026-10-29T02:23:56.100230+00:00",
+  "error_code": 403
+}
