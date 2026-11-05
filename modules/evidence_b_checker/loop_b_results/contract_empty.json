@@ -1,0 +1,372 @@
+{
+  "integration_version": "loop-b-d74ec4e-to-02b-0.1-draft",
+  "synthetic_demo": true,
+  "source_commit": "d74ec4e7927dc92dd7e65adfb7bf430df59164a5",
+  "raw_tool_calls": {
+    "CRM_CONTRACT_DB": [
+      {
+        "request": {
+          "customer_id": "999",
+          "scenario": "normal",
+          "page_token": null
+        },
+        "response": {
+          "source_type": "CRM_CONTRACT_DB",
+          "customer_id": "999",
+          "tool_status": "SUCCESS",
+          "records": [],
+          "pagination_complete": true,
+          "next_page_token": null,
+          "fetched_at": "2026-11-03T19:18:10.199949+00:00"
+        }
+      }
+    ]
+  },
+  "normalized_responses": {
+    "CRM_CONTRACT_DB": {
+      "task_id": "LOOPB-INTEGRATION-999",
+      "customer_id": "999",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "DEMO-INCIDENT",
+      "incident_start": "2026-10-20T00:30:00Z",
+      "incident_end": "2026-10-20T02:30:00Z",
+      "evidence_id": "LOOPB-Q-04af49df2ff623ef",
+      "citation": "loop-b-mock://query/04af49df2ff623ef",
+      "source_type": "CRM_CONTRACT_DB",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "records": [],
+      "fetched_at": "2026-11-03T19:18:10.199949+00:00",
+      "query_coverage": "CUSTOMER_WIDE_SYNTHETIC_DATASET",
+      "actual_request_fields": [
+        "customer_id",
+        "scenario",
+        "page_token"
+      ],
+      "adapter_issues": []
+    }
+  },
+  "adapter_gaps": [],
+  "metadata_observations": [],
+  "checker_result": {
+    "schema_version": "02B-handoff-0.3-draft",
+    "synthetic_demo": true,
+    "task_id": "LOOPB-INTEGRATION-999",
+    "current_decision": null,
+    "checker_decision": "UNDETERMINED",
+    "selected_rule_id": null,
+    "obligation_results": [
+      {
+        "obligation_id": "B-CONTRACT",
+        "statement": "确认故障当时的适用合同",
+        "status": "SUPPORT",
+        "reason_codes": [
+          "CONTRACT_RESOLVED"
+        ],
+        "reason": "正确范围内完整查询，确认没有适用合同",
+        "evidence_ids": [
+          "LOOPB-Q-04af49df2ff623ef"
+        ],
+        "required_sources": [
+          "CRM_CONTRACT_DB"
+        ],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": true,
+          "scope_valid": true,
+          "version_valid": true,
+          "time_valid": true,
+          "query_sufficient": true
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+      },
+      {
+        "obligation_id": "B-IDENTITY",
+        "statement": "确认客户身份和套餐",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_QUERIED"
+        ],
+        "reason": "客户身份和套餐尚未明确",
+        "evidence_ids": [],
+        "required_sources": [
+          "PLAN_DB"
+        ],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+      },
+      {
+        "obligation_id": "B-RULE",
+        "statement": "确定适用规则和条款",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_CHECKED"
+        ],
+        "reason": "尚未检查",
+        "evidence_ids": [],
+        "required_sources": [],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+      },
+      {
+        "obligation_id": "B-PERMISSION",
+        "statement": "条款允许本次补偿",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_CHECKED"
+        ],
+        "reason": "尚未检查",
+        "evidence_ids": [],
+        "required_sources": [],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+      },
+      {
+        "obligation_id": "B-DURATION",
+        "statement": "有效故障时长达到门槛",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_CHECKED"
+        ],
+        "reason": "尚未检查",
+        "evidence_ids": [],
+        "required_sources": [
+          "MONITORING_SYSTEM"
+        ],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+      },
+      {
+        "obligation_id": "B-CAUSE",
+        "statement": "故障原因不属于免责范围",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_CHECKED"
+        ],
+        "reason": "尚未检查",
+        "evidence_ids": [],
+        "required_sources": [
+          "TICKET_SYSTEM",
+          "BACKEND_LOGS"
+        ],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+      }
+    ],
+    "gaps": [
+      {
+        "obligation_id": "B-IDENTITY",
+        "statement": "确认客户身份和套餐",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_QUERIED"
+        ],
+        "reason": "客户身份和套餐尚未明确",
+        "evidence_ids": [],
+        "required_sources": [
+          "PLAN_DB"
+        ],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。",
+        "blocked_by": [],
+        "ready_for_lookup": true
+      },
+      {
+        "obligation_id": "B-RULE",
+        "statement": "确定适用规则和条款",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_CHECKED"
+        ],
+        "reason": "尚未检查",
+        "evidence_ids": [],
+        "required_sources": [],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。",
+        "blocked_by": [
+          "B-IDENTITY"
+        ],
+        "ready_for_lookup": false
+      },
+      {
+        "obligation_id": "B-PERMISSION",
+        "statement": "条款允许本次补偿",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_CHECKED"
+        ],
+        "reason": "尚未检查",
+        "evidence_ids": [],
+        "required_sources": [],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。",
+        "blocked_by": [
+          "B-IDENTITY"
+        ],
+        "ready_for_lookup": false
+      },
+      {
+        "obligation_id": "B-DURATION",
+        "statement": "有效故障时长达到门槛",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_CHECKED"
+        ],
+        "reason": "尚未检查",
+        "evidence_ids": [],
+        "required_sources": [
+          "MONITORING_SYSTEM"
+        ],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。",
+        "blocked_by": [
+          "B-IDENTITY"
+        ],
+        "ready_for_lookup": false
+      },
+      {
+        "obligation_id": "B-CAUSE",
+        "statement": "故障原因不属于免责范围",
+        "status": "UNKNOWN",
+        "reason_codes": [
+          "NOT_CHECKED"
+        ],
+        "reason": "尚未检查",
+        "evidence_ids": [],
+        "required_sources": [
+          "TICKET_SYSTEM",
+          "BACKEND_LOGS"
+        ],
+        "required_for_decision": true,
+        "checks": {
+          "source_allowed": null,
+          "scope_valid": null,
+          "version_valid": null,
+          "time_valid": null,
+          "query_sufficient": null
+        },
+        "must_verify": false,
+        "applicability": "APPLICABLE",
+        "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。",
+        "blocked_by": [
+          "B-IDENTITY"
+        ],
+        "ready_for_lookup": false
+      }
+    ],
+    "loop_hint": "SUPPLEMENT_OR_CONFIRM",
+    "duration": {},
+    "audits": [],
+    "used_policy_evidence": [],
+    "raw_responses": {
+      "CRM_CONTRACT_DB": {
+        "task_id": "LOOPB-INTEGRATION-999",
+        "customer_id": "999",
+        "scope": "CLOUD_SERVER",
+        "incident_id": "DEMO-INCIDENT",
+        "incident_start": "2026-10-20T00:30:00Z",
+        "incident_end": "2026-10-20T02:30:00Z",
+        "evidence_id": "LOOPB-Q-04af49df2ff623ef",
+        "citation": "loop-b-mock://query/04af49df2ff623ef",
+        "source_type": "CRM_CONTRACT_DB",
+        "tool_status": "SUCCESS",
+        "pagination_complete": true,
+        "records": [],
+        "fetched_at": "2026-11-03T19:18:10.199949+00:00",
+        "query_coverage": "CUSTOMER_WIDE_SYNTHETIC_DATASET",
+        "actual_request_fields": [
+          "customer_id",
+          "scenario",
+          "page_token"
+        ],
+        "adapter_issues": []
+      }
+    },
+    "rules_fingerprint": "7ef444fc71f5354a",
+    "snapshot_fingerprint": "a57f62b9db90967a",
+    "integration_status": "SYNTHETIC_CONTRACT_PENDING_TEAM_MAPPING"
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "evidence_id": "contract_001",
+    "customer_id": "001",
+    "source_type": "CRM_CONTRACT_DB",
+    "scope": {
+      "customer_id": "001"
+    },
+    "version": "v1",
+    "effective_from": "2026-01-01T00:00:00Z",
+    "effective_to": "2026-12-31T23:59:59Z",
+    "customer_tier": "VIP",
+    "plan_type": "Enterprise_Pro",
+    "citation": "synthetic://contracts/001",
+    "description": "Synthetic metadata only; no compensation clauses"
+  },
+  {
+    "evidence_id": "contract_002",
+    "customer_id": "002",
+    "source_type": "CRM_CONTRACT_DB",
+    "scope": {
+      "customer_id": "002"
+    },
+    "version": "v1",
+    "effective_from": "2026-01-01T00:00:00Z",
+    "effective_to": "2026-12-31T23:59:59Z",
+    "customer_tier": "STANDARD",
+    "plan_type": "Basic",
+    "citation": "synthetic://contracts/002",
+    "description": "Synthetic metadata only; no compensation clauses"
+  }
+]

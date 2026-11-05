@@ -1,0 +1,37 @@
+[
+  {
+    "case": "normal",
+    "decision": "RECOMMEND_COMPENSATION",
+    "score": 100.0,
+    "may_present_definitive_decision": true,
+    "gap_count": 0
+  },
+  {
+    "case": "denied",
+    "decision": "DO_NOT_RECOMMEND",
+    "score": 66.67,
+    "may_present_definitive_decision": true,
+    "gap_count": 0
+  },
+  {
+    "case": "missing_contract",
+    "decision": "UNDETERMINED",
+    "score": 0.0,
+    "may_present_definitive_decision": false,
+    "gap_count": 6
+  },
+  {
+    "case": "access_denied",
+    "decision": "UNDETERMINED",
+    "score": 0.0,
+    "may_present_definitive_decision": false,
+    "gap_count": 6
+  },
+  {
+    "case": "cause_conflict",
+    "decision": "UNDETERMINED",
+    "score": 49,
+    "may_present_definitive_decision": false,
+    "gap_count": 1
+  }
+]

@@ -1,0 +1,464 @@
+{
+  "schema_version": "02B-handoff-0.3-draft",
+  "synthetic_demo": true,
+  "task_id": "DEMO-TASK-V2",
+  "current_decision": null,
+  "checker_decision": "UNDETERMINED",
+  "selected_rule_id": "RULE-001",
+  "obligation_results": [
+    {
+      "obligation_id": "B-CONTRACT",
+      "statement": "确认故障当时的适用合同",
+      "status": "SUPPORT",
+      "reason_codes": [
+        "CONTRACT_RESOLVED"
+      ],
+      "reason": "已取得唯一适用合同",
+      "evidence_ids": [
+        "E-CONTRACT"
+      ],
+      "required_sources": [
+        "CRM_CONTRACT_DB"
+      ],
+      "required_for_decision": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "must_verify": false,
+      "applicability": "APPLICABLE",
+      "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+    },
+    {
+      "obligation_id": "B-IDENTITY",
+      "statement": "确认客户身份和套餐",
+      "status": "SUPPORT",
+      "reason_codes": [
+        "IDENTITY_RESOLVED"
+      ],
+      "reason": "客户等级和套餐已取得",
+      "evidence_ids": [
+        "E-PLAN"
+      ],
+      "required_sources": [
+        "PLAN_DB"
+      ],
+      "required_for_decision": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "must_verify": false,
+      "applicability": "APPLICABLE",
+      "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+    },
+    {
+      "obligation_id": "B-RULE",
+      "statement": "确定适用规则和条款",
+      "status": "SUPPORT",
+      "reason_codes": [
+        "RULE_LOCKED"
+      ],
+      "reason": "已锁定规则；专属合同条款优先",
+      "evidence_ids": [
+        "E-CONTRACT",
+        "POLICY:RULE-001"
+      ],
+      "required_sources": [],
+      "required_for_decision": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "must_verify": false,
+      "applicability": "APPLICABLE",
+      "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+    },
+    {
+      "obligation_id": "B-PERMISSION",
+      "statement": "条款允许本次补偿",
+      "status": "SUPPORT",
+      "reason_codes": [
+        "COMPENSATION_TERMS_PRESENT"
+      ],
+      "reason": "已取得明确补偿条件，仍需核实故障事实",
+      "evidence_ids": [
+        "E-CONTRACT",
+        "POLICY:RULE-001"
+      ],
+      "required_sources": [],
+      "required_for_decision": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "must_verify": false,
+      "applicability": "APPLICABLE",
+      "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+    },
+    {
+      "obligation_id": "B-DURATION",
+      "statement": "有效故障时长达到门槛",
+      "status": "SUPPORT",
+      "reason_codes": [
+        "DURATION_THRESHOLD_MET"
+      ],
+      "reason": "总时长90分钟，扣维护40分钟，净时长50分钟，门槛30分钟",
+      "evidence_ids": [
+        "E-INCIDENT",
+        "Q-MAINTENANCE_CALENDAR",
+        "E-MAINT-1"
+      ],
+      "required_sources": [
+        "MONITORING_SYSTEM",
+        "MAINTENANCE_CALENDAR"
+      ],
+      "required_for_decision": true,
+      "checks": {
+        "source_allowed": true,
+        "scope_valid": true,
+        "version_valid": true,
+        "time_valid": true,
+        "query_sufficient": true
+      },
+      "must_verify": false,
+      "applicability": "APPLICABLE",
+      "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+    },
+    {
+      "obligation_id": "B-CAUSE",
+      "statement": "故障原因不属于免责范围",
+      "status": "CONFLICT",
+      "reason_codes": [
+        "CAUSE_CONFLICT"
+      ],
+      "reason": "工单与后台日志对根因的描述不一致，不能自行挑一份",
+      "evidence_ids": [
+        "E-TICKET",
+        "E-LOG"
+      ],
+      "required_sources": [
+        "TICKET_SYSTEM",
+        "BACKEND_LOGS"
+      ],
+      "required_for_decision": true,
+      "checks": {
+        "source_allowed": null,
+        "scope_valid": null,
+        "version_valid": null,
+        "time_valid": null,
+        "query_sufficient": null
+      },
+      "must_verify": false,
+      "applicability": "APPLICABLE",
+      "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。"
+    }
+  ],
+  "gaps": [
+    {
+      "obligation_id": "B-CAUSE",
+      "statement": "故障原因不属于免责范围",
+      "status": "CONFLICT",
+      "reason_codes": [
+        "CAUSE_CONFLICT"
+      ],
+      "reason": "工单与后台日志对根因的描述不一致，不能自行挑一份",
+      "evidence_ids": [
+        "E-TICKET",
+        "E-LOG"
+      ],
+      "required_sources": [
+        "TICKET_SYSTEM",
+        "BACKEND_LOGS"
+      ],
+      "required_for_decision": true,
+      "checks": {
+        "source_allowed": null,
+        "scope_valid": null,
+        "version_valid": null,
+        "time_valid": null,
+        "query_sufficient": null
+      },
+      "must_verify": false,
+      "applicability": "APPLICABLE",
+      "applicability_reason": "当前补偿流程中的检查项；未知与跳过均保留，不冒充不适用。",
+      "blocked_by": [],
+      "ready_for_lookup": true
+    }
+  ],
+  "loop_hint": "HUMAN_REVIEW_RECOMMENDED",
+  "duration": {
+    "raw_minutes": 90.0,
+    "maintenance_minutes": 40.0,
+    "net_minutes": 50.0,
+    "threshold_minutes": 30
+  },
+  "audits": [
+    {
+      "evidence_id": "E-CONTRACT",
+      "source_type": "CRM_CONTRACT_DB",
+      "usable": true,
+      "reason_codes": []
+    },
+    {
+      "evidence_id": "E-PLAN",
+      "source_type": "PLAN_DB",
+      "usable": true,
+      "reason_codes": []
+    },
+    {
+      "evidence_id": "E-INCIDENT",
+      "source_type": "MONITORING_SYSTEM",
+      "usable": true,
+      "reason_codes": []
+    },
+    {
+      "evidence_id": "E-MAINT-1",
+      "source_type": "MAINTENANCE_CALENDAR",
+      "usable": true,
+      "reason_codes": []
+    },
+    {
+      "evidence_id": "E-TICKET",
+      "source_type": "TICKET_SYSTEM",
+      "usable": true,
+      "reason_codes": []
+    },
+    {
+      "evidence_id": "E-LOG",
+      "source_type": "BACKEND_LOGS",
+      "usable": true,
+      "reason_codes": []
+    }
+  ],
+  "used_policy_evidence": [
+    {
+      "evidence_id": "POLICY:RULE-001",
+      "citation": "A组 rules.json#RULE-001",
+      "rule": {
+        "rule_id": "RULE-001",
+        "rule_name": "VIP客户专属SLA补偿规则",
+        "description": "针对购买企业VIP套餐的客户，故障满30分钟即可申请赔偿，但需扣除计划内维护；若因客户配置错误或不可抗力导致的故障属于免责例外。",
+        "priority": 1,
+        "effective_time": {
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2026-12-31T23:59:59Z"
+        },
+        "scope": {
+          "customer_tier": [
+            "VIP"
+          ],
+          "plan_type": [
+            "Enterprise_Pro"
+          ]
+        },
+        "thresholds": {
+          "min_incident_minutes": 30
+        },
+        "exceptions": [
+          "CLIENT_CONFIG_ERROR",
+          "FORCE_MAJEURE"
+        ]
+      }
+    }
+  ],
+  "raw_responses": {
+    "CRM_CONTRACT_DB": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-CRM_CONTRACT_DB",
+      "citation": "demo://query/CRM_CONTRACT_DB",
+      "source_type": "CRM_CONTRACT_DB",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-CONTRACT",
+          "citation": "demo://E-CONTRACT",
+          "source_type": "CRM_CONTRACT_DB",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "rule_id": "RULE-001",
+          "terms": {
+            "allows_compensation": true,
+            "min_incident_minutes": 30,
+            "deduct_maintenance": true,
+            "exceptions": [
+              "CLIENT_CONFIG_ERROR",
+              "FORCE_MAJEURE"
+            ]
+          }
+        }
+      ]
+    },
+    "PLAN_DB": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-PLAN_DB",
+      "citation": "demo://query/PLAN_DB",
+      "source_type": "PLAN_DB",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-PLAN",
+          "citation": "demo://E-PLAN",
+          "source_type": "PLAN_DB",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "customer_tier": "VIP",
+          "plan_type": "Enterprise_Pro"
+        }
+      ]
+    },
+    "MONITORING_SYSTEM": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-MONITORING_SYSTEM",
+      "citation": "demo://query/MONITORING_SYSTEM",
+      "source_type": "MONITORING_SYSTEM",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-INCIDENT",
+          "citation": "demo://E-INCIDENT",
+          "source_type": "MONITORING_SYSTEM",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "incident_id": "INC-001",
+          "start": "2026-06-01T10:00:00Z",
+          "end": "2026-06-01T11:30:00Z"
+        }
+      ]
+    },
+    "MAINTENANCE_CALENDAR": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-MAINTENANCE_CALENDAR",
+      "citation": "demo://query/MAINTENANCE_CALENDAR",
+      "source_type": "MAINTENANCE_CALENDAR",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-MAINT-1",
+          "citation": "demo://E-MAINT-1",
+          "source_type": "MAINTENANCE_CALENDAR",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "planned": true,
+          "start": "2026-06-01T10:00:00Z",
+          "end": "2026-06-01T10:40:00Z"
+        }
+      ]
+    },
+    "TICKET_SYSTEM": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-TICKET_SYSTEM",
+      "citation": "demo://query/TICKET_SYSTEM",
+      "source_type": "TICKET_SYSTEM",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-TICKET",
+          "citation": "demo://E-TICKET",
+          "source_type": "TICKET_SYSTEM",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "incident_id": "INC-001",
+          "cause_codes": [
+            "PROVIDER_FAILURE"
+          ]
+        }
+      ]
+    },
+    "BACKEND_LOGS": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-BACKEND_LOGS",
+      "citation": "demo://query/BACKEND_LOGS",
+      "source_type": "BACKEND_LOGS",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-LOG",
+          "citation": "demo://E-LOG",
+          "source_type": "BACKEND_LOGS",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "incident_id": "INC-001",
+          "cause_codes": [
+            "CLIENT_CONFIG_ERROR"
+          ]
+        }
+      ]
+    }
+  },
+  "rules_fingerprint": "7ef444fc71f5354a",
+  "snapshot_fingerprint": "00d12f39367975d3",
+  "integration_status": "SYNTHETIC_CONTRACT_PENDING_TEAM_MAPPING"
+}

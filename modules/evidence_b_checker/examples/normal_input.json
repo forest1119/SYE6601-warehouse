@@ -1,0 +1,320 @@
+{
+  "task": {
+    "task_id": "DEMO-TASK-V2",
+    "customer_id": "C001",
+    "scope": "CLOUD_SERVER",
+    "incident_id": "INC-001",
+    "incident_start": "2026-06-01T10:00:00Z",
+    "incident_end": "2026-06-01T11:30:00Z"
+  },
+  "responses": {
+    "CRM_CONTRACT_DB": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-CRM_CONTRACT_DB",
+      "citation": "demo://query/CRM_CONTRACT_DB",
+      "source_type": "CRM_CONTRACT_DB",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-CONTRACT",
+          "citation": "demo://E-CONTRACT",
+          "source_type": "CRM_CONTRACT_DB",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "rule_id": "RULE-001",
+          "terms": {
+            "allows_compensation": true,
+            "min_incident_minutes": 30,
+            "deduct_maintenance": true,
+            "exceptions": [
+              "CLIENT_CONFIG_ERROR",
+              "FORCE_MAJEURE"
+            ]
+          }
+        }
+      ]
+    },
+    "PLAN_DB": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-PLAN_DB",
+      "citation": "demo://query/PLAN_DB",
+      "source_type": "PLAN_DB",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-PLAN",
+          "citation": "demo://E-PLAN",
+          "source_type": "PLAN_DB",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "customer_tier": "VIP",
+          "plan_type": "Enterprise_Pro"
+        }
+      ]
+    },
+    "MONITORING_SYSTEM": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-MONITORING_SYSTEM",
+      "citation": "demo://query/MONITORING_SYSTEM",
+      "source_type": "MONITORING_SYSTEM",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-INCIDENT",
+          "citation": "demo://E-INCIDENT",
+          "source_type": "MONITORING_SYSTEM",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "incident_id": "INC-001",
+          "start": "2026-06-01T10:00:00Z",
+          "end": "2026-06-01T11:30:00Z"
+        }
+      ]
+    },
+    "MAINTENANCE_CALENDAR": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-MAINTENANCE_CALENDAR",
+      "citation": "demo://query/MAINTENANCE_CALENDAR",
+      "source_type": "MAINTENANCE_CALENDAR",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-MAINT-1",
+          "citation": "demo://E-MAINT-1",
+          "source_type": "MAINTENANCE_CALENDAR",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "planned": true,
+          "start": "2026-06-01T10:00:00Z",
+          "end": "2026-06-01T10:40:00Z"
+        }
+      ]
+    },
+    "TICKET_SYSTEM": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-TICKET_SYSTEM",
+      "citation": "demo://query/TICKET_SYSTEM",
+      "source_type": "TICKET_SYSTEM",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-TICKET",
+          "citation": "demo://E-TICKET",
+          "source_type": "TICKET_SYSTEM",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "incident_id": "INC-001",
+          "cause_codes": [
+            "PROVIDER_FAILURE"
+          ]
+        }
+      ]
+    },
+    "BACKEND_LOGS": {
+      "task_id": "DEMO-TASK-V2",
+      "customer_id": "C001",
+      "scope": "CLOUD_SERVER",
+      "incident_id": "INC-001",
+      "incident_start": "2026-06-01T10:00:00Z",
+      "incident_end": "2026-06-01T11:30:00Z",
+      "evidence_id": "Q-BACKEND_LOGS",
+      "citation": "demo://query/BACKEND_LOGS",
+      "source_type": "BACKEND_LOGS",
+      "tool_status": "SUCCESS",
+      "pagination_complete": true,
+      "fetched_at": "2026-06-02T00:00:00Z",
+      "records": [
+        {
+          "evidence_id": "E-LOG",
+          "citation": "demo://E-LOG",
+          "source_type": "BACKEND_LOGS",
+          "customer_id": "C001",
+          "scope": "CLOUD_SERVER",
+          "version": "V1",
+          "effective_from": "2026-01-01T00:00:00Z",
+          "effective_to": "2026-12-31T23:59:59Z",
+          "incident_id": "INC-001",
+          "cause_codes": [
+            "PROVIDER_FAILURE"
+          ]
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "rule_id": "RULE-001",
+      "rule_name": "VIP客户专属SLA补偿规则",
+      "description": "针对购买企业VIP套餐的客户，故障满30分钟即可申请赔偿，但需扣除计划内维护；若因客户配置错误或不可抗力导致的故障属于免责例外。",
+      "priority": 1,
+      "effective_time": {
+        "start": "2026-01-01T00:00:00Z",
+        "end": "2026-12-31T23:59:59Z"
+      },
+      "scope": {
+        "customer_tier": [
+          "VIP"
+        ],
+        "plan_type": [
+          "Enterprise_Pro"
+        ]
+      },
+      "thresholds": {
+        "min_incident_minutes": 30
+      },
+      "exceptions": [
+        "CLIENT_CONFIG_ERROR",
+        "FORCE_MAJEURE"
+      ]
+    },
+    {
+      "rule_id": "RULE-002",
+      "rule_name": "通用客户标准补偿政策",
+      "description": "针对普通基础套餐客户，无专属合同下降级适用；故障满60分钟可赔偿；同样排除客户自身原因引发的故障。",
+      "priority": 100,
+      "effective_time": {
+        "start": "2025-01-01T00:00:00Z",
+        "end": "2027-12-31T23:59:59Z"
+      },
+      "scope": {
+        "customer_tier": [
+          "STANDARD",
+          "BASIC"
+        ],
+        "plan_type": [
+          "ALL"
+        ]
+      },
+      "thresholds": {
+        "min_incident_minutes": 60
+      },
+      "exceptions": [
+        "CLIENT_CONFIG_ERROR"
+      ]
+    },
+    {
+      "rule_id": "RULE-003",
+      "rule_name": "金融专区高可用保障规则",
+      "description": "针对金融专区套餐客户，故障达到15分钟即可赔偿；排除黑客攻击与客户自身配置错误引发的故障。",
+      "priority": 5,
+      "effective_time": {
+        "start": "2026-01-01T00:00:00Z",
+        "end": "2026-12-31T23:59:59Z"
+      },
+      "scope": {
+        "customer_tier": [
+          "FINANCE"
+        ],
+        "plan_type": [
+          "FINANCE_ZONE"
+        ]
+      },
+      "thresholds": {
+        "min_incident_minutes": 15
+      },
+      "exceptions": [
+        "DDoS_ATTACK",
+        "CLIENT_CONFIG_ERROR"
+      ]
+    },
+    {
+      "rule_id": "RULE-004",
+      "rule_name": "战略合作伙伴大客户极速补偿规则",
+      "description": "针对战略合作大客户（KA），故障达10分钟即触发补偿保障，优先级别极高；仅排除客户人为主动破坏情况。",
+      "priority": 2,
+      "effective_time": {
+        "start": "2026-01-01T00:00:00Z",
+        "end": "2028-12-31T23:59:59Z"
+      },
+      "scope": {
+        "customer_tier": [
+          "KA_STRATEGIC"
+        ],
+        "plan_type": [
+          "Custom_Dedicated"
+        ]
+      },
+      "thresholds": {
+        "min_incident_minutes": 10
+      },
+      "exceptions": [
+        "CLIENT_MALICIOUS_ACTION"
+      ]
+    },
+    {
+      "rule_id": "RULE-005",
+      "rule_name": "免费试用与沙盒环境免赔规则",
+      "description": "针对使用免费试用版或沙盒测试环境的客户，不提供SLA赔偿承诺，故障门槛设为不适用（极高值），所有故障均属于免赔范围。",
+      "priority": 10,
+      "effective_time": {
+        "start": "2025-01-01T00:00:00Z",
+        "end": "2099-12-31T23:59:59Z"
+      },
+      "scope": {
+        "customer_tier": [
+          "TRIAL",
+          "SANDBOX"
+        ],
+        "plan_type": [
+          "Free_Tier"
+        ]
+      },
+      "thresholds": {
+        "min_incident_minutes": 999999
+      },
+      "exceptions": [
+        "ALL_EXCEPTIONS"
+      ]
+    }
+  ]
+}

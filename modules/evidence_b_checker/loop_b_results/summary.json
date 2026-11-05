@@ -1,0 +1,110 @@
+[
+  {
+    "case": "contract_found",
+    "decision": "UNDETERMINED",
+    "adapter_gaps": [
+      "MISSING_SERVICE_SCOPE",
+      "MISSING_CONTRACT_BUSINESS_FIELD",
+      "MISSING_CONTRACT_BUSINESS_FIELD"
+    ],
+    "transport_status": {
+      "CRM_CONTRACT_DB": "SUCCESS"
+    },
+    "pagination_complete": {
+      "CRM_CONTRACT_DB": true
+    }
+  },
+  {
+    "case": "contract_empty",
+    "decision": "UNDETERMINED",
+    "adapter_gaps": [],
+    "transport_status": {
+      "CRM_CONTRACT_DB": "SUCCESS"
+    },
+    "pagination_complete": {
+      "CRM_CONTRACT_DB": true
+    }
+  },
+  {
+    "case": "contract_403",
+    "decision": "UNDETERMINED",
+    "adapter_gaps": [],
+    "transport_status": {
+      "CRM_CONTRACT_DB": "ACCESS_DENIED"
+    },
+    "pagination_complete": {
+      "CRM_CONTRACT_DB": false
+    }
+  },
+  {
+    "case": "contract_timeout",
+    "decision": "UNDETERMINED",
+    "adapter_gaps": [],
+    "transport_status": {
+      "CRM_CONTRACT_DB": "TIMEOUT"
+    },
+    "pagination_complete": {
+      "CRM_CONTRACT_DB": false
+    }
+  },
+  {
+    "case": "contract_old",
+    "decision": "UNDETERMINED",
+    "adapter_gaps": [
+      "MISSING_SERVICE_SCOPE",
+      "MISSING_CONTRACT_BUSINESS_FIELD",
+      "MISSING_CONTRACT_BUSINESS_FIELD"
+    ],
+    "transport_status": {
+      "CRM_CONTRACT_DB": "SUCCESS"
+    },
+    "pagination_complete": {
+      "CRM_CONTRACT_DB": true
+    }
+  },
+  {
+    "case": "opposite_placeholder",
+    "decision": "UNDETERMINED",
+    "adapter_gaps": [
+      "MISSING_SERVICE_SCOPE",
+      "MISSING_CONTRACT_BUSINESS_FIELD",
+      "MISSING_CONTRACT_BUSINESS_FIELD",
+      "UNSTRUCTURED_STATEMENT_NOT_JUDGED",
+      "MISSING_SERVICE_SCOPE",
+      "MISSING_CONTRACT_BUSINESS_FIELD",
+      "MISSING_CONTRACT_BUSINESS_FIELD",
+      "UNSTRUCTURED_STATEMENT_NOT_JUDGED"
+    ],
+    "transport_status": {
+      "CRM_CONTRACT_DB": "SUCCESS"
+    },
+    "pagination_complete": {
+      "CRM_CONTRACT_DB": true
+    }
+  },
+  {
+    "case": "maintenance_first_page",
+    "decision": "UNDETERMINED",
+    "adapter_gaps": [],
+    "transport_status": {
+      "MAINTENANCE_CALENDAR": "SUCCESS"
+    },
+    "pagination_complete": {
+      "MAINTENANCE_CALENDAR": false
+    }
+  },
+  {
+    "case": "maintenance_all_pages",
+    "decision": "UNDETERMINED",
+    "adapter_gaps": [
+      "MISSING_SERVICE_SCOPE",
+      "MISSING_PLANNED_FLAG"
+    ],
+    "transport_status": {
+      "MAINTENANCE_CALENDAR": "SUCCESS"
+    },
+    "pagination_complete": {
+      "MAINTENANCE_CALENDAR": true
+    }
+  }
+]
