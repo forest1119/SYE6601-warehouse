@@ -7,8 +7,10 @@ import math
 import time
 import uuid
 from mock_tools import get_customer_contract, list_maintenance
+from ticket_tools import get_ticket
 
 TOOLS = {
+    "get_ticket": get_ticket,
     "get_customer_contract": get_customer_contract,
     "list_maintenance": list_maintenance,
 }

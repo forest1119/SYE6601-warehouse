@@ -1,0 +1,24 @@
+{
+  "source_type": "TICKET_DB",
+  "customer_id": "C-DEMO",
+  "incident_id": "I-DEMO",
+  "tool_status": "SUCCESS",
+  "records": [
+    {
+      "source_type": "TICKET_DB",
+      "evidence_id": "T-01",
+      "statement": "Verified ticket submission.",
+      "customer_id": "C-DEMO",
+      "incident_id": "I-DEMO",
+      "version": "v1",
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_to": "2026-12-31T23:59:59Z",
+      "citation": "synthetic:T-01",
+      "submitted_at": "2026-10-01T12:00:00Z"
+    }
+  ],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-11-12T10:17:35.743415+00:00",
+  "cost_units": 1
+}

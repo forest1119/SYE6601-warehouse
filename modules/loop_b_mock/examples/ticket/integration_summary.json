@@ -1,0 +1,54 @@
+{
+  "description": "Local integration smoke test, not independent evaluation or live model run",
+  "reference_commit": "8d544b865e19c5bd286e14201af777efb694b81d",
+  "cases": [
+    {
+      "case": "DYN-01",
+      "ticket_scenario": "normal",
+      "mode": "simulated",
+      "reference_recommendation": "eligible",
+      "ticket_replacement_recommendation": "eligible",
+      "matched": true
+    },
+    {
+      "case": "LATE-TICKET",
+      "ticket_scenario": "late_ticket",
+      "mode": "simulated",
+      "reference_recommendation": "ineligible",
+      "ticket_replacement_recommendation": "ineligible",
+      "matched": true
+    },
+    {
+      "case": "BOUNDARY",
+      "ticket_scenario": "boundary",
+      "mode": "simulated",
+      "reference_recommendation": "eligible",
+      "ticket_replacement_recommendation": "eligible",
+      "matched": true
+    },
+    {
+      "case": "MISSING-TICKET",
+      "ticket_scenario": "missing_ticket",
+      "mode": "simulated",
+      "reference_recommendation": "ineligible",
+      "ticket_replacement_recommendation": "ineligible",
+      "matched": true
+    },
+    {
+      "case": "TICKET-403",
+      "ticket_scenario": "forbidden",
+      "mode": "simulated",
+      "reference_recommendation": "undetermined",
+      "ticket_replacement_recommendation": "undetermined",
+      "matched": true
+    },
+    {
+      "case": "DYN-01",
+      "ticket_scenario": "paged",
+      "mode": "simulated",
+      "reference_recommendation": "eligible",
+      "ticket_replacement_recommendation": "eligible",
+      "matched": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "source_type": "TICKET_DB",
+  "customer_id": "C-DEMO",
+  "incident_id": "I-DEMO",
+  "tool_status": "SUCCESS",
+  "records": [],
+  "pagination_complete": false,
+  "next_page_token": "page_2",
+  "fetched_at": "2026-11-12T10:17:35.741824+00:00",
+  "cost_units": 1
+}
