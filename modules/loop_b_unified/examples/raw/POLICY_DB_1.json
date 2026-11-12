@@ -1,0 +1,76 @@
+{
+  "task_id": "TASK-001",
+  "run_id": "RUN-dcb848119dc445cda9cf8ca897fa670c",
+  "call_id": "tool-727a7ecffa9a4f7fb3618328ee49773c",
+  "provider_call_id": "tool-727a7ecffa9a4f7fb3618328ee49773c",
+  "tool_name": "get_policy",
+  "source_type": "POLICY_DB",
+  "customer_id": "C-DEMO",
+  "incident_id": "I-DEMO",
+  "arguments": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "event_time": "2026-10-01T00:00:00Z",
+    "page_token": null
+  },
+  "status": "SUCCESS",
+  "tool_status": "SUCCESS",
+  "records": [
+    {
+      "source_type": "POLICY_DB",
+      "customer_id": "C-DEMO",
+      "incident_id": "I-DEMO",
+      "version": "v1",
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_to": "2026-12-31T23:59:59Z",
+      "record_id": "R6f3a663fc5f2ef6d",
+      "evidence_id": "R6f3a663fc5f2ef6d",
+      "source_id": "S45749dc4243389f5",
+      "scope": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO"
+      },
+      "service_scope": null,
+      "locator": {
+        "unit": "unicode_code_points",
+        "start": 0,
+        "end": 60
+      },
+      "excerpt": "Compensation requires an outage lasting at least 60 minutes.",
+      "statement": "Compensation requires an outage lasting at least 60 minutes.",
+      "context": {
+        "source_id": "S45749dc4243389f5",
+        "start": 0,
+        "end": 60,
+        "text": "Compensation requires an outage lasting at least 60 minutes.",
+        "available": true,
+        "coverage": "retrieved source text only",
+        "has_more_context": false
+      },
+      "citation": "synthetic://S45749dc4243389f5/R6f3a663fc5f2ef6d",
+      "call_id": "tool-727a7ecffa9a4f7fb3618328ee49773c"
+    }
+  ],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-11-12T16:03:13.964930+00:00",
+  "cost_units": 1,
+  "cost": {
+    "value": 1,
+    "unit": "simulated_tool_unit"
+  },
+  "scope_declaration": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "coverage": "all configured records for this customer and incident in one frozen synthetic dataset",
+    "event_time": "2026-10-01T00:00:00Z",
+    "time_filter_applied": false,
+    "service_scope": null,
+    "limitation": "Service applicability is unspecified. Effective-time validation belongs to Checker. Empty means none in this configured dataset, not none in an enterprise."
+  },
+  "elapsed_ms": 0.212,
+  "elapsed": {
+    "value": 0.212,
+    "unit": "ms"
+  }
+}

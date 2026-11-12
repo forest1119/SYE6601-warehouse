@@ -1,0 +1,138 @@
+{
+  "reference_pr": 5,
+  "reference_commit": "8d544b865e19c5bd286e14201af777efb694b81d",
+  "description": "Development simulated wiring check. No live model, no independent gold validation.",
+  "cases": [
+    {
+      "development_case": "DYN-01",
+      "mode": "simulated",
+      "reference": "eligible",
+      "actual": "eligible",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": []
+    },
+    {
+      "development_case": "NO-TICKET",
+      "mode": "simulated",
+      "reference": "eligible",
+      "actual": "eligible",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": []
+    },
+    {
+      "development_case": "REFERRAL",
+      "mode": "simulated",
+      "reference": "undetermined",
+      "actual": "undetermined",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": [
+        "review_3.json"
+      ]
+    },
+    {
+      "development_case": "AMOUNT",
+      "mode": "simulated",
+      "reference": "undetermined",
+      "actual": "undetermined",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": [
+        "review_4.json"
+      ]
+    },
+    {
+      "development_case": "LATE-TICKET",
+      "mode": "simulated",
+      "reference": "ineligible",
+      "actual": "ineligible",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": []
+    },
+    {
+      "development_case": "BOUNDARY",
+      "mode": "simulated",
+      "reference": "eligible",
+      "actual": "eligible",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": []
+    },
+    {
+      "development_case": "MISSING-TICKET",
+      "mode": "simulated",
+      "reference": "ineligible",
+      "actual": "ineligible",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": []
+    },
+    {
+      "development_case": "MAINTENANCE",
+      "mode": "simulated",
+      "reference": "ineligible",
+      "actual": "undetermined",
+      "same_recommendation": false,
+      "known_interface_issue": "Upstream graph currently expects maintenance.excluded; raw material returns planned. Owner must confirm semantic mapping.",
+      "review_packets": [
+        "review_8.json"
+      ]
+    },
+    {
+      "development_case": "CONFLICT",
+      "mode": "simulated",
+      "reference": "undetermined",
+      "actual": "undetermined",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": [
+        "review_9.json"
+      ]
+    },
+    {
+      "development_case": "EMPTY-CONTRACT",
+      "mode": "simulated",
+      "reference": "eligible",
+      "actual": "eligible",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": []
+    },
+    {
+      "development_case": "TICKET-403",
+      "mode": "simulated",
+      "reference": "undetermined",
+      "actual": "undetermined",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": [
+        "review_11.json"
+      ]
+    },
+    {
+      "development_case": "CONTRACT-403",
+      "mode": "simulated",
+      "reference": "undetermined",
+      "actual": "undetermined",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": [
+        "review_12.json"
+      ]
+    },
+    {
+      "development_case": "OLD-CONTRACT",
+      "mode": "simulated",
+      "reference": "undetermined",
+      "actual": "undetermined",
+      "same_recommendation": true,
+      "known_interface_issue": null,
+      "review_packets": [
+        "review_13.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "task_id": "TASK-001",
+  "run_id": "RUN-dcb848119dc445cda9cf8ca897fa670c",
+  "call_id": "tool-141027cafedf455096d80598f6f902ec",
+  "provider_call_id": "tool-141027cafedf455096d80598f6f902ec",
+  "tool_name": "get_incident",
+  "source_type": "INCIDENT_DB",
+  "customer_id": "C-DEMO",
+  "incident_id": "I-DEMO",
+  "arguments": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "event_time": "2026-10-01T00:00:00Z",
+    "page_token": null
+  },
+  "status": "SUCCESS",
+  "tool_status": "SUCCESS",
+  "records": [
+    {
+      "source_type": "INCIDENT_DB",
+      "customer_id": "C-DEMO",
+      "incident_id": "I-DEMO",
+      "version": "v1",
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_to": "2026-12-31T23:59:59Z",
+      "duration_minutes": 120,
+      "record_id": "Rcb51d95acdbdea89",
+      "evidence_id": "Rcb51d95acdbdea89",
+      "source_id": "S7a4b33a551950623",
+      "scope": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO"
+      },
+      "service_scope": null,
+      "locator": {
+        "unit": "unicode_code_points",
+        "start": 0,
+        "end": 25
+      },
+      "excerpt": "Verified outage duration.",
+      "statement": "Verified outage duration.",
+      "context": {
+        "source_id": "S7a4b33a551950623",
+        "start": 0,
+        "end": 25,
+        "text": "Verified outage duration.",
+        "available": true,
+        "coverage": "retrieved source text only",
+        "has_more_context": false
+      },
+      "citation": "synthetic://S7a4b33a551950623/Rcb51d95acdbdea89",
+      "call_id": "tool-141027cafedf455096d80598f6f902ec"
+    }
+  ],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-11-12T16:03:13.968928+00:00",
+  "cost_units": 1,
+  "cost": {
+    "value": 1,
+    "unit": "simulated_tool_unit"
+  },
+  "scope_declaration": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "coverage": "all configured records for this customer and incident in one frozen synthetic dataset",
+    "event_time": "2026-10-01T00:00:00Z",
+    "time_filter_applied": false,
+    "service_scope": null,
+    "limitation": "Service applicability is unspecified. Effective-time validation belongs to Checker. Empty means none in this configured dataset, not none in an enterprise."
+  },
+  "elapsed_ms": 0.141,
+  "elapsed": {
+    "value": 0.141,
+    "unit": "ms"
+  }
+}

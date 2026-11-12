@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-001",
+  "run_id": "RUN-dcb848119dc445cda9cf8ca897fa670c",
+  "call_id": "tool-953fea3d1f8144d89643601f94e1d2a9",
+  "provider_call_id": "tool-953fea3d1f8144d89643601f94e1d2a9",
+  "tool_name": "list_maintenance",
+  "source_type": "MAINTENANCE_CALENDAR",
+  "customer_id": "C-DEMO",
+  "incident_id": "I-DEMO",
+  "arguments": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "event_time": "2026-10-01T00:00:00Z",
+    "page_token": null
+  },
+  "status": "SUCCESS",
+  "tool_status": "SUCCESS",
+  "records": [],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-11-12T16:03:13.977887+00:00",
+  "cost_units": 1,
+  "cost": {
+    "value": 1,
+    "unit": "simulated_tool_unit"
+  },
+  "scope_declaration": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "coverage": "all configured records for this customer and incident in one frozen synthetic dataset",
+    "event_time": "2026-10-01T00:00:00Z",
+    "time_filter_applied": false,
+    "service_scope": null,
+    "limitation": "Service applicability is unspecified. Effective-time validation belongs to Checker. Empty means none in this configured dataset, not none in an enterprise."
+  },
+  "elapsed_ms": 0.054,
+  "elapsed": {
+    "value": 0.054,
+    "unit": "ms"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "repository": "baishouxiaosheng/SYE6601-warehouse",
+  "pr": 5,
+  "commit": "8d544b865e19c5bd286e14201af777efb694b81d",
+  "files": [
+    "dynamic_evidence/__init__.py",
+    "dynamic_evidence/tools.py",
+    "dynamic_evidence/cases.py",
+    "dynamic_evidence/matrix.py"
+  ],
+  "purpose": "Unmodified PR5 synthetic provider; only its TICKET_DB responses are used in the new runtime entry"
+}

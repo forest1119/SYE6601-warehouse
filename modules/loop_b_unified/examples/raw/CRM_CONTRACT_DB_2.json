@@ -1,0 +1,76 @@
+{
+  "task_id": "TASK-001",
+  "run_id": "RUN-dcb848119dc445cda9cf8ca897fa670c",
+  "call_id": "tool-ff87ad0b1ab7455d9c20f8d84f65e426",
+  "provider_call_id": "tool-ff87ad0b1ab7455d9c20f8d84f65e426",
+  "tool_name": "get_customer_contract",
+  "source_type": "CRM_CONTRACT_DB",
+  "customer_id": "C-DEMO",
+  "incident_id": "I-DEMO",
+  "arguments": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "event_time": "2026-10-01T00:00:00Z",
+    "page_token": "70c92ed5abb73a1472243364:1"
+  },
+  "status": "SUCCESS",
+  "tool_status": "SUCCESS",
+  "records": [
+    {
+      "source_type": "CRM_CONTRACT_DB",
+      "customer_id": "C-DEMO",
+      "incident_id": "I-DEMO",
+      "version": "v1",
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_to": "2026-12-31T23:59:59Z",
+      "record_id": "Ref4695692b310494",
+      "evidence_id": "Ref4695692b310494",
+      "source_id": "S550fb74a2d341e5e",
+      "scope": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO"
+      },
+      "service_scope": null,
+      "locator": {
+        "unit": "unicode_code_points",
+        "start": 45,
+        "end": 107
+      },
+      "excerpt": "A ticket must be submitted within 24 hours after the incident.",
+      "statement": "A ticket must be submitted within 24 hours after the incident.",
+      "context": {
+        "source_id": "S550fb74a2d341e5e",
+        "start": 0,
+        "end": 107,
+        "text": "The incident must last at least 90 minutes.\n\nA ticket must be submitted within 24 hours after the incident.",
+        "available": true,
+        "coverage": "retrieved source text only",
+        "has_more_context": false
+      },
+      "citation": "synthetic://S550fb74a2d341e5e/Ref4695692b310494",
+      "call_id": "tool-ff87ad0b1ab7455d9c20f8d84f65e426"
+    }
+  ],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-11-12T16:03:13.975899+00:00",
+  "cost_units": 1,
+  "cost": {
+    "value": 1,
+    "unit": "simulated_tool_unit"
+  },
+  "scope_declaration": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "coverage": "all configured records for this customer and incident in one frozen synthetic dataset",
+    "event_time": "2026-10-01T00:00:00Z",
+    "time_filter_applied": false,
+    "service_scope": null,
+    "limitation": "Service applicability is unspecified. Effective-time validation belongs to Checker. Empty means none in this configured dataset, not none in an enterprise."
+  },
+  "elapsed_ms": 0.177,
+  "elapsed": {
+    "value": 0.177,
+    "unit": "ms"
+  }
+}

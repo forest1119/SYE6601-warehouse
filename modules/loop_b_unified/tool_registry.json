@@ -1,0 +1,76 @@
+{
+  "schema_version": "loop-b-raw-0.2-draft",
+  "status": "TEAM_CONFIRMATION_PENDING",
+  "sources": [
+    {
+      "source_type": "POLICY_DB",
+      "tool_name": "get_policy",
+      "arguments": [
+        "task_id",
+        "run_id",
+        "customer_id",
+        "incident_id",
+        "event_time",
+        "page_token"
+      ],
+      "permission": "synthetic configured access, supports FORBIDDEN",
+      "cost": "one synthetic unit per attempted query"
+    },
+    {
+      "source_type": "INCIDENT_DB",
+      "tool_name": "get_incident",
+      "arguments": [
+        "task_id",
+        "run_id",
+        "customer_id",
+        "incident_id",
+        "event_time",
+        "page_token"
+      ],
+      "permission": "synthetic configured access, supports FORBIDDEN",
+      "cost": "one synthetic unit per attempted query"
+    },
+    {
+      "source_type": "CRM_CONTRACT_DB",
+      "tool_name": "get_customer_contract",
+      "arguments": [
+        "task_id",
+        "run_id",
+        "customer_id",
+        "incident_id",
+        "event_time",
+        "page_token"
+      ],
+      "permission": "synthetic configured access, supports FORBIDDEN",
+      "cost": "one synthetic unit per attempted query"
+    },
+    {
+      "source_type": "MAINTENANCE_CALENDAR",
+      "tool_name": "list_maintenance",
+      "arguments": [
+        "task_id",
+        "run_id",
+        "customer_id",
+        "incident_id",
+        "event_time",
+        "page_token"
+      ],
+      "permission": "synthetic configured access, supports FORBIDDEN",
+      "cost": "one synthetic unit per attempted query"
+    },
+    {
+      "source_type": "TICKET_DB",
+      "tool_name": "PR5_ticket_provider",
+      "arguments": [
+        "task_id",
+        "run_id",
+        "customer_id",
+        "incident_id",
+        "event_time",
+        "page_token"
+      ],
+      "permission": "synthetic configured access, supports FORBIDDEN",
+      "cost": "one synthetic unit per attempted query"
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "S45749dc4243389f5": {
+    "source_id": "S45749dc4243389f5",
+    "source_type": "POLICY_DB",
+    "text": "Compensation requires an outage lasting at least 60 minutes.",
+    "records": [
+      {
+        "source_type": "POLICY_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "record_id": "R6f3a663fc5f2ef6d",
+        "evidence_id": "R6f3a663fc5f2ef6d",
+        "source_id": "S45749dc4243389f5",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 0,
+          "end": 60
+        },
+        "excerpt": "Compensation requires an outage lasting at least 60 minutes.",
+        "statement": "Compensation requires an outage lasting at least 60 minutes.",
+        "context": {
+          "source_id": "S45749dc4243389f5",
+          "start": 0,
+          "end": 60,
+          "text": "Compensation requires an outage lasting at least 60 minutes."
+        },
+        "citation": "synthetic://S45749dc4243389f5/R6f3a663fc5f2ef6d"
+      }
+    ]
+  },
+  "S7a4b33a551950623": {
+    "source_id": "S7a4b33a551950623",
+    "source_type": "INCIDENT_DB",
+    "text": "Verified outage duration.",
+    "records": [
+      {
+        "source_type": "INCIDENT_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "duration_minutes": 120,
+        "record_id": "Rcb51d95acdbdea89",
+        "evidence_id": "Rcb51d95acdbdea89",
+        "source_id": "S7a4b33a551950623",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 0,
+          "end": 25
+        },
+        "excerpt": "Verified outage duration.",
+        "statement": "Verified outage duration.",
+        "context": {
+          "source_id": "S7a4b33a551950623",
+          "start": 0,
+          "end": 25,
+          "text": "Verified outage duration."
+        },
+        "citation": "synthetic://S7a4b33a551950623/Rcb51d95acdbdea89"
+      }
+    ]
+  },
+  "S550fb74a2d341e5e": {
+    "source_id": "S550fb74a2d341e5e",
+    "source_type": "CRM_CONTRACT_DB",
+    "text": "The incident must last at least 90 minutes.\n\nA ticket must be submitted within 24 hours after the incident.",
+    "records": [
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "record_id": "Rf9d6aad4f3236271",
+        "evidence_id": "Rf9d6aad4f3236271",
+        "source_id": "S550fb74a2d341e5e",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 0,
+          "end": 43
+        },
+        "excerpt": "The incident must last at least 90 minutes.",
+        "statement": "The incident must last at least 90 minutes.",
+        "context": {
+          "source_id": "S550fb74a2d341e5e",
+          "start": 0,
+          "end": 107,
+          "text": "The incident must last at least 90 minutes.\n\nA ticket must be submitted within 24 hours after the incident."
+        },
+        "citation": "synthetic://S550fb74a2d341e5e/Rf9d6aad4f3236271"
+      },
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "record_id": "Ref4695692b310494",
+        "evidence_id": "Ref4695692b310494",
+        "source_id": "S550fb74a2d341e5e",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 45,
+          "end": 107
+        },
+        "excerpt": "A ticket must be submitted within 24 hours after the incident.",
+        "statement": "A ticket must be submitted within 24 hours after the incident.",
+        "context": {
+          "source_id": "S550fb74a2d341e5e",
+          "start": 0,
+          "end": 107,
+          "text": "The incident must last at least 90 minutes.\n\nA ticket must be submitted within 24 hours after the incident."
+        },
+        "citation": "synthetic://S550fb74a2d341e5e/Ref4695692b310494"
+      }
+    ]
+  },
+  "Sc6d57444a9a6628d": {
+    "source_id": "Sc6d57444a9a6628d",
+    "source_type": "MAINTENANCE_CALENDAR",
+    "text": "",
+    "records": []
+  },
+  "S167a7bc072dd6cd3": {
+    "source_id": "S167a7bc072dd6cd3",
+    "source_type": "CRM_CONTRACT_DB",
+    "text": "The incident must last at least 90 minutes.",
+    "records": [
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "record_id": "Rf9d6aad4f3236271",
+        "evidence_id": "Rf9d6aad4f3236271",
+        "source_id": "S167a7bc072dd6cd3",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 0,
+          "end": 43
+        },
+        "excerpt": "The incident must last at least 90 minutes.",
+        "statement": "The incident must last at least 90 minutes.",
+        "context": {
+          "source_id": "S167a7bc072dd6cd3",
+          "start": 0,
+          "end": 43,
+          "text": "The incident must last at least 90 minutes."
+        },
+        "citation": "synthetic://S167a7bc072dd6cd3/Rf9d6aad4f3236271"
+      }
+    ]
+  },
+  "S98b8493e55c103c0": {
+    "source_id": "S98b8493e55c103c0",
+    "source_type": "CRM_CONTRACT_DB",
+    "text": "The incident must last at least 90 minutes.\n\nEligibility is subject to the unpublished Schedule Z.",
+    "records": [
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "record_id": "Rf9d6aad4f3236271",
+        "evidence_id": "Rf9d6aad4f3236271",
+        "source_id": "S98b8493e55c103c0",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 0,
+          "end": 43
+        },
+        "excerpt": "The incident must last at least 90 minutes.",
+        "statement": "The incident must last at least 90 minutes.",
+        "context": {
+          "source_id": "S98b8493e55c103c0",
+          "start": 0,
+          "end": 98,
+          "text": "The incident must last at least 90 minutes.\n\nEligibility is subject to the unpublished Schedule Z."
+        },
+        "citation": "synthetic://S98b8493e55c103c0/Rf9d6aad4f3236271"
+      },
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "record_id": "R3e8f20d8f55b5cd5",
+        "evidence_id": "R3e8f20d8f55b5cd5",
+        "source_id": "S98b8493e55c103c0",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 45,
+          "end": 98
+        },
+        "excerpt": "Eligibility is subject to the unpublished Schedule Z.",
+        "statement": "Eligibility is subject to the unpublished Schedule Z.",
+        "context": {
+          "source_id": "S98b8493e55c103c0",
+          "start": 0,
+          "end": 98,
+          "text": "The incident must last at least 90 minutes.\n\nEligibility is subject to the unpublished Schedule Z."
+        },
+        "citation": "synthetic://S98b8493e55c103c0/R3e8f20d8f55b5cd5"
+      }
+    ]
+  },
+  "S4b10584de6330ea6": {
+    "source_id": "S4b10584de6330ea6",
+    "source_type": "MAINTENANCE_CALENDAR",
+    "text": "Applicable planned maintenance.",
+    "records": [
+      {
+        "source_type": "MAINTENANCE_CALENDAR",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "planned": true,
+        "record_id": "R7baf501e10c3370d",
+        "evidence_id": "R7baf501e10c3370d",
+        "source_id": "S4b10584de6330ea6",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 0,
+          "end": 31
+        },
+        "excerpt": "Applicable planned maintenance.",
+        "statement": "Applicable planned maintenance.",
+        "context": {
+          "source_id": "S4b10584de6330ea6",
+          "start": 0,
+          "end": 31,
+          "text": "Applicable planned maintenance."
+        },
+        "citation": "synthetic://S4b10584de6330ea6/R7baf501e10c3370d"
+      }
+    ]
+  },
+  "S79a7f18b5c1cc5c8": {
+    "source_id": "S79a7f18b5c1cc5c8",
+    "source_type": "CRM_CONTRACT_DB",
+    "text": "",
+    "records": []
+  },
+  "S9532e2b382153ad3": {
+    "source_id": "S9532e2b382153ad3",
+    "source_type": "CRM_CONTRACT_DB",
+    "text": "The incident must last at least 90 minutes.\n\nEligibility is subject to the unpublished Schedule Z.",
+    "records": [
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "record_id": "Rf9d6aad4f3236271",
+        "evidence_id": "Rf9d6aad4f3236271",
+        "source_id": "S9532e2b382153ad3",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 0,
+          "end": 43
+        },
+        "excerpt": "The incident must last at least 90 minutes.",
+        "statement": "The incident must last at least 90 minutes.",
+        "context": {
+          "source_id": "S9532e2b382153ad3",
+          "text": null,
+          "available": false
+        },
+        "citation": "synthetic://S9532e2b382153ad3/Rf9d6aad4f3236271"
+      },
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "record_id": "R3e8f20d8f55b5cd5",
+        "evidence_id": "R3e8f20d8f55b5cd5",
+        "source_id": "S9532e2b382153ad3",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 45,
+          "end": 98
+        },
+        "excerpt": "Eligibility is subject to the unpublished Schedule Z.",
+        "statement": "Eligibility is subject to the unpublished Schedule Z.",
+        "context": {
+          "source_id": "S9532e2b382153ad3",
+          "text": null,
+          "available": false
+        },
+        "citation": "synthetic://S9532e2b382153ad3/R3e8f20d8f55b5cd5"
+      }
+    ]
+  },
+  "S95e851c8bd6172e1": {
+    "source_id": "S95e851c8bd6172e1",
+    "source_type": "CRM_CONTRACT_DB",
+    "text": "The incident must last at least 90 minutes.\n\nThe incident must last at least 300 minutes.",
+    "records": [
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "statement": "The incident must last at least 90 minutes.",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "evidence_id": "Rd2cf5daeaa38f98c",
+        "record_id": "Rd2cf5daeaa38f98c",
+        "source_id": "S95e851c8bd6172e1",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 0,
+          "end": 43
+        },
+        "excerpt": "The incident must last at least 90 minutes.",
+        "context": {
+          "source_id": "S95e851c8bd6172e1",
+          "text": "The incident must last at least 90 minutes.\n\nThe incident must last at least 300 minutes.",
+          "start": 0,
+          "end": 89
+        },
+        "citation": "synthetic://S95e851c8bd6172e1/Rd2cf5daeaa38f98c"
+      },
+      {
+        "source_type": "CRM_CONTRACT_DB",
+        "statement": "The incident must last at least 300 minutes.",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "evidence_id": "Rb6a9cf6741321b62",
+        "record_id": "Rb6a9cf6741321b62",
+        "source_id": "S95e851c8bd6172e1",
+        "scope": {
+          "customer_id": "C-DEMO",
+          "incident_id": "I-DEMO"
+        },
+        "service_scope": null,
+        "locator": {
+          "unit": "unicode_code_points",
+          "start": 45,
+          "end": 89
+        },
+        "excerpt": "The incident must last at least 300 minutes.",
+        "context": {
+          "source_id": "S95e851c8bd6172e1",
+          "text": "The incident must last at least 90 minutes.\n\nThe incident must last at least 300 minutes.",
+          "start": 0,
+          "end": 89
+        },
+        "citation": "synthetic://S95e851c8bd6172e1/Rb6a9cf6741321b62"
+      }
+    ]
+  }
+}

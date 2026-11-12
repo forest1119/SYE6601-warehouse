@@ -1,0 +1,16 @@
+{
+  "development_tests": 31,
+  "development_tests_passed": 31,
+  "integration_mode": "simulated",
+  "integration_cases": 13,
+  "same_recommendation": 12,
+  "known_pending": [
+    "PR5 maintenance excluded vs raw planned semantics",
+    "Service scope, full source context and business signoff",
+    "Team adoption of unified entry and call_id mapping"
+  ],
+  "ticket_provider": "Unmodified PR5 SyntheticTools, fixed commit 8d544b865e19c5bd286e14201af777efb694b81d",
+  "private_ticket_entry": "not included in this clean module",
+  "live_model_calls": 0,
+  "module": "loop_b_unified"
+}

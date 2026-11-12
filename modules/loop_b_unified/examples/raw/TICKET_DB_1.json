@@ -1,0 +1,97 @@
+{
+  "task_id": "TASK-001",
+  "run_id": "RUN-dcb848119dc445cda9cf8ca897fa670c",
+  "call_id": "tool-d7f36a10d4024fe79784d808826c3d97",
+  "provider_call_id": "tool-d7f36a10d4024fe79784d808826c3d97",
+  "tool_name": "PR5_ticket_provider",
+  "source_type": "TICKET_DB",
+  "customer_id": "C-DEMO",
+  "incident_id": "I-DEMO",
+  "arguments": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "event_time": "2026-10-01T00:00:00Z",
+    "page_token": null
+  },
+  "status": "SUCCESS",
+  "tool_status": "SUCCESS",
+  "records": [
+    {
+      "source_type": "TICKET_DB",
+      "evidence_id": "T-01",
+      "statement": "Verified ticket submission.",
+      "customer_id": "C-DEMO",
+      "incident_id": "I-DEMO",
+      "version": "v1",
+      "effective_from": "2026-01-01T00:00:00Z",
+      "effective_to": "2026-12-31T23:59:59Z",
+      "citation": "synthetic://S4030380c784484c0/T-01",
+      "submitted_at": "2026-10-01T12:00:00Z",
+      "source_id": "S4030380c784484c0",
+      "record_id": "T-01",
+      "locator": {
+        "unit": "unicode_code_points",
+        "start": 0,
+        "end": 27
+      },
+      "excerpt": "Verified ticket submission.",
+      "context": {
+        "source_id": "S4030380c784484c0",
+        "start": 0,
+        "end": 27,
+        "text": "Verified ticket submission.",
+        "coverage": "upstream returned record only"
+      },
+      "call_id": "tool-d7f36a10d4024fe79784d808826c3d97",
+      "upstream_citation": "synthetic:T-01"
+    }
+  ],
+  "pagination_complete": true,
+  "next_page_token": null,
+  "fetched_at": "2026-11-12T16:03:13.979880+00:00",
+  "cost_units": 1,
+  "cost": {
+    "value": 1,
+    "unit": "simulated_tool_unit"
+  },
+  "scope_declaration": {
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "coverage": "Delegated PR5 synthetic ticket records, query and returned record identities checked",
+    "event_time": "2026-10-01T00:00:00Z",
+    "time_filter_applied": false,
+    "service_scope": null,
+    "limitation": "Service applicability is unspecified. Effective-time validation belongs to Checker. Empty means none in this configured dataset, not none in an enterprise.",
+    "upstream_implementation": "PR5 SyntheticTools, fixed vendor version"
+  },
+  "upstream_receipt": {
+    "source_type": "TICKET_DB",
+    "customer_id": "C-DEMO",
+    "incident_id": "I-DEMO",
+    "tool_status": "SUCCESS",
+    "records": [
+      {
+        "source_type": "TICKET_DB",
+        "evidence_id": "T-01",
+        "statement": "Verified ticket submission.",
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "version": "v1",
+        "effective_from": "2026-01-01T00:00:00Z",
+        "effective_to": "2026-12-31T23:59:59Z",
+        "citation": "synthetic:T-01",
+        "submitted_at": "2026-10-01T12:00:00Z"
+      }
+    ],
+    "pagination_complete": true,
+    "next_page_token": null,
+    "fetched_at": "2026-11-10T00:00:00Z",
+    "cost_units": 1,
+    "error_code": null
+  },
+  "elapsed_ms": 0.133,
+  "elapsed": {
+    "value": 0.133,
+    "unit": "ms"
+  }
+}

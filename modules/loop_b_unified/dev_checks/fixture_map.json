@@ -1,0 +1,104 @@
+{
+  "note": "Development-only scenario routing, not independent evaluation gold; never supplied to builder/controller",
+  "cases": [
+    {
+      "bundle_id": "bundle-01",
+      "source_case": "DYN-01",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-02",
+      "source_case": "NO-TICKET",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-03",
+      "source_case": "REFERRAL",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-04",
+      "source_case": "AMOUNT",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-05",
+      "source_case": "LATE-TICKET",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-06",
+      "source_case": "BOUNDARY",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-07",
+      "source_case": "MISSING-TICKET",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-08",
+      "source_case": "MAINTENANCE",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-09",
+      "source_case": "CONFLICT",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-10",
+      "source_case": "EMPTY-CONTRACT",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    },
+    {
+      "bundle_id": "bundle-11",
+      "source_case": "FRAGMENT_OF_REFERRAL",
+      "task": {
+        "customer_id": "C-DEMO",
+        "incident_id": "I-DEMO",
+        "event_time": "2026-10-01T00:00:00Z"
+      }
+    }
+  ]
+}
