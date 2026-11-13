@@ -1,0 +1,864 @@
+{
+  "mode": "simulated",
+  "n_rows": 315,
+  "groups": {
+    "configured/injected": {
+      "runs": 4,
+      "terminal_accuracy": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "critical_condition_recall": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 7,
+        "value": 0.0
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "citation_resolvability": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1.0
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "automatic_coverage": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "automatic_success": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "version_consistency": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "proper_escalations": 4,
+      "over_abstentions": 0,
+      "stops": {
+        "ACCESS_DENIED": 2,
+        "UNRESOLVED_GAPS": 2
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 4,
+          "total": 21,
+          "mean": 5.25
+        },
+        "model_calls": {
+          "measured": 4,
+          "total": 7,
+          "mean": 1.75
+        },
+        "model_cost_usd": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 4,
+          "total": 21,
+          "mean": 5.25
+        },
+        "elapsed_ms": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        }
+      }
+    },
+    "configured/none": {
+      "runs": 59,
+      "terminal_accuracy": {
+        "numerator": 27,
+        "denominator": 59,
+        "value": 0.4576271186440678
+      },
+      "critical_condition_recall": {
+        "numerator": 82,
+        "denominator": 114,
+        "value": 0.7192982456140351
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 140,
+        "value": 0.0
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 0,
+        "denominator": 3,
+        "value": 0.0
+      },
+      "citation_resolvability": {
+        "numerator": 252,
+        "denominator": 252,
+        "value": 1.0
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 24,
+        "value": 0.0
+      },
+      "automatic_coverage": {
+        "numerator": 24,
+        "denominator": 59,
+        "value": 0.4067796610169492
+      },
+      "automatic_success": {
+        "numerator": 24,
+        "denominator": 59,
+        "value": 0.4067796610169492
+      },
+      "version_consistency": {
+        "numerator": 59,
+        "denominator": 59,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "proper_escalations": 3,
+      "over_abstentions": 32,
+      "stops": {
+        "COMPLETED": 24,
+        "UNRESOLVED_GAPS": 35
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 59,
+          "total": 318,
+          "mean": 5.389830508474576
+        },
+        "model_calls": {
+          "measured": 59,
+          "total": 140,
+          "mean": 2.3728813559322033
+        },
+        "model_cost_usd": {
+          "measured": 59,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 59,
+          "total": 318,
+          "mean": 5.389830508474576
+        },
+        "elapsed_ms": {
+          "measured": 59,
+          "total": 47.0,
+          "mean": 0.7966101694915254
+        }
+      }
+    },
+    "dynamic/injected": {
+      "runs": 4,
+      "terminal_accuracy": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "critical_condition_recall": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 8,
+        "value": 0.0
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "citation_resolvability": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1.0
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "automatic_coverage": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "automatic_success": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "version_consistency": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "proper_escalations": 4,
+      "over_abstentions": 0,
+      "stops": {
+        "ACCESS_DENIED": 2,
+        "UNRESOLVED_GAPS": 2
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 4,
+          "total": 21,
+          "mean": 5.25
+        },
+        "model_calls": {
+          "measured": 4,
+          "total": 14,
+          "mean": 3.5
+        },
+        "model_cost_usd": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 4,
+          "total": 21,
+          "mean": 5.25
+        },
+        "elapsed_ms": {
+          "measured": 4,
+          "total": 16.0,
+          "mean": 4.0
+        }
+      }
+    },
+    "dynamic/none": {
+      "runs": 59,
+      "terminal_accuracy": {
+        "numerator": 59,
+        "denominator": 59,
+        "value": 1.0
+      },
+      "critical_condition_recall": {
+        "numerator": 114,
+        "denominator": 114,
+        "value": 1.0
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 172,
+        "value": 0.0
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 0,
+        "denominator": 3,
+        "value": 0.0
+      },
+      "citation_resolvability": {
+        "numerator": 276,
+        "denominator": 276,
+        "value": 1.0
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 56,
+        "value": 0.0
+      },
+      "automatic_coverage": {
+        "numerator": 56,
+        "denominator": 59,
+        "value": 0.9491525423728814
+      },
+      "automatic_success": {
+        "numerator": 56,
+        "denominator": 59,
+        "value": 0.9491525423728814
+      },
+      "version_consistency": {
+        "numerator": 59,
+        "denominator": 59,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "proper_escalations": 3,
+      "over_abstentions": 0,
+      "stops": {
+        "COMPLETED": 56,
+        "UNRESOLVED_GAPS": 3
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 59,
+          "total": 350,
+          "mean": 5.932203389830509
+        },
+        "model_calls": {
+          "measured": 59,
+          "total": 289,
+          "mean": 4.898305084745763
+        },
+        "model_cost_usd": {
+          "measured": 59,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 59,
+          "total": 350,
+          "mean": 5.932203389830509
+        },
+        "elapsed_ms": {
+          "measured": 59,
+          "total": 32.0,
+          "mean": 0.5423728813559322
+        }
+      }
+    },
+    "fixed/injected": {
+      "runs": 4,
+      "terminal_accuracy": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "critical_condition_recall": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 8,
+        "value": 0.0
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "citation_resolvability": {
+        "numerator": 15,
+        "denominator": 15,
+        "value": 1.0
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "automatic_coverage": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "automatic_success": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "version_consistency": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "proper_escalations": 4,
+      "over_abstentions": 0,
+      "stops": {
+        "ACCESS_DENIED": 2,
+        "UNRESOLVED_GAPS": 2
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 4,
+          "total": 24,
+          "mean": 6.0
+        },
+        "model_calls": {
+          "measured": 4,
+          "total": 12,
+          "mean": 3.0
+        },
+        "model_cost_usd": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 4,
+          "total": 24,
+          "mean": 6.0
+        },
+        "elapsed_ms": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        }
+      }
+    },
+    "fixed/none": {
+      "runs": 59,
+      "terminal_accuracy": {
+        "numerator": 59,
+        "denominator": 59,
+        "value": 1.0
+      },
+      "critical_condition_recall": {
+        "numerator": 114,
+        "denominator": 114,
+        "value": 1.0
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 172,
+        "value": 0.0
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 0,
+        "denominator": 3,
+        "value": 0.0
+      },
+      "citation_resolvability": {
+        "numerator": 280,
+        "denominator": 280,
+        "value": 1.0
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 56,
+        "value": 0.0
+      },
+      "automatic_coverage": {
+        "numerator": 56,
+        "denominator": 59,
+        "value": 0.9491525423728814
+      },
+      "automatic_success": {
+        "numerator": 56,
+        "denominator": 59,
+        "value": 0.9491525423728814
+      },
+      "version_consistency": {
+        "numerator": 59,
+        "denominator": 59,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0.0
+      },
+      "proper_escalations": 3,
+      "over_abstentions": 0,
+      "stops": {
+        "COMPLETED": 56,
+        "UNRESOLVED_GAPS": 3
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 59,
+          "total": 354,
+          "mean": 6.0
+        },
+        "model_calls": {
+          "measured": 59,
+          "total": 231,
+          "mean": 3.9152542372881354
+        },
+        "model_cost_usd": {
+          "measured": 59,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 59,
+          "total": 354,
+          "mean": 6.0
+        },
+        "elapsed_ms": {
+          "measured": 59,
+          "total": 32.0,
+          "mean": 0.5423728813559322
+        }
+      }
+    },
+    "no_expand/injected": {
+      "runs": 4,
+      "terminal_accuracy": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "critical_condition_recall": {
+        "numerator": 2,
+        "denominator": 4,
+        "value": 0.5
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "citation_resolvability": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1.0
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "automatic_coverage": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "automatic_success": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "version_consistency": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "proper_escalations": 4,
+      "over_abstentions": 0,
+      "stops": {
+        "ACCESS_DENIED": 1,
+        "UNRESOLVED_GAPS": 3
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 4,
+          "total": 20,
+          "mean": 5.0
+        },
+        "model_calls": {
+          "measured": 4,
+          "total": 8,
+          "mean": 2.0
+        },
+        "model_cost_usd": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 4,
+          "total": 20,
+          "mean": 5.0
+        },
+        "elapsed_ms": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        }
+      }
+    },
+    "no_expand/none": {
+      "runs": 59,
+      "terminal_accuracy": {
+        "numerator": 4,
+        "denominator": 59,
+        "value": 0.06779661016949153
+      },
+      "critical_condition_recall": {
+        "numerator": 1,
+        "denominator": 114,
+        "value": 0.008771929824561403
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 59,
+        "value": 0.0
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 0,
+        "denominator": 3,
+        "value": 0.0
+      },
+      "citation_resolvability": {
+        "numerator": 234,
+        "denominator": 234,
+        "value": 1.0
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0.0
+      },
+      "automatic_coverage": {
+        "numerator": 1,
+        "denominator": 59,
+        "value": 0.01694915254237288
+      },
+      "automatic_success": {
+        "numerator": 1,
+        "denominator": 59,
+        "value": 0.01694915254237288
+      },
+      "version_consistency": {
+        "numerator": 59,
+        "denominator": 59,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0.0
+      },
+      "proper_escalations": 3,
+      "over_abstentions": 55,
+      "stops": {
+        "UNRESOLVED_GAPS": 58,
+        "COMPLETED": 1
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 59,
+          "total": 295,
+          "mean": 5.0
+        },
+        "model_calls": {
+          "measured": 59,
+          "total": 118,
+          "mean": 2.0
+        },
+        "model_cost_usd": {
+          "measured": 59,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 59,
+          "total": 295,
+          "mean": 5.0
+        },
+        "elapsed_ms": {
+          "measured": 59,
+          "total": 15.0,
+          "mean": 0.2542372881355932
+        }
+      }
+    },
+    "prompt/injected": {
+      "runs": 4,
+      "terminal_accuracy": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "critical_condition_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "citation_resolvability": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "automatic_coverage": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "automatic_success": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "version_consistency": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "proper_escalations": 0,
+      "over_abstentions": 0,
+      "stops": {
+        "COMPLETED": 4
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 4,
+          "total": 24,
+          "mean": 6.0
+        },
+        "model_calls": {
+          "measured": 4,
+          "total": 4,
+          "mean": 1.0
+        },
+        "model_cost_usd": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 4,
+          "total": 24,
+          "mean": 6.0
+        },
+        "elapsed_ms": {
+          "measured": 4,
+          "total": 0.0,
+          "mean": 0.0
+        }
+      }
+    },
+    "prompt/none": {
+      "runs": 59,
+      "terminal_accuracy": {
+        "numerator": 3,
+        "denominator": 59,
+        "value": 0.05084745762711865
+      },
+      "critical_condition_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "wrong_accepted_ratio": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "critical_gap_miss_rate": {
+        "numerator": 3,
+        "denominator": 3,
+        "value": 1.0
+      },
+      "citation_resolvability": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "unsupported_assertion_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "automatic_coverage": {
+        "numerator": 0,
+        "denominator": 59,
+        "value": 0.0
+      },
+      "automatic_success": {
+        "numerator": 0,
+        "denominator": 59,
+        "value": 0.0
+      },
+      "version_consistency": {
+        "numerator": 59,
+        "denominator": 59,
+        "value": 1.0
+      },
+      "dynamic_path_success": {
+        "numerator": 0,
+        "denominator": 1,
+        "value": 0.0
+      },
+      "proper_escalations": 0,
+      "over_abstentions": 56,
+      "stops": {
+        "COMPLETED": 59
+      },
+      "resources": {
+        "tool_calls": {
+          "measured": 59,
+          "total": 354,
+          "mean": 6.0
+        },
+        "model_calls": {
+          "measured": 59,
+          "total": 59,
+          "mean": 1.0
+        },
+        "model_cost_usd": {
+          "measured": 59,
+          "total": 0.0,
+          "mean": 0.0
+        },
+        "tool_cost_units": {
+          "measured": 59,
+          "total": 354,
+          "mean": 6.0
+        },
+        "elapsed_ms": {
+          "measured": 59,
+          "total": 0.0,
+          "mean": 0.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+name: Dynamic evidence tests
+
+on:
+  push:
+    paths:
+      - 'dynamic_evidence/**'
+      - 'tests/test_dynamic_evidence.py'
+      - 'loop_b_unified/**'
+      - '.github/workflows/dynamic-evidence.yml'
+  pull_request:
+    paths:
+      - 'dynamic_evidence/**'
+      - 'tests/test_dynamic_evidence.py'
+      - 'loop_b_unified/**'
+      - '.github/workflows/dynamic-evidence.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m unittest discover -s tests -p test_dynamic_evidence.py -v
+      - run: python -m unittest discover -s loop_b_unified -p test_raw_evidence.py -v
+      - run: python -m dynamic_evidence --replay docs/dynamic-evidence/records/dyn01-model-replay.json

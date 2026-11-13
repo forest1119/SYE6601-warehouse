@@ -1,5 +1,7 @@
-   .venv/
-   __pycache__/
-   *.pyc
-   .idea/
-   *.log
+.venv/
+__pycache__/
+*.py[cod]
+.idea/
+*.log
+.env
+dynamic_evidence_artifacts/
