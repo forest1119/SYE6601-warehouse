@@ -1,0 +1,469 @@
+{
+  "case_id": "IND-034",
+  "run_id": "IND-034-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 6,
+  "aligned_gold_claim_count": 4,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 3,
+    "NEEDS_ALIGNMENT": 2,
+    "STATUS_MISMATCH": 2
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "当前操作压力 1.85 MPa",
+      "expected_status": "SUPPORT",
+      "rationale": "当前1.85。",
+      "actual_target": "PV-301 高压分离器当前操作压力 1.85 MPa",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "根据 DCS 系统记录，该容器最大操作压力为 2.5 MPa，设计压力 3.0 MPa，安全阀整定压力 2.75 MPa",
+      "expected_status": "SUPPORT",
+      "rationale": "仅为DCS所记参数的忠实转述。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "当前压力在安全范围内",
+      "expected_status": "SUPPORT",
+      "rationale": "1.85低于按规则选定的2.0上限；仅指当前压力。",
+      "actual_target": "当前压力在安全范围内",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "安全操作压力上限为 2.5 MPa",
+      "expected_status": "REFUTE",
+      "rationale": "规则明确DCS与SOP不一致取低值，适用上限2.0MPa。",
+      "actual_target": "安全操作压力上限为 2.5 MPa",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "请勿超过此值运行",
+      "expected_status": "REFUTE",
+      "rationale": "若此值指2.5，则容许2.0-2.5违背SOP，不能沿用。",
+      "actual_target": "请勿超过此值运行",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "容器最近一次检验（2026年6月）合格，壁厚 28.5mm",
+      "expected_status": "SUPPORT",
+      "rationale": "合格且28.5≥24。",
+      "actual_target": "容器最近一次检验（2026年6月）合格",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-009",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "容器最近一次检验（2026年6月）合格，壁厚 28.5mm",
+      "expected_status": "SUPPORT",
+      "rationale": "合格且28.5≥24。",
+      "actual_target": "壁厚 28.5mm",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-010",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "PV-301 高压分离器当前操作压力 1.85 MPa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 1.85,
+      "unit": "MPa",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 1.85,
+            "unit": "MPa",
+            "raw": "1.85 MPa",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "PV-301"
+        ],
+        "covers_goals": [],
+        "source_span": "PV-301 高压分离器当前操作压力 1.85 MPa",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001",
+          "CHK-007",
+          "CHK-009"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "根据 DCS 系统记录",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "根据 DCS 系统记录",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "该容器最大操作压力为 2.5 MPa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 2.5,
+      "unit": "MPa",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 2.5,
+            "unit": "MPa",
+            "raw": "2.5 MPa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "该容器最大操作压力为 2.5 MPa",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002",
+          "CHK-010"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "设计压力 3.0 MPa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 3.0,
+      "unit": "MPa",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 3.0,
+            "unit": "MPa",
+            "raw": "3.0 MPa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "设计压力 3.0 MPa",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003",
+          "CHK-011"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "安全阀整定压力 2.75 MPa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 2.75,
+      "unit": "MPa",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 2.75,
+            "unit": "MPa",
+            "raw": "2.75 MPa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "安全阀整定压力 2.75 MPa",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "当前压力在安全范围内",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "当前压力在安全范围内",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "安全操作压力上限为 2.5 MPa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 2.5,
+      "unit": "MPa",
+      "meta": {
+        "order": 6,
+        "numerals": [
+          {
+            "value": 2.5,
+            "unit": "MPa",
+            "raw": "2.5 MPa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "安全操作压力上限为 2.5 MPa",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-005",
+          "CHK-012"
+        ]
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "容器最近一次检验（2026年6月）合格",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 8,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "容器最近一次检验（2026年6月）合格",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-008"
+        ]
+      }
+    },
+    {
+      "id": "CLM-010",
+      "type": "claim",
+      "content": "壁厚 28.5mm",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 28.5,
+      "unit": "mm",
+      "meta": {
+        "order": 9,
+        "numerals": [
+          {
+            "value": 28.5,
+            "unit": "mm",
+            "raw": "28.5mm",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "壁厚 28.5mm",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-011",
+      "type": "claim",
+      "content": "状态良好",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 10,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "状态良好",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-034-r1.json"
+}

@@ -1,0 +1,232 @@
+{
+  "case_id": "IND-022",
+  "run_id": "IND-022-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 4,
+  "aligned_gold_claim_count": 4,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 4
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "夜班产量为 8500 件",
+      "expected_status": "REFUTE",
+      "rationale": "8500为全天合计，夜班2200。",
+      "actual_target": "B线11月13日（昨日）夜班产量为 8500 件",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "良率 98.2%",
+      "expected_status": "UNKNOWN",
+      "rationale": "98.2%为全天综合，不能当夜班良率。",
+      "actual_target": "良率 98.2%",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "产线利用率 97.7%",
+      "expected_status": "UNKNOWN",
+      "rationale": "未给夜班口径，不能归到夜班。",
+      "actual_target": "产线利用率 97.7%",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "仅有30分钟换模停机",
+      "expected_status": "UNKNOWN",
+      "rationale": "全查询口径30分钟，夜班停机未确认。",
+      "actual_target": "仅有30分钟换模停机",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "B线11月13日（昨日）夜班产量为 8500 件",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 8500.0,
+      "unit": "件",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 8500.0,
+            "unit": "件",
+            "raw": "8500 件",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "B线11月13日（昨日）夜班产量为 8500 件",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "良率 98.2%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 98.2,
+      "unit": "%",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 98.2,
+            "unit": "%",
+            "raw": "98.2%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "良率 98.2%",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "产线利用率 97.7%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 97.7,
+      "unit": "%",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 97.7,
+            "unit": "%",
+            "raw": "97.7%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "产线利用率 97.7%",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "仅有30分钟换模停机",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 30.0,
+      "unit": "分钟",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 30.0,
+            "unit": "分钟",
+            "raw": "30分钟",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "仅有30分钟换模停机",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-022-r1.json"
+}

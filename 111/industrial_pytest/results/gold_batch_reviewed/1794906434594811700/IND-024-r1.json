@@ -1,0 +1,352 @@
+{
+  "case_id": "IND-024",
+  "run_id": "IND-024-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 8,
+  "aligned_gold_claim_count": 5,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 2,
+    "STATUS_MISMATCH": 4,
+    "NEEDS_ALIGNMENT": 3
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "当前系统压力为 21500 MPa",
+      "expected_status": "REFUTE",
+      "rationale": "实际21500kPa=21.5MPa，单位误读千倍。",
+      "actual_target": "液压机 HP-03 当前系统压力为 21500 MPa",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "REFUTE",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "REFUTE",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "已严重超出最大工作压力 25 MPa",
+      "expected_status": "REFUTE",
+      "rationale": "21.5<25且在18-25MPa区间。",
+      "actual_target": "已严重超出最大工作压力 25 MPa",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "REFUTE",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "REFUTE",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "超出约 86000 倍",
+      "expected_status": "REFUTE",
+      "rationale": "实际压力/上限=0.86，无超限，更无86000倍。",
+      "actual_target": "超出约 86000 倍",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "属于极度危险状态",
+      "expected_status": "REFUTE",
+      "rationale": "本次压力NORMAL，错误单位导致危险判定。",
+      "actual_target": "属于极度危险状态",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "请立即停机检查",
+      "expected_status": "REFUTE",
+      "rationale": "本次压力读数不支持该紧急处置，属于错误前提衍生建议。",
+      "actual_target": "请立即停机检查",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "近2小时压力波动范围 20800～22100，趋势稳定",
+      "expected_status": "SUPPORT",
+      "rationale": "范围单位应明确kPa，趋势STABLE。",
+      "actual_target": "近2小时压力波动范围 20800～22100",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "近2小时压力波动范围 20800～22100，趋势稳定",
+      "expected_status": "SUPPORT",
+      "rationale": "范围单位应明确kPa，趋势STABLE。",
+      "actual_target": "趋势稳定",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "建议立即启动紧急停机程序",
+      "expected_status": "REFUTE",
+      "rationale": "现有正常压力和稳定趋势不支持以超压为由紧停。",
+      "actual_target": "建议立即启动紧急停机程序",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g8",
+      "gold_text": "排查传感器或安全阀",
+      "expected_status": "MISSING_RULE",
+      "rationale": "仅因错误超压推断提出故障方向，未有传感器/安全阀故障证据；排查可建议但不能认定故障或要求立即工艺动作。",
+      "actual_target": "排查传感器或安全阀",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "液压机 HP-03 当前系统压力为 21500 MPa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "REFUTE",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 21500.0,
+      "unit": "MPa",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 21500.0,
+            "unit": "MPa",
+            "raw": "21500 MPa",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "HP-03"
+        ],
+        "covers_goals": [],
+        "source_span": "液压机 HP-03 当前系统压力为 21500 MPa",
+        "verdict_reason": "存在与结论直接矛盾的可复算检查结果",
+        "checks": [
+          "CHK-001",
+          "CHK-004",
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "已严重超出最大工作压力 25 MPa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "REFUTE",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 25.0,
+      "unit": "MPa",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 25.0,
+            "unit": "MPa",
+            "raw": "25 MPa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "已严重超出最大工作压力 25 MPa",
+        "verdict_reason": "存在与结论直接矛盾的可复算检查结果",
+        "checks": [
+          "CHK-002",
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "超出约 86000 倍",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 86000.0,
+      "unit": "倍",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 86000.0,
+            "unit": "倍",
+            "raw": "86000 倍",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "超出约 86000 倍",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-003",
+          "CHK-007"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "属于极度危险状态",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "属于极度危险状态",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "近2小时压力波动范围 20800～22100",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 2.0,
+      "unit": "小时",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 2.0,
+            "unit": "小时",
+            "raw": "2小时",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "近2小时压力波动范围 20800～22100",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "趋势稳定",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "趋势稳定",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-024-r1.json"
+}

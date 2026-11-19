@@ -1,0 +1,395 @@
+{
+  "case_id": "IND-018",
+  "run_id": "IND-018-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 8,
+  "aligned_gold_claim_count": 4,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 3,
+    "MATCH": 2,
+    "NEEDS_ALIGNMENT": 4
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "三号储罐有两个液位传感器",
+      "expected_status": "SUPPORT",
+      "rationale": "返回两种传感器。",
+      "actual_target": "三号储罐有两个液位传感器",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "雷达液位计（LT-TK03-01）数据正常，当前液位62.3%",
+      "expected_status": "SUPPORT",
+      "rationale": "GOOD且62.3%；仅指数据质量。",
+      "actual_target": "雷达液位计（LT-TK03-01）数据正常",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "雷达液位计（LT-TK03-01）数据正常，当前液位62.3%",
+      "expected_status": "SUPPORT",
+      "rationale": "GOOD且62.3%；仅指数据质量。",
+      "actual_target": "当前液位62.3%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "趋势平稳上升",
+      "expected_status": "SUPPORT",
+      "rationale": "55.2→58.1→60.5→62.3，支持这几个采样点上升，不代表连续无波动。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "采样点上升有据，“平稳”未给定量标准，应拆开事实与评价。"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "从11:30开始离线",
+      "expected_status": "UNKNOWN",
+      "rationale": "11:30为最后有效时刻且该时刻仍有60.1，不能精确认定离线起点。",
+      "actual_target": "差压液位计（LT-TK03-02）从11:30开始离线",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "最后一次有效读数是60.1%",
+      "expected_status": "SUPPORT",
+      "rationale": "最后有效样本60.1。",
+      "actual_target": "最后一次有效读数是60.1%",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "此前两个传感器的读数基本一致（偏差<0.5%）",
+      "expected_status": "SUPPORT",
+      "rationale": "配对差0.3、0.3、0.4个百分点；此处%应按百分点理解。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "0.3/0.3/0.4为百分点差；若按相对百分差则不全<0.5%，标准答案不得静默将%改成百分点。"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "差压液位计的离线原因需要排查",
+      "expected_status": "UNKNOWN",
+      "rationale": "只知离线，不知原因。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g8",
+      "gold_text": "雷达液位计的数据可以暂时作为参考",
+      "expected_status": "SUPPORT",
+      "rationale": "仅作参考，雷达GOOD且历史两表接近，不代表冗余完整或可用于所有安全联锁。",
+      "actual_target": "雷达液位计的数据可以暂时作为参考",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "三号储罐有两个液位传感器",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "三号储罐"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "三号储罐有两个液位传感器",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "雷达液位计（LT-TK03-01）数据正常",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [
+          "LT-TK03-01"
+        ],
+        "covers_goals": [],
+        "source_span": "雷达液位计（LT-TK03-01）数据正常",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "当前液位62.3%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 62.3,
+      "unit": "%",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 62.3,
+            "unit": "%",
+            "raw": "62.3%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "当前液位62.3%",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "趋势平稳上升",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "趋势平稳上升",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "差压液位计（LT-TK03-02）从11:30开始离线",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [
+          "LT-TK03-02"
+        ],
+        "covers_goals": [],
+        "source_span": "差压液位计（LT-TK03-02）从11:30开始离线",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "最后一次有效读数是60.1%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 60.1,
+      "unit": "%",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 60.1,
+            "unit": "%",
+            "raw": "60.1%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "最后一次有效读数是60.1%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "此前两个传感器的读数基本一致（偏差<0.5%）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 0.5,
+      "unit": "%",
+      "meta": {
+        "order": 6,
+        "numerals": [
+          {
+            "value": 0.5,
+            "unit": "%",
+            "raw": "0.5%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "此前两个传感器的读数基本一致（偏差<0.5%）",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "所以雷达液位计的数据可以暂时作为参考",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "所以雷达液位计的数据可以暂时作为参考",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-018-r1.json"
+}

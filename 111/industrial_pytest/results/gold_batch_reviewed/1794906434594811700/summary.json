@@ -1,0 +1,662 @@
+{
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_version": "ai-audited-delivery-2.0",
+  "cases_reported": 60,
+  "case_counts": {
+    "STATUS_MISMATCH": 56,
+    "NEEDS_ALIGNMENT": 4
+  },
+  "comparison_counts": {
+    "MATCH": 127,
+    "STATUS_MISMATCH": 163,
+    "NEEDS_ALIGNMENT": 80
+  },
+  "gold_claim_count": 307,
+  "aligned_gold_claim_count": 227,
+  "unaligned_gold_claim_count": 80,
+  "equivalent_by_four_state_mapping": 13,
+  "notes": [
+    "仅限本轮实际报告的工业案例，不代表保险已测试。",
+    "NEEDS_ALIGNMENT和口径待确认不是已确认工程误判。",
+    "MISSING_RULE在四态对比中映射UNKNOWN，原始五类状态仍保留。",
+    "一对多比较项数不同于gold命题数；不计算正式准确率。"
+  ],
+  "cases": [
+    {
+      "case_id": "IND-001",
+      "run_id": "IND-001-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 5,
+        "STATUS_MISMATCH": 1,
+        "NEEDS_ALIGNMENT": 3
+      },
+      "report_file": "IND-001-r1.json"
+    },
+    {
+      "case_id": "IND-002",
+      "run_id": "IND-002-r1",
+      "result": "NEEDS_ALIGNMENT",
+      "counts": {
+        "MATCH": 7,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-002-r1.json"
+    },
+    {
+      "case_id": "IND-003",
+      "run_id": "IND-003-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 4,
+        "STATUS_MISMATCH": 3,
+        "NEEDS_ALIGNMENT": 3
+      },
+      "report_file": "IND-003-r1.json"
+    },
+    {
+      "case_id": "IND-004",
+      "run_id": "IND-004-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-004-r1.json"
+    },
+    {
+      "case_id": "IND-005",
+      "run_id": "IND-005-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 5,
+        "MATCH": 1,
+        "NEEDS_ALIGNMENT": 4
+      },
+      "report_file": "IND-005-r1.json"
+    },
+    {
+      "case_id": "IND-006",
+      "run_id": "IND-006-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "NEEDS_ALIGNMENT": 6,
+        "STATUS_MISMATCH": 1
+      },
+      "report_file": "IND-006-r1.json"
+    },
+    {
+      "case_id": "IND-007",
+      "run_id": "IND-007-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 4,
+        "MATCH": 2
+      },
+      "report_file": "IND-007-r1.json"
+    },
+    {
+      "case_id": "IND-008",
+      "run_id": "IND-008-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 3,
+        "MATCH": 2,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-008-r1.json"
+    },
+    {
+      "case_id": "IND-009",
+      "run_id": "IND-009-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 4,
+        "NEEDS_ALIGNMENT": 1,
+        "MATCH": 1
+      },
+      "report_file": "IND-009-r1.json"
+    },
+    {
+      "case_id": "IND-010",
+      "run_id": "IND-010-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 4,
+        "STATUS_MISMATCH": 3,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-010-r1.json"
+    },
+    {
+      "case_id": "IND-011",
+      "run_id": "IND-011-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "NEEDS_ALIGNMENT": 3,
+        "MATCH": 1,
+        "STATUS_MISMATCH": 3
+      },
+      "report_file": "IND-011-r1.json"
+    },
+    {
+      "case_id": "IND-012",
+      "run_id": "IND-012-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "NEEDS_ALIGNMENT": 2
+      },
+      "report_file": "IND-012-r1.json"
+    },
+    {
+      "case_id": "IND-013",
+      "run_id": "IND-013-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "NEEDS_ALIGNMENT": 2,
+        "STATUS_MISMATCH": 3,
+        "MATCH": 2
+      },
+      "report_file": "IND-013-r1.json"
+    },
+    {
+      "case_id": "IND-014",
+      "run_id": "IND-014-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 1,
+        "STATUS_MISMATCH": 3,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-014-r1.json"
+    },
+    {
+      "case_id": "IND-015",
+      "run_id": "IND-015-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "NEEDS_ALIGNMENT": 1,
+        "STATUS_MISMATCH": 4,
+        "MATCH": 2
+      },
+      "report_file": "IND-015-r1.json"
+    },
+    {
+      "case_id": "IND-016",
+      "run_id": "IND-016-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 3,
+        "STATUS_MISMATCH": 4,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-016-r1.json"
+    },
+    {
+      "case_id": "IND-017",
+      "run_id": "IND-017-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 1,
+        "STATUS_MISMATCH": 2,
+        "NEEDS_ALIGNMENT": 2
+      },
+      "report_file": "IND-017-r1.json"
+    },
+    {
+      "case_id": "IND-018",
+      "run_id": "IND-018-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 3,
+        "MATCH": 2,
+        "NEEDS_ALIGNMENT": 4
+      },
+      "report_file": "IND-018-r1.json"
+    },
+    {
+      "case_id": "IND-019",
+      "run_id": "IND-019-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 1,
+        "STATUS_MISMATCH": 3,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-019-r1.json"
+    },
+    {
+      "case_id": "IND-020",
+      "run_id": "IND-020-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "NEEDS_ALIGNMENT": 4,
+        "STATUS_MISMATCH": 3,
+        "MATCH": 2
+      },
+      "report_file": "IND-020-r1.json"
+    },
+    {
+      "case_id": "IND-021",
+      "run_id": "IND-021-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 5,
+        "STATUS_MISMATCH": 1
+      },
+      "report_file": "IND-021-r1.json"
+    },
+    {
+      "case_id": "IND-022",
+      "run_id": "IND-022-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 4
+      },
+      "report_file": "IND-022-r1.json"
+    },
+    {
+      "case_id": "IND-023",
+      "run_id": "IND-023-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 3,
+        "STATUS_MISMATCH": 4
+      },
+      "report_file": "IND-023-r1.json"
+    },
+    {
+      "case_id": "IND-024",
+      "run_id": "IND-024-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 2,
+        "STATUS_MISMATCH": 4,
+        "NEEDS_ALIGNMENT": 3
+      },
+      "report_file": "IND-024-r1.json"
+    },
+    {
+      "case_id": "IND-025",
+      "run_id": "IND-025-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 4,
+        "STATUS_MISMATCH": 5
+      },
+      "report_file": "IND-025-r1.json"
+    },
+    {
+      "case_id": "IND-026",
+      "run_id": "IND-026-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 5,
+        "NEEDS_ALIGNMENT": 2,
+        "MATCH": 3
+      },
+      "report_file": "IND-026-r1.json"
+    },
+    {
+      "case_id": "IND-027",
+      "run_id": "IND-027-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "NEEDS_ALIGNMENT": 1,
+        "STATUS_MISMATCH": 1,
+        "MATCH": 2
+      },
+      "report_file": "IND-027-r1.json"
+    },
+    {
+      "case_id": "IND-028",
+      "run_id": "IND-028-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 2,
+        "STATUS_MISMATCH": 6
+      },
+      "report_file": "IND-028-r1.json"
+    },
+    {
+      "case_id": "IND-029",
+      "run_id": "IND-029-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 4,
+        "MATCH": 3
+      },
+      "report_file": "IND-029-r1.json"
+    },
+    {
+      "case_id": "IND-030",
+      "run_id": "IND-030-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 1,
+        "NEEDS_ALIGNMENT": 1,
+        "STATUS_MISMATCH": 3
+      },
+      "report_file": "IND-030-r1.json"
+    },
+    {
+      "case_id": "IND-031",
+      "run_id": "IND-031-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 4,
+        "MATCH": 4,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-031-r1.json"
+    },
+    {
+      "case_id": "IND-032",
+      "run_id": "IND-032-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 2,
+        "STATUS_MISMATCH": 9,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-032-r1.json"
+    },
+    {
+      "case_id": "IND-033",
+      "run_id": "IND-033-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 1,
+        "NEEDS_ALIGNMENT": 3,
+        "STATUS_MISMATCH": 2
+      },
+      "report_file": "IND-033-r1.json"
+    },
+    {
+      "case_id": "IND-034",
+      "run_id": "IND-034-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 3,
+        "NEEDS_ALIGNMENT": 2,
+        "STATUS_MISMATCH": 2
+      },
+      "report_file": "IND-034-r1.json"
+    },
+    {
+      "case_id": "IND-035",
+      "run_id": "IND-035-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 6,
+        "MATCH": 2
+      },
+      "report_file": "IND-035-r1.json"
+    },
+    {
+      "case_id": "IND-036",
+      "run_id": "IND-036-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 2,
+        "STATUS_MISMATCH": 5
+      },
+      "report_file": "IND-036-r1.json"
+    },
+    {
+      "case_id": "IND-037",
+      "run_id": "IND-037-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 3,
+        "MATCH": 3,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-037-r1.json"
+    },
+    {
+      "case_id": "IND-038",
+      "run_id": "IND-038-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "MATCH": 6
+      },
+      "report_file": "IND-038-r1.json"
+    },
+    {
+      "case_id": "IND-039",
+      "run_id": "IND-039-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "NEEDS_ALIGNMENT": 2,
+        "MATCH": 1
+      },
+      "report_file": "IND-039-r1.json"
+    },
+    {
+      "case_id": "IND-040",
+      "run_id": "IND-040-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 3,
+        "MATCH": 2,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-040-r1.json"
+    },
+    {
+      "case_id": "IND-041",
+      "run_id": "IND-041-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 2,
+        "STATUS_MISMATCH": 2,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-041-r1.json"
+    },
+    {
+      "case_id": "IND-042",
+      "run_id": "IND-042-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 1,
+        "MATCH": 1,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-042-r1.json"
+    },
+    {
+      "case_id": "IND-043",
+      "run_id": "IND-043-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 2,
+        "STATUS_MISMATCH": 2
+      },
+      "report_file": "IND-043-r1.json"
+    },
+    {
+      "case_id": "IND-044",
+      "run_id": "IND-044-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "NEEDS_ALIGNMENT": 3
+      },
+      "report_file": "IND-044-r1.json"
+    },
+    {
+      "case_id": "IND-045",
+      "run_id": "IND-045-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 1,
+        "STATUS_MISMATCH": 3,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-045-r1.json"
+    },
+    {
+      "case_id": "IND-046",
+      "run_id": "IND-046-r1",
+      "result": "NEEDS_ALIGNMENT",
+      "counts": {
+        "MATCH": 4,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-046-r1.json"
+    },
+    {
+      "case_id": "IND-047",
+      "run_id": "IND-047-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "MATCH": 1,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-047-r1.json"
+    },
+    {
+      "case_id": "IND-048",
+      "run_id": "IND-048-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "NEEDS_ALIGNMENT": 1,
+        "MATCH": 1
+      },
+      "report_file": "IND-048-r1.json"
+    },
+    {
+      "case_id": "IND-049",
+      "run_id": "IND-049-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 4
+      },
+      "report_file": "IND-049-r1.json"
+    },
+    {
+      "case_id": "IND-050",
+      "run_id": "IND-050-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 4,
+        "STATUS_MISMATCH": 1
+      },
+      "report_file": "IND-050-r1.json"
+    },
+    {
+      "case_id": "IND-051",
+      "run_id": "IND-051-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "NEEDS_ALIGNMENT": 2,
+        "STATUS_MISMATCH": 2
+      },
+      "report_file": "IND-051-r1.json"
+    },
+    {
+      "case_id": "IND-052",
+      "run_id": "IND-052-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "MATCH": 1,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-052-r1.json"
+    },
+    {
+      "case_id": "IND-053",
+      "run_id": "IND-053-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 5,
+        "STATUS_MISMATCH": 1
+      },
+      "report_file": "IND-053-r1.json"
+    },
+    {
+      "case_id": "IND-054",
+      "run_id": "IND-054-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 2,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-054-r1.json"
+    },
+    {
+      "case_id": "IND-055",
+      "run_id": "IND-055-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 5,
+        "STATUS_MISMATCH": 1
+      },
+      "report_file": "IND-055-r1.json"
+    },
+    {
+      "case_id": "IND-056",
+      "run_id": "IND-056-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "STATUS_MISMATCH": 1,
+        "MATCH": 1,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-056-r1.json"
+    },
+    {
+      "case_id": "IND-057",
+      "run_id": "IND-057-r1",
+      "result": "NEEDS_ALIGNMENT",
+      "counts": {
+        "MATCH": 1,
+        "NEEDS_ALIGNMENT": 2
+      },
+      "report_file": "IND-057-r1.json"
+    },
+    {
+      "case_id": "IND-058",
+      "run_id": "IND-058-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "NEEDS_ALIGNMENT": 1,
+        "STATUS_MISMATCH": 3,
+        "MATCH": 1
+      },
+      "report_file": "IND-058-r1.json"
+    },
+    {
+      "case_id": "IND-059",
+      "run_id": "IND-059-r1",
+      "result": "STATUS_MISMATCH",
+      "counts": {
+        "MATCH": 2,
+        "STATUS_MISMATCH": 1,
+        "NEEDS_ALIGNMENT": 1
+      },
+      "report_file": "IND-059-r1.json"
+    },
+    {
+      "case_id": "IND-060",
+      "run_id": "IND-060-r1",
+      "result": "NEEDS_ALIGNMENT",
+      "counts": {
+        "MATCH": 3,
+        "NEEDS_ALIGNMENT": 2
+      },
+      "report_file": "IND-060-r1.json"
+    }
+  ]
+}

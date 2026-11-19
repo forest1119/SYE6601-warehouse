@@ -1,0 +1,476 @@
+{
+  "case_id": "IND-026",
+  "run_id": "IND-026-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 8,
+  "aligned_gold_claim_count": 6,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 5,
+    "NEEDS_ALIGNMENT": 2,
+    "MATCH": 3
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "冷却系统运行正常",
+      "expected_status": "UNKNOWN",
+      "rationale": "只查2/6路，整体正常未知。",
+      "actual_target": "F-02 退火炉冷却系统运行正常",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "炉顶冷却进水 22.3℃ / 出水 35.1℃",
+      "expected_status": "SUPPORT",
+      "rationale": "仅第一路数值。",
+      "actual_target": "炉顶冷却进水 22.3℃ / 出水 35.1℃",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "炉壁冷却A进水 22.5℃ / 出水 36.8℃",
+      "expected_status": "SUPPORT",
+      "rationale": "仅第二路数值。",
+      "actual_target": "炉壁冷却A进水 22.5℃ / 出水 36.8℃",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "流量分别约 120 和 115 L/min",
+      "expected_status": "SUPPORT",
+      "rationale": "两路流量相符。",
+      "actual_target": "流量分别约 120 和 115 L/min",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "近2小时无冷却系统报警",
+      "expected_status": "SUPPORT",
+      "rationale": "空报警，仅查询范围内成立。",
+      "actual_target": "近2小时无冷却系统报警",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "当前炉温 820℃，处于保温阶段",
+      "expected_status": "SUPPORT",
+      "rationale": "温度、程序阶段相符。",
+      "actual_target": "当前炉温 820℃",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "当前炉温 820℃，处于保温阶段",
+      "expected_status": "SUPPORT",
+      "rationale": "温度、程序阶段相符。",
+      "actual_target": "处于保温阶段",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "系统状态良好，可继续运行",
+      "expected_status": "UNKNOWN",
+      "rationale": "四路未查询，缺全系统运行依据。",
+      "actual_target": "系统状态良好",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-008",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "系统状态良好，可继续运行",
+      "expected_status": "UNKNOWN",
+      "rationale": "四路未查询，缺全系统运行依据。",
+      "actual_target": "可继续运行",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-009",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g8",
+      "gold_text": "各冷却回路温度和流量均在正常范围内",
+      "expected_status": "UNKNOWN",
+      "rationale": "只有1、2路NORMAL，其余3-6路未返回。",
+      "actual_target": "各冷却回路温度和流量均在正常范围内",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "F-02 退火炉冷却系统运行正常",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "F-02"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "F-02 退火炉冷却系统运行正常",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "各冷却回路温度和流量均在正常范围内：炉顶冷却进水 22.3℃ / 出水 35.1℃",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 22.3,
+      "unit": "℃",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 22.3,
+            "unit": "℃",
+            "raw": "22.3℃",
+            "upper": null
+          },
+          {
+            "value": 35.1,
+            "unit": "℃",
+            "raw": "35.1℃",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "各冷却回路温度和流量均在正常范围内：炉顶冷却进水 22.3℃ / 出水 35.1℃",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "炉壁冷却A进水 22.5℃ / 出水 36.8℃",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 22.5,
+      "unit": "℃",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 22.5,
+            "unit": "℃",
+            "raw": "22.5℃",
+            "upper": null
+          },
+          {
+            "value": 36.8,
+            "unit": "℃",
+            "raw": "36.8℃",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "炉壁冷却A进水 22.5℃ / 出水 36.8℃",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "流量分别约 120 和 115 L/min",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 115.0,
+      "unit": "L",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 115.0,
+            "unit": "L",
+            "raw": "115 L",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "流量分别约 120 和 115 L/min",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "近2小时无冷却系统报警",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 2.0,
+      "unit": "小时",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 2.0,
+            "unit": "小时",
+            "raw": "2小时",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "近2小时无冷却系统报警",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "当前炉温 820℃",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 820.0,
+      "unit": "℃",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 820.0,
+            "unit": "℃",
+            "raw": "820℃",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "当前炉温 820℃",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "处于保温阶段",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "处于保温阶段",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "系统状态良好",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "系统状态良好",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "可继续运行",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 8,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "可继续运行",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-026-r1.json"
+}

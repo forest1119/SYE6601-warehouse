@@ -1,0 +1,422 @@
+{
+  "case_id": "IND-037",
+  "run_id": "IND-037-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 4,
+  "aligned_gold_claim_count": 3,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 3,
+    "MATCH": 3,
+    "NEEDS_ALIGNMENT": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "氧含量 20.8%（正常范围 19.5-23.5%），可燃气体 LEL 0%（限值 10%），硫化氢 0 ppm（限值 10 ppm），一氧化碳 0 ppm（限值 25 ppm）",
+      "expected_status": "SUPPORT",
+      "rationale": "这些是06:00历史检测值，不是当前有效复测。",
+      "actual_target": "TK-05 储罐气体检测数据：氧含量 20.8%（正常范围 19.5-23.5%）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "氧含量 20.8%（正常范围 19.5-23.5%），可燃气体 LEL 0%（限值 10%），硫化氢 0 ppm（限值 10 ppm），一氧化碳 0 ppm（限值 25 ppm）",
+      "expected_status": "SUPPORT",
+      "rationale": "这些是06:00历史检测值，不是当前有效复测。",
+      "actual_target": "可燃气体 LEL 0%（限值 10%）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "氧含量 20.8%（正常范围 19.5-23.5%），可燃气体 LEL 0%（限值 10%），硫化氢 0 ppm（限值 10 ppm），一氧化碳 0 ppm（限值 25 ppm）",
+      "expected_status": "SUPPORT",
+      "rationale": "这些是06:00历史检测值，不是当前有效复测。",
+      "actual_target": "硫化氢 0 ppm（限值 10 ppm）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "氧含量 20.8%（正常范围 19.5-23.5%），可燃气体 LEL 0%（限值 10%），硫化氢 0 ppm（限值 10 ppm），一氧化碳 0 ppm（限值 25 ppm）",
+      "expected_status": "SUPPORT",
+      "rationale": "这些是06:00历史检测值，不是当前有效复测。",
+      "actual_target": "一氧化碳 0 ppm（限值 25 ppm）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "各项气体指标均合格",
+      "expected_status": "SUPPORT",
+      "rationale": "只对06:00样本成立；需保留时效限定。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "06:00样本合格与当前仍有效是不同命题，应先限定历史采样范围。"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "可以进入有限空间作业",
+      "expected_status": "REFUTE",
+      "rationale": "检测过期、PENDING_GAS_RETEST，未复测不可进入。",
+      "actual_target": "可以进入有限空间作业",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "储罐已完成盲板隔离并强制通风",
+      "expected_status": "SUPPORT",
+      "rationale": "隔离通风事实明确，不抵消气检过期。",
+      "actual_target": "储罐已完成盲板隔离并强制通风",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "TK-05 储罐气体检测数据：氧含量 20.8%（正常范围 19.5-23.5%）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 20.8,
+      "unit": "%",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 20.8,
+            "unit": "%",
+            "raw": "20.8%",
+            "upper": null
+          },
+          {
+            "value": 19.5,
+            "unit": "%",
+            "raw": "19.5-23.5%",
+            "upper": 23.5
+          }
+        ],
+        "entities": [
+          "TK-05"
+        ],
+        "covers_goals": [],
+        "source_span": "TK-05 储罐气体检测数据：氧含量 20.8%（正常范围 19.5-23.5%）",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-001",
+          "CHK-002",
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "可燃气体 LEL 0%（限值 10%）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 0.0,
+      "unit": "%",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 0.0,
+            "unit": "%",
+            "raw": "0%",
+            "upper": null
+          },
+          {
+            "value": 10.0,
+            "unit": "%",
+            "raw": "10%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "可燃气体 LEL 0%（限值 10%）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "硫化氢 0 ppm（限值 10 ppm）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 0.0,
+      "unit": "ppm",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 0.0,
+            "unit": "ppm",
+            "raw": "0 ppm",
+            "upper": null
+          },
+          {
+            "value": 10.0,
+            "unit": "ppm",
+            "raw": "10 ppm",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "硫化氢 0 ppm（限值 10 ppm）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "一氧化碳 0 ppm（限值 25 ppm）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 0.0,
+      "unit": "ppm",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 0.0,
+            "unit": "ppm",
+            "raw": "0 ppm",
+            "upper": null
+          },
+          {
+            "value": 25.0,
+            "unit": "ppm",
+            "raw": "25 ppm",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "一氧化碳 0 ppm（限值 25 ppm）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "各项气体指标均合格",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "各项气体指标均合格",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-007"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "可以进入有限空间作业",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "可以进入有限空间作业",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-009"
+        ]
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "储罐已完成盲板隔离并强制通风",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "储罐已完成盲板隔离并强制通风",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-008"
+        ]
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "并安排专人在罐外监护",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 8,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "并安排专人在罐外监护",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-037-r1.json"
+}

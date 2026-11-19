@@ -1,0 +1,281 @@
+{
+  "case_id": "IND-013",
+  "run_id": "IND-013-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 6,
+  "aligned_gold_claim_count": 4,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "NEEDS_ALIGNMENT": 2,
+    "STATUS_MISMATCH": 3,
+    "MATCH": 2
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "BT-261110-M12（6061）和BT-261113-M18（6061）都已合格",
+      "expected_status": "SUPPORT",
+      "rationale": "两批disposition=PASS。",
+      "actual_target": "BT-261110-M12（6061）和BT-261113-M18（6061）都已合格",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "合格放行",
+      "expected_status": "UNKNOWN",
+      "rationale": "PASS表示检测判定；没有两批正式放行状态，不能自动当已放行。",
+      "actual_target": "最近三批铝合金件的检测情况：BT-261110-M12（6061）和BT-261113-M18（6061）都已合格放行",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "BT-261112-M15（7075）硬度和拉伸合格",
+      "expected_status": "SUPPORT",
+      "rationale": "156≥150、585≥572。",
+      "actual_target": "BT-261112-M15（7075）硬度和拉伸合格",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "盐雾试验只做了48小时，没到规定的72小时",
+      "expected_status": "SUPPORT",
+      "rationale": "待确认且时长不足。",
+      "actual_target": "但盐雾试验只做了48小时",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "盐雾试验只做了48小时，没到规定的72小时",
+      "expected_status": "SUPPORT",
+      "rationale": "待确认且时长不足。",
+      "actual_target": "没到规定的72小时",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "目前是有条件放行",
+      "expected_status": "UNKNOWN",
+      "rationale": "CONDITIONAL_PASS支持有条件检验通过，未提供正式放行回执。",
+      "actual_target": "目前是有条件放行",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "需要等盐雾试验补做结果确认后才能最终判定",
+      "expected_status": "UNKNOWN",
+      "rationale": "72h最终结果缺失，如实保留。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "最近三批铝合金件的检测情况：BT-261110-M12（6061）和BT-261113-M18（6061）都已合格放行",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "BT-261110-M12",
+          "BT-261113-M18",
+          "铝合金"
+        ],
+        "covers_goals": [],
+        "source_span": "最近三批铝合金件的检测情况：BT-261110-M12（6061）和BT-261113-M18（6061）都已合格放行",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001",
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "BT-261112-M15（7075）硬度和拉伸合格",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [
+          "BT-261112-M15"
+        ],
+        "covers_goals": [],
+        "source_span": "BT-261112-M15（7075）硬度和拉伸合格",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002",
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "但盐雾试验只做了48小时",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 48.0,
+      "unit": "小时",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 48.0,
+            "unit": "小时",
+            "raw": "48小时",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "但盐雾试验只做了48小时",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "没到规定的72小时",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 72.0,
+      "unit": "小时",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 72.0,
+            "unit": "小时",
+            "raw": "72小时",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "没到规定的72小时",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "目前是有条件放行",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "目前是有条件放行",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-013-r1.json"
+}

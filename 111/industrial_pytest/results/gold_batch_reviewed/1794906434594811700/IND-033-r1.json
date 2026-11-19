@@ -1,0 +1,278 @@
+{
+  "case_id": "IND-033",
+  "run_id": "IND-033-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 6,
+  "aligned_gold_claim_count": 3,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 1,
+    "NEEDS_ALIGNMENT": 3,
+    "STATUS_MISMATCH": 2
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "当前温度 102℃",
+      "expected_status": "SUPPORT",
+      "rationale": "当前实测102。",
+      "actual_target": "RXT-03 反应釜当前温度 102℃",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "工艺参数卡（R2版本），该配方反应温度控制范围为 85-95℃（建议值）",
+      "expected_status": "SUPPORT",
+      "rationale": "准确引用旧R2内容，仅限版本内事实。",
+      "actual_target": "工艺参数卡（R2版本），该配方反应温度控制范围为 85-95℃（建议值）",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "偏高约 7℃",
+      "expected_status": "SUPPORT",
+      "rationale": "相对其明确引用的旧R2建议上限95℃，102-95=7℃算术成立；不能由此判断现行R3超限。",
+      "actual_target": "偏高约 7℃",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "超过 98℃ 的降速搅拌警戒线",
+      "expected_status": "UNKNOWN",
+      "rationale": "98℃仅来自R2，R3适用警戒线未查。",
+      "actual_target": "且超过 98℃ 的降速搅拌警戒线",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "建议立即将温度回调至 95℃ 以内，并降低搅拌转速至安全范围",
+      "expected_status": "MISSING_RULE",
+      "rationale": "缺现行R3参数及调节规程，不能按过期版本直接改参数。",
+      "actual_target": "建议立即将温度回调至 95℃ 以内，并降低搅拌转速至安全范围",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "当前温度 102℃ 已超过建议上限 95℃",
+      "expected_status": "MISSING_RULE",
+      "rationale": "当前已切R3；R2卡上的95℃只支持旧版本描述，不能直接作为本次适用上限。需取得当前R3温度范围及适用规则，现有102℃和设定105℃均不能代替该规则。",
+      "actual_target": "当前温度 102℃ 已超过建议上限 95℃",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "RXT-03 反应釜当前温度 102℃",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 102.0,
+      "unit": "℃",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 102.0,
+            "unit": "℃",
+            "raw": "102℃",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "RXT-03"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "RXT-03 反应釜当前温度 102℃",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002",
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "根据工艺参数卡（R2版本）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [
+          "R2"
+        ],
+        "covers_goals": [],
+        "source_span": "根据工艺参数卡（R2版本）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "偏高约 7℃",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 7.0,
+      "unit": "℃",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 7.0,
+            "unit": "℃",
+            "raw": "7℃",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "偏高约 7℃",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-001",
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "且超过 98℃ 的降速搅拌警戒线",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 98.0,
+      "unit": "℃",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 98.0,
+            "unit": "℃",
+            "raw": "98℃",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "且超过 98℃ 的降速搅拌警戒线",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "并降低搅拌转速至安全范围",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "并降低搅拌转速至安全范围",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-033-r1.json"
+}

@@ -1,0 +1,501 @@
+{
+  "case_id": "IND-001",
+  "run_id": "IND-001-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 8,
+  "aligned_gold_claim_count": 5,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 5,
+    "STATUS_MISMATCH": 1,
+    "NEEDS_ALIGNMENT": 3
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "三号锅炉排烟温度目前218℃",
+      "expected_status": "SUPPORT",
+      "rationale": "当前读数218℃。",
+      "actual_target": "三号锅炉排烟温度目前218℃",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "超出正常范围（140-190℃）",
+      "expected_status": "SUPPORT",
+      "rationale": "218>190。",
+      "actual_target": "超出正常范围（140-190℃）",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "近两小时持续上升",
+      "expected_status": "SUPPORT",
+      "rationale": "趋势为RISING。",
+      "actual_target": "近两小时持续上升",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "烟道差压285Pa略高于正常上限280Pa",
+      "expected_status": "SUPPORT",
+      "rationale": "285>280。",
+      "actual_target": "烟道差压285Pa略高于正常上限280Pa",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "可能有一定积灰",
+      "expected_status": "UNKNOWN",
+      "rationale": "差压仅提示可能，未现场确认积灰；保留可能表达合理。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "运行手册列出的常见原因包括受热面积灰、过剩空气系数偏高和燃烧器喷嘴磨损",
+      "expected_status": "SUPPORT",
+      "rationale": "手册列出的候选原因，不等于本次确诊。",
+      "actual_target": "运行手册列出的常见原因包括受热面积灰",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "运行手册列出的常见原因包括受热面积灰、过剩空气系数偏高和燃烧器喷嘴磨损",
+      "expected_status": "SUPPORT",
+      "rationale": "手册列出的候选原因，不等于本次确诊。",
+      "actual_target": "过剩空气系数偏高和燃烧器喷嘴磨损",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-008",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "目前仅凭远程数据无法确定具体原因",
+      "expected_status": "UNKNOWN",
+      "rationale": "本次根因仍缺现场证据；如实声明不确定。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "系统评价“证据不足这一陈述本身”，gold评价底层事实；需统一评价对象，不直接作为误判。"
+    },
+    {
+      "gold_claim_id": "g8",
+      "gold_text": "建议安排现场检查，优先排查积灰情况，同时检查燃烧器喷嘴和过剩空气系数",
+      "expected_status": "SUPPORT",
+      "rationale": "与手册排查顺序及未确认原因一致，属于调查建议。",
+      "actual_target": "建议安排现场检查，优先排查积灰情况，同时检查燃烧器喷嘴和过剩空气系数",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "三号锅炉排烟温度目前218℃",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 218.0,
+      "unit": "℃",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 218.0,
+            "unit": "℃",
+            "raw": "218℃",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "三号锅炉"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "三号锅炉排烟温度目前218℃",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "超出正常范围（140-190℃）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 140.0,
+      "unit": "℃",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 140.0,
+            "unit": "℃",
+            "raw": "140-190℃",
+            "upper": 190.0
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "超出正常范围（140-190℃）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "近两小时持续上升",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "近两小时持续上升",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "烟道差压285Pa略高于正常上限280Pa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 285.0,
+      "unit": "Pa",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 285.0,
+            "unit": "Pa",
+            "raw": "285Pa",
+            "upper": null
+          },
+          {
+            "value": 280.0,
+            "unit": "Pa",
+            "raw": "280Pa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "烟道差压285Pa略高于正常上限280Pa",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002",
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "可能有一定积灰",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "可能有一定积灰",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-008"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "但也可能是其他因素",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "但也可能是其他因素",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-009"
+        ]
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "运行手册列出的常见原因包括受热面积灰",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "运行手册列出的常见原因包括受热面积灰",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "过剩空气系数偏高和燃烧器喷嘴磨损",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "过剩空气系数偏高和燃烧器喷嘴磨损",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "目前仅凭远程数据无法确定具体原因",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "negative_finding",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 8,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "目前仅凭远程数据无法确定具体原因",
+        "verdict_reason": "图中确实存在证据缺口，该结论关于“现有证据不足”的表述本身得到支持",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-011",
+      "type": "claim",
+      "content": "优先排查积灰情况",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 10,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "优先排查积灰情况",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-012",
+      "type": "claim",
+      "content": "同时检查燃烧器喷嘴和过剩空气系数",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 11,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "同时检查燃烧器喷嘴和过剩空气系数",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-007"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-001-r1.json"
+}
