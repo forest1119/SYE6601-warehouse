@@ -1,0 +1,362 @@
+{
+  "task": {
+    "task_id": "IND-001",
+    "run_id": "IND-001-r1",
+    "question": "三号锅炉排烟温度偏高了，看看怎么回事。",
+    "customer_id": null,
+    "incident_id": "BLR-03",
+    "event_time": "2026-11-14T10:15:00+08:00"
+  },
+  "graph_version": "IND-001-proposal-v1",
+  "scope_declaration": {
+    "scope": "BLR-03排烟温度异常及可能原因分析",
+    "in_scope": [
+      "排烟温度异常判定",
+      "温度变化趋势",
+      "烟道差压与积灰排查",
+      "手册列出的其他可能原因"
+    ],
+    "out_of_scope": [
+      "未经现场检查确认的具体故障诊断",
+      "未经参数标准验证的燃烧效率评价"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "三号锅炉排烟温度异常的原因及当前可确认程度",
+      "review_status": "proposed"
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "当前排烟温度超过正常上限",
+      "evidence_status": "SUPPORT",
+      "review_status": "proposed"
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "近两小时排烟温度持续上升",
+      "evidence_status": "SUPPORT",
+      "review_status": "proposed"
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "当前锅炉可能存在受热面积灰",
+      "evidence_status": "UNKNOWN",
+      "review_status": "proposed"
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "手册列出积灰、过剩空气系数偏高和燃烧器喷嘴磨损为常见原因",
+      "evidence_status": "SUPPORT",
+      "review_status": "proposed"
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "现有远程证据不足以确定具体故障原因",
+      "evidence_status": "SUPPORT",
+      "review_status": "proposed"
+    },
+    {
+      "id": "FACT-001",
+      "type": "fact",
+      "content": "BLR-03设备型号SZL-20，使用天然气"
+    },
+    {
+      "id": "FACT-002",
+      "type": "fact",
+      "content": "排烟温度218℃，正常范围140–190℃"
+    },
+    {
+      "id": "FACT-003",
+      "type": "fact",
+      "content": "排烟温度近两小时趋势为RISING"
+    },
+    {
+      "id": "FACT-004",
+      "type": "fact",
+      "content": "烟道差压285 Pa，正常范围150–280 Pa"
+    },
+    {
+      "id": "FACT-005",
+      "type": "fact",
+      "content": "氧气含量5.8%，CO为120 ppm，过剩空气系数1.35"
+    },
+    {
+      "id": "RULE-001",
+      "type": "rule",
+      "content": "排烟温度超过190℃时属于手册定义的异常排查情形"
+    },
+    {
+      "id": "RULE-002",
+      "type": "rule",
+      "content": "排烟温度异常的常见原因包括受热面积灰、过剩空气系数偏高和燃烧器喷嘴磨损"
+    },
+    {
+      "id": "RULE-003",
+      "type": "rule",
+      "content": "烟道差压应优先检查，以辅助判断积灰程度"
+    },
+    {
+      "id": "OBL-001",
+      "type": "obligation",
+      "content": "进一步检查烟道差压及现场积灰情况",
+      "review_status": "proposed"
+    },
+    {
+      "id": "OBL-002",
+      "type": "obligation",
+      "content": "进一步检查燃烧器喷嘴状态和燃烧参数",
+      "review_status": "proposed"
+    },
+    {
+      "id": "MAT-001",
+      "type": "evidence",
+      "content": "设备档案查询结果",
+      "source_id": "asset_registry",
+      "record_id": "c1",
+      "locator": "trace[c1].result"
+    },
+    {
+      "id": "MAT-002",
+      "type": "evidence",
+      "content": "排烟温度监测结果",
+      "source_id": "plant_monitor",
+      "record_id": "c2",
+      "locator": "trace[c2].result.sensors[0]"
+    },
+    {
+      "id": "MAT-003",
+      "type": "evidence",
+      "content": "燃烧参数监测结果",
+      "source_id": "plant_monitor",
+      "record_id": "c3",
+      "locator": "trace[c3].result"
+    },
+    {
+      "id": "MAT-004",
+      "type": "evidence",
+      "content": "SZL-20设备运行手册排烟温度异常排查章节",
+      "source_id": "knowledge_base",
+      "record_id": "c4",
+      "locator": "trace[c4].result.excerpt",
+      "excerpt": "排烟温度超过190℃时，常见原因包括：受热面积灰、过剩空气系数偏高、燃烧器喷嘴磨损。建议先检查烟道差压判断积灰程度。"
+    },
+    {
+      "id": "MAT-005",
+      "type": "evidence",
+      "content": "烟道差压监测结果",
+      "source_id": "plant_monitor",
+      "record_id": "c5",
+      "locator": "trace[c5].result"
+    }
+  ],
+  "edges": [
+    {
+      "id": "E-001",
+      "from": "MAT-001",
+      "to": "FACT-001",
+      "type": "supports"
+    },
+    {
+      "id": "E-002",
+      "from": "MAT-002",
+      "to": "FACT-002",
+      "type": "supports"
+    },
+    {
+      "id": "E-003",
+      "from": "MAT-002",
+      "to": "FACT-003",
+      "type": "supports"
+    },
+    {
+      "id": "E-004",
+      "from": "MAT-003",
+      "to": "FACT-005",
+      "type": "supports"
+    },
+    {
+      "id": "E-005",
+      "from": "MAT-004",
+      "to": "RULE-001",
+      "type": "supports"
+    },
+    {
+      "id": "E-006",
+      "from": "MAT-004",
+      "to": "RULE-002",
+      "type": "supports"
+    },
+    {
+      "id": "E-007",
+      "from": "MAT-004",
+      "to": "RULE-003",
+      "type": "supports"
+    },
+    {
+      "id": "E-008",
+      "from": "MAT-005",
+      "to": "FACT-004",
+      "type": "supports"
+    },
+    {
+      "id": "E-009",
+      "from": "FACT-002",
+      "to": "CLM-002",
+      "type": "supports"
+    },
+    {
+      "id": "E-010",
+      "from": "FACT-003",
+      "to": "CLM-003",
+      "type": "supports"
+    },
+    {
+      "id": "E-011",
+      "from": "FACT-004",
+      "to": "CLM-004",
+      "type": "supports"
+    },
+    {
+      "id": "E-012",
+      "from": "RULE-002",
+      "to": "CLM-005",
+      "type": "supports"
+    },
+    {
+      "id": "E-013",
+      "from": "RULE-003",
+      "to": "OBL-001",
+      "type": "derived_from"
+    },
+    {
+      "id": "E-014",
+      "from": "RULE-002",
+      "to": "OBL-002",
+      "type": "derived_from"
+    },
+    {
+      "id": "E-015",
+      "from": "CLM-002",
+      "to": "CLM-001",
+      "type": "depends_on"
+    },
+    {
+      "id": "E-016",
+      "from": "CLM-003",
+      "to": "CLM-001",
+      "type": "depends_on"
+    },
+    {
+      "id": "E-017",
+      "from": "CLM-004",
+      "to": "CLM-001",
+      "type": "depends_on"
+    },
+    {
+      "id": "E-018",
+      "from": "CLM-005",
+      "to": "CLM-001",
+      "type": "depends_on"
+    },
+    {
+      "id": "E-019",
+      "from": "CLM-006",
+      "to": "CLM-001",
+      "type": "supports"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "GAP-001",
+      "type": "MISSING_EVIDENCE",
+      "affected_claims": [
+        "CLM-004"
+      ],
+      "description": "缺少现场受热面积灰检查记录",
+      "criticality": "HIGH",
+      "mandatory": false,
+      "target_source": "现场设备检查记录"
+    },
+    {
+      "id": "GAP-002",
+      "type": "MISSING_DEPENDENCY",
+      "affected_claims": [
+        "CLM-005"
+      ],
+      "description": "缺少过剩空气系数1.35的设备适用判定基准",
+      "criticality": "MEDIUM",
+      "mandatory": false,
+      "target_source": "SZL-20设备运行标准或工艺参数文件"
+    },
+    {
+      "id": "GAP-003",
+      "type": "MISSING_EVIDENCE",
+      "affected_claims": [
+        "CLM-005"
+      ],
+      "description": "缺少燃烧器喷嘴检查或磨损检测记录",
+      "criticality": "MEDIUM",
+      "mandatory": false,
+      "target_source": "燃烧器维护检查记录"
+    },
+    {
+      "id": "GAP-004",
+      "type": "MISSING_EVIDENCE",
+      "affected_claims": [
+        "CLM-002"
+      ],
+      "description": "缺少排烟温度传感器校准及有效性记录；此项为审慎核查建议，不代表传感器已失准",
+      "criticality": "LOW",
+      "mandatory": false,
+      "target_source": "仪表校准记录"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "CHK-001",
+      "description": "确认设备身份和型号",
+      "source_record": "c1",
+      "status": "completed"
+    },
+    {
+      "check_id": "CHK-002",
+      "description": "检查排烟温度和趋势",
+      "source_record": "c2",
+      "status": "completed"
+    },
+    {
+      "check_id": "CHK-003",
+      "description": "检查燃烧参数",
+      "source_record": "c3",
+      "status": "completed"
+    },
+    {
+      "check_id": "CHK-004",
+      "description": "检索设备运行手册",
+      "source_record": "c4",
+      "status": "completed"
+    },
+    {
+      "check_id": "CHK-005",
+      "description": "检查烟道差压",
+      "source_record": "c5",
+      "status": "completed"
+    }
+  ],
+  "changes": [],
+  "proposal_status": "proposed",
+  "limitations": [
+    "本提案基于现有模拟监控日志的离线拆解，不代表真实模型调用或B组审核已经发生。",
+    "手册列出的常见原因不等于当前设备已发生对应故障。",
+    "现有材料未提供过剩空气系数的正常范围，不能将1.35直接判为异常。",
+    "正式入库前应补充每个节点和关系的created_by、created_at、call_id及完整原文定位字段，并由B审核。"
+  ]
+}
