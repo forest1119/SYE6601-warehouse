@@ -1,0 +1,446 @@
+{
+  "case_id": "IND-025",
+  "run_id": "IND-025-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 5,
+  "aligned_gold_claim_count": 5,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 4,
+    "STATUS_MISMATCH": 5
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "硬度 29.5 HRC（合格），抗拉强度 1095 MPa（合格）",
+      "expected_status": "SUPPORT",
+      "rationale": "两项PASS。",
+      "actual_target": "批次 BT-261113-C07（42CrMo）质检结果：硬度 29.5 HRC（合格）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "硬度 29.5 HRC（合格），抗拉强度 1095 MPa（合格）",
+      "expected_status": "SUPPORT",
+      "rationale": "两项PASS。",
+      "actual_target": "抗拉强度 1095 MPa（合格）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "冲击试验已完成",
+      "expected_status": "REFUTE",
+      "rationale": "PENDING且无结果。",
+      "actual_target": "冲击试验已完成",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "各项指标均符合 GB/T 3077-2015 要求",
+      "expected_status": "REFUTE",
+      "rationale": "冲击未出，不能称各项达标。",
+      "actual_target": "各项指标均符合 GB/T 3077-2015 要求",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "该批次判定合格，可以放行",
+      "expected_status": "REFUTE",
+      "rationale": "IN_PROGRESS，release_eligible=false。",
+      "actual_target": "该批次判定合格",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "该批次判定合格，可以放行",
+      "expected_status": "REFUTE",
+      "rationale": "IN_PROGRESS，release_eligible=false。",
+      "actual_target": "可以放行",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "MISSING_RULE",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "炉号 H26111307，电炉 EF-03 冶炼，目前位于质检区",
+      "expected_status": "SUPPORT",
+      "rationale": "炉号位置与回执相符。",
+      "actual_target": "该批次炉号 H26111307",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "炉号 H26111307，电炉 EF-03 冶炼，目前位于质检区",
+      "expected_status": "SUPPORT",
+      "rationale": "炉号位置与回执相符。",
+      "actual_target": "电炉 EF-03 冶炼",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-008",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "炉号 H26111307，电炉 EF-03 冶炼，目前位于质检区",
+      "expected_status": "SUPPORT",
+      "rationale": "炉号位置与回执相符。",
+      "actual_target": "目前位于质检区",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-009",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "批次 BT-261113-C07（42CrMo）质检结果：硬度 29.5 HRC（合格）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "42CrMo",
+          "BT-261113-C07"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "批次 BT-261113-C07（42CrMo）质检结果：硬度 29.5 HRC（合格）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001",
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "抗拉强度 1095 MPa（合格）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 1095.0,
+      "unit": "MPa",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 1095.0,
+            "unit": "MPa",
+            "raw": "1095 MPa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "抗拉强度 1095 MPa（合格）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002",
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "冲击试验已完成",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [
+          "冲击试验"
+        ],
+        "covers_goals": [],
+        "source_span": "冲击试验已完成",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-007"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "各项指标均符合 GB/T 3077-2015 要求",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "各项指标均符合 GB/T 3077-2015 要求",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "该批次判定合格",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "该批次判定合格",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-008"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "可以放行",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "MISSING_RULE",
+      "assertion_strength": "approval",
+      "related_goals": [
+        "GOAL-002"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "可以放行",
+        "verdict_reason": "缺少判定所必需的适用规则或授权依据",
+        "checks": [
+          "CHK-009"
+        ]
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "该批次炉号 H26111307",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [
+          "H26111307"
+        ],
+        "covers_goals": [],
+        "source_span": "该批次炉号 H26111307",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "电炉 EF-03 冶炼",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [
+          "EF-03"
+        ],
+        "covers_goals": [],
+        "source_span": "电炉 EF-03 冶炼",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "目前位于质检区",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 8,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "目前位于质检区",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-025-r1.json"
+}

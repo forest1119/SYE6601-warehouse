@@ -1,0 +1,292 @@
+{
+  "case_id": "IND-039",
+  "run_id": "IND-039-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 5,
+  "aligned_gold_claim_count": 3,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 2,
+    "NEEDS_ALIGNMENT": 2,
+    "MATCH": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "11月11日发生过一起乙酸乙酯溶剂泄漏事件（约 15L）",
+      "expected_status": "SUPPORT",
+      "rationale": "历史泄漏量和日期明确。",
+      "actual_target": "隔壁萃取车间 11月11日发生过一起乙酸乙酯溶剂泄漏事件（约 15L）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "该泄漏已于当日 18:00 完成清理并更换垫片",
+      "expected_status": "SUPPORT",
+      "rationale": "结案处置明确。",
+      "actual_target": "该泄漏已于当日 18:00 完成清理并更换垫片",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "目前萃取车间 VOC 检测值 2.1 ppm（限值 50 ppm），空气指标正常",
+      "expected_status": "SUPPORT",
+      "rationale": "就该监测点VOC成立，不代表全部空气组分。",
+      "actual_target": "目前萃取车间 VOC 检测值 2.1 ppm（限值 50 ppm），空气指标正常",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "很可能是该泄漏事件的残留气味扩散过来所致",
+      "expected_status": "UNKNOWN",
+      "rationale": "三日前已清理，本车间另有两处甲苯微漏；无风向、组分或扩散证据，不能认定主因。",
+      "actual_target": "您闻到的异味很可能是该泄漏事件的残留气味扩散过来所致",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "进一步排查本车间内部管线和阀门",
+      "expected_status": "SUPPORT",
+      "rationale": "本车间18.5ppm且两处泄漏已报告，排查有依据。",
+      "actual_target": "进一步排查本车间内部管线和阀门",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "隔壁萃取车间 11月11日发生过一起乙酸乙酯溶剂泄漏事件（约 15L）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 15.0,
+      "unit": "L",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 15.0,
+            "unit": "L",
+            "raw": "15L",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "萃取车间"
+        ],
+        "covers_goals": [],
+        "source_span": "隔壁萃取车间 11月11日发生过一起乙酸乙酯溶剂泄漏事件（约 15L）",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "原因为法兰垫片老化",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "原因为法兰垫片老化",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "该泄漏已于当日 18:00 完成清理并更换垫片",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "该泄漏已于当日 18:00 完成清理并更换垫片",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "目前萃取车间 VOC 检测值 2.1 ppm（限值 50 ppm）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 2.1,
+      "unit": "ppm",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 2.1,
+            "unit": "ppm",
+            "raw": "2.1 ppm",
+            "upper": null
+          },
+          {
+            "value": 50.0,
+            "unit": "ppm",
+            "raw": "50 ppm",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "VOC",
+          "萃取车间"
+        ],
+        "covers_goals": [],
+        "source_span": "目前萃取车间 VOC 检测值 2.1 ppm（限值 50 ppm）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001",
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "空气指标正常",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "空气指标正常",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "您闻到的异味很可能是该泄漏事件的残留气味扩散过来所致",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "您闻到的异味很可能是该泄漏事件的残留气味扩散过来所致",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-039-r1.json"
+}

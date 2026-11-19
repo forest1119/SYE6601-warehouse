@@ -1,0 +1,193 @@
+{
+  "case_id": "IND-056",
+  "run_id": "IND-056-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 3,
+  "aligned_gold_claim_count": 2,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 1,
+    "MATCH": 1,
+    "NEEDS_ALIGNMENT": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "厂区边界噪声82分贝在合规范围内",
+      "expected_status": "REFUTE",
+      "rationale": "适用2类厂界昼间65，82超17dB。",
+      "actual_target": "厂区边界噪声82分贝在合规范围内",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "8小时等效声级限值为85dB(A)",
+      "expected_status": "SUPPORT",
+      "rationale": "仅是工作场所职业接触标准内容，不适用厂界。",
+      "actual_target": "8小时等效声级限值为85dB(A)",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "当前数值低于限值，不需要额外采取降噪措施",
+      "expected_status": "REFUTE",
+      "rationale": "错用85；82>65，应按适用厂界要求处理。",
+      "actual_target": "当前数值低于限值，不需要额外采取降噪措施",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "厂区边界噪声82分贝在合规范围内",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "厂区边界"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "厂区边界噪声82分贝在合规范围内",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "根据国家职业接触限值标准",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "根据国家职业接触限值标准",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "8小时等效声级限值为85dB(A)",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 8.0,
+      "unit": "小时",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 8.0,
+            "unit": "小时",
+            "raw": "8小时",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "8小时等效声级限值为85dB(A)",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "当前数值低于限值",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "当前数值低于限值",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-056-r1.json"
+}

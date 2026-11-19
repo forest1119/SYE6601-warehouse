@@ -1,0 +1,163 @@
+{
+  "case_id": "IND-012",
+  "run_id": "IND-012-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 4,
+  "aligned_gold_claim_count": 2,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 2,
+    "NEEDS_ALIGNMENT": 2
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "上午11:30完成了渗碳淬火工艺",
+      "expected_status": "SUPPORT",
+      "rationale": "process_end为11:30。",
+      "actual_target": "这批齿轮轴（HT-261114-005）上午11:30完成了渗碳淬火工艺",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "还没提交检测申请",
+      "expected_status": "SUPPORT",
+      "rationale": "NOT_STARTED，明示未提交。",
+      "actual_target": "还没提交检测申请",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "实验室那边也没有这批的送样记录",
+      "expected_status": "SUPPORT",
+      "rationale": "队列仅另一个批次，note明确本批不在队列。",
+      "actual_target": "实验室那边也没有这批的送样记录",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "热处理报告目前还没有，需要先安排送检",
+      "expected_status": "SUPPORT",
+      "rationale": "没有本批检验结果，送检为合理下一步。",
+      "actual_target": "热处理报告目前还没有，需要先安排送检",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "这批齿轮轴（HT-261114-005）上午11:30完成了渗碳淬火工艺",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "HT-261114-005"
+        ],
+        "covers_goals": [],
+        "source_span": "这批齿轮轴（HT-261114-005）上午11:30完成了渗碳淬火工艺",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-001",
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "实验室那边也没有这批的送样记录",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "实验室那边也没有这批的送样记录",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "热处理报告目前还没有",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "热处理报告目前还没有",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-012-r1.json"
+}

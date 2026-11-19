@@ -1,0 +1,768 @@
+{
+  "case_id": "IND-032",
+  "run_id": "IND-032-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 6,
+  "aligned_gold_claim_count": 5,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 2,
+    "STATUS_MISMATCH": 9,
+    "NEEDS_ALIGNMENT": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "电压总谐波畸变率 THD 为 3.8%",
+      "expected_status": "SUPPORT",
+      "rationale": "当前3.8%。",
+      "actual_target": "10kV母线（BUS-10KV-01）电能质量检测结果：电压总谐波畸变率 THD 为 3.8%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "3次 1.2%、5次 2.1%、7次 1.5%、11次 0.8%、13次 0.6%",
+      "expected_status": "SUPPORT",
+      "rationale": "已返回各次谐波数值。",
+      "actual_target": "各次谐波含量分别为 3次 1.2%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "3次 1.2%、5次 2.1%、7次 1.5%、11次 0.8%、13次 0.6%",
+      "expected_status": "SUPPORT",
+      "rationale": "已返回各次谐波数值。",
+      "actual_target": "5次 2.1%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "3次 1.2%、5次 2.1%、7次 1.5%、11次 0.8%、13次 0.6%",
+      "expected_status": "SUPPORT",
+      "rationale": "已返回各次谐波数值。",
+      "actual_target": "7次 1.5%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "3次 1.2%、5次 2.1%、7次 1.5%、11次 0.8%、13次 0.6%",
+      "expected_status": "SUPPORT",
+      "rationale": "已返回各次谐波数值。",
+      "actual_target": "11次 0.8%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "3次 1.2%、5次 2.1%、7次 1.5%、11次 0.8%、13次 0.6%",
+      "expected_status": "SUPPORT",
+      "rationale": "已返回各次谐波数值。",
+      "actual_target": "13次 0.6%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "当前 THD 3.8% 低于 5% 限值",
+      "expected_status": "REFUTE",
+      "rationale": "数值比较3.8<5本身正确，但在10kV对象上将5%称为适用限值错误；日志c3明确应取4%。REFUTE针对适用标准，不是否定3.8<5算术。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "3.8<5算术正确，5%不适用于10kV；需将数值比较与适用标准拆开后比较，不能把同一句两种对象强配。"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "系统频率 50.01 Hz",
+      "expected_status": "SUPPORT",
+      "rationale": "原值50.01。",
+      "actual_target": "系统频率 50.01 Hz",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-011",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "近24小时 THD 最高 4.2%，平均 3.3%，上午呈上升趋势",
+      "expected_status": "SUPPORT",
+      "rationale": "4.2>适用4%意味着24h内曾超限，不能遗漏该风险。",
+      "actual_target": "近24小时 THD 最高 4.2%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-013",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "近24小时 THD 最高 4.2%，平均 3.3%，上午呈上升趋势",
+      "expected_status": "SUPPORT",
+      "rationale": "4.2>适用4%意味着24h内曾超限，不能遗漏该风险。",
+      "actual_target": "平均 3.3%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-014",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "近24小时 THD 最高 4.2%，平均 3.3%，上午呈上升趋势",
+      "expected_status": "SUPPORT",
+      "rationale": "4.2>适用4%意味着24h内曾超限，不能遗漏该风险。",
+      "actual_target": "上午呈上升趋势",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-015",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "谐波指标合格",
+      "expected_status": "SUPPORT",
+      "rationale": "仅就本次采样且已返回的THD与各奇次谐波：3.8≤4%，已给奇次分量均≤3.2%，当前可合格；不代表24h所有时点都合格，24h最高4.2%另需提示。",
+      "actual_target": "谐波指标合格",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-010",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "10kV母线（BUS-10KV-01）电能质量检测结果：电压总谐波畸变率 THD 为 3.8%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 3.8,
+      "unit": "%",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 3.8,
+            "unit": "%",
+            "raw": "3.8%",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "10kV",
+          "BUS-10KV-01"
+        ],
+        "covers_goals": [],
+        "source_span": "10kV母线（BUS-10KV-01）电能质量检测结果：电压总谐波畸变率 THD 为 3.8%",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001",
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "各次谐波含量分别为 3次 1.2%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 3.0,
+      "unit": "次",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 3.0,
+            "unit": "次",
+            "raw": "3次",
+            "upper": null
+          },
+          {
+            "value": 1.2,
+            "unit": "%",
+            "raw": "1.2%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "各次谐波含量分别为 3次 1.2%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "5次 2.1%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 5.0,
+      "unit": "次",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 5.0,
+            "unit": "次",
+            "raw": "5次",
+            "upper": null
+          },
+          {
+            "value": 2.1,
+            "unit": "%",
+            "raw": "2.1%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "5次 2.1%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "7次 1.5%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 7.0,
+      "unit": "次",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 7.0,
+            "unit": "次",
+            "raw": "7次",
+            "upper": null
+          },
+          {
+            "value": 1.5,
+            "unit": "%",
+            "raw": "1.5%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "7次 1.5%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "11次 0.8%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 11.0,
+      "unit": "次",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 11.0,
+            "unit": "次",
+            "raw": "11次",
+            "upper": null
+          },
+          {
+            "value": 0.8,
+            "unit": "%",
+            "raw": "0.8%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "11次 0.8%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "13次 0.6%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 13.0,
+      "unit": "次",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 13.0,
+            "unit": "次",
+            "raw": "13次",
+            "upper": null
+          },
+          {
+            "value": 0.6,
+            "unit": "%",
+            "raw": "0.6%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "13次 0.6%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "根据电能质量标准",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "根据电能质量标准",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "380V及以下低压系统 THD 限值为 5%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 380.0,
+      "unit": "V",
+      "meta": {
+        "order": 7,
+        "numerals": [
+          {
+            "value": 380.0,
+            "unit": "V",
+            "raw": "380V",
+            "upper": null
+          },
+          {
+            "value": 5.0,
+            "unit": "%",
+            "raw": "5%",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "380V"
+        ],
+        "covers_goals": [],
+        "source_span": "380V及以下低压系统 THD 限值为 5%",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "当前 THD 3.8% 低于 5% 限值",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 3.8,
+      "unit": "%",
+      "meta": {
+        "order": 8,
+        "numerals": [
+          {
+            "value": 3.8,
+            "unit": "%",
+            "raw": "3.8%",
+            "upper": null
+          },
+          {
+            "value": 5.0,
+            "unit": "%",
+            "raw": "5%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "当前 THD 3.8% 低于 5% 限值",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-010",
+      "type": "claim",
+      "content": "谐波指标合格",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-002"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 9,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [
+          1
+        ],
+        "source_span": "谐波指标合格",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-011",
+      "type": "claim",
+      "content": "系统频率 50.01 Hz",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 50.01,
+      "unit": "Hz",
+      "meta": {
+        "order": 10,
+        "numerals": [
+          {
+            "value": 50.01,
+            "unit": "Hz",
+            "raw": "50.01 Hz",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "系统频率 50.01 Hz",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-012",
+      "type": "claim",
+      "content": "运行稳定",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 11,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "运行稳定",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-013",
+      "type": "claim",
+      "content": "近24小时 THD 最高 4.2%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 24.0,
+      "unit": "小时",
+      "meta": {
+        "order": 12,
+        "numerals": [
+          {
+            "value": 24.0,
+            "unit": "小时",
+            "raw": "24小时",
+            "upper": null
+          },
+          {
+            "value": 4.2,
+            "unit": "%",
+            "raw": "4.2%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "近24小时 THD 最高 4.2%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-014",
+      "type": "claim",
+      "content": "平均 3.3%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 3.3,
+      "unit": "%",
+      "meta": {
+        "order": 13,
+        "numerals": [
+          {
+            "value": 3.3,
+            "unit": "%",
+            "raw": "3.3%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "平均 3.3%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-015",
+      "type": "claim",
+      "content": "上午呈上升趋势",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 14,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "上午呈上升趋势",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-032-r1.json"
+}

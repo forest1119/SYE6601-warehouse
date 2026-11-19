@@ -1,0 +1,232 @@
+{
+  "case_id": "IND-048",
+  "run_id": "IND-048-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 4,
+  "aligned_gold_claim_count": 3,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 2,
+    "NEEDS_ALIGNMENT": 1,
+    "MATCH": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "目前有24个可用",
+      "expected_status": "REFUTE",
+      "rationale": "24属于2RS，工单强制Z型库存6；不能混SKU。",
+      "actual_target": "目前有24个可用",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "明天维修使用没有问题",
+      "expected_status": "SUPPORT",
+      "rationale": "按正确SKU，Z型库存6≥需求2，数量支持满足；回答的24件依据仍错。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "正确Z型库存6足够2是数量关系，不等于所有条件下明日维修一定无问题；原金标准需明确仅数量范围。"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "库房位置在A-03-12货架",
+      "expected_status": "REFUTE",
+      "rationale": "所需Z型在A-03-13，A-03-12是2RS位置。",
+      "actual_target": "库房位置在A-03-12货架",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "领料时直接报修工单号即可",
+      "expected_status": "MISSING_RULE",
+      "rationale": "未提供领料权限或办理流程，不能断言仅工单号足够。",
+      "actual_target": "领料时直接报修工单号即可",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": true,
+      "result": "MATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "SKF-6205轴承库存充足",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "SKF-6205"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "SKF-6205轴承库存充足",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "目前有24个可用",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 24.0,
+      "unit": "个",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 24.0,
+            "unit": "个",
+            "raw": "24个",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "目前有24个可用",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "明天维修使用没有问题",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "明天维修使用没有问题",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "库房位置在A-03-12货架",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "库房位置在A-03-12货架",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "领料时直接报修工单号即可",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "领料时直接报修工单号即可",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-048-r1.json"
+}

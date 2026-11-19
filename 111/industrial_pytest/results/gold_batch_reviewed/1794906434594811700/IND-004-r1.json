@@ -1,0 +1,187 @@
+{
+  "case_id": "IND-004",
+  "run_id": "IND-004-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 3,
+  "aligned_gold_claim_count": 2,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 2,
+    "NEEDS_ALIGNMENT": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "上午A线两个批次都已检完并放行",
+      "expected_status": "SUPPORT",
+      "rationale": "两批检测COMPLETED且均有RELEASED记录。",
+      "actual_target": "上午A线两个批次都已检完并放行",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "BT-261114-A01和BT-261114-A02的微生物、pH值、密封性检测均合格",
+      "expected_status": "SUPPORT",
+      "rationale": "两组检测条目全部合格。",
+      "actual_target": "BT-261114-A01和BT-261114-A02的微生物、pH值、密封性检测均合格",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "质检主管李明已分别于11:00和14:20签字放行",
+      "expected_status": "SUPPORT",
+      "rationale": "放行人员、时间与两批记录一致。",
+      "actual_target": "质检主管李明已分别于11:00和14:20签字放行",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "上午A线两个批次都已检完并放行",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "A线"
+        ],
+        "covers_goals": [],
+        "source_span": "上午A线两个批次都已检完并放行",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "BT-261114-A01和BT-261114-A02的微生物",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [
+          "BT-261114",
+          "BT-261114-A01",
+          "BT-261114-A02"
+        ],
+        "covers_goals": [],
+        "source_span": "BT-261114-A01和BT-261114-A02的微生物",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "密封性检测均合格",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "密封性检测均合格",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "质检主管李明已分别于11:00和14:20签字放行",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "质检主管李明已分别于11:00和14:20签字放行",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-004-r1.json"
+}

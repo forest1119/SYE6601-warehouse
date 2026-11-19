@@ -1,0 +1,260 @@
+{
+  "case_id": "IND-052",
+  "run_id": "IND-052-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 4,
+  "aligned_gold_claim_count": 3,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 2,
+    "MATCH": 1,
+    "NEEDS_ALIGNMENT": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "添加剂配方已经确认完毕",
+      "expected_status": "REFUTE",
+      "rationale": "添加剂B待确认，批次等待配方确认。",
+      "actual_target": "BT-261114-E03批次的添加剂配方已经确认完毕",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "添加剂A用量2.5kg",
+      "expected_status": "SUPPORT",
+      "rationale": "CONFIRMED。",
+      "actual_target": "添加剂A用量2.5kg",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "添加剂B用量1.8kg，均已完成确认",
+      "expected_status": "REFUTE",
+      "rationale": "1.8仅suggested_dosage，正式dosage为空，小试进行中。",
+      "actual_target": "添加剂B用量1.8kg，均已完成确认",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "可以开始按配方投料生产",
+      "expected_status": "REFUTE",
+      "rationale": "确认依赖未完成，不得当成已确认投料。",
+      "actual_target": "可以开始按配方投料生产",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "BT-261114-E03批次的添加剂配方已经确认完毕",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "BT-261114",
+          "BT-261114-E03"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "BT-261114-E03批次的添加剂配方已经确认完毕",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "添加剂A用量2.5kg",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 2.5,
+      "unit": "kg",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 2.5,
+            "unit": "kg",
+            "raw": "2.5kg",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "添加剂A用量2.5kg",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "添加剂B用量1.8kg",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 1.8,
+      "unit": "kg",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 1.8,
+            "unit": "kg",
+            "raw": "1.8kg",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "添加剂B用量1.8kg",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "均已完成确认",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "均已完成确认",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "可以开始按配方投料生产",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-002"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [
+          1
+        ],
+        "source_span": "可以开始按配方投料生产",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-052-r1.json"
+}

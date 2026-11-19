@@ -1,0 +1,355 @@
+{
+  "case_id": "IND-021",
+  "run_id": "IND-021-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 6,
+  "aligned_gold_claim_count": 6,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 5,
+    "STATUS_MISMATCH": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "压缩机 CMP-01A 近30分钟振动数据正常",
+      "expected_status": "UNKNOWN",
+      "rationale": "c2设备为CMP-01B，不能判断01A；错对象不是证实01A异常。",
+      "actual_target": "压缩机 CMP-01A 近30分钟振动数据正常",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "振动值在 2.0～2.4 mm/s 之间",
+      "expected_status": "UNKNOWN",
+      "rationale": "数值属于01B，01A振动未知。",
+      "actual_target": "振动值在 2.0～2.4 mm/s 之间",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "设备运行状态良好",
+      "expected_status": "UNKNOWN",
+      "rationale": "01B记录不能证明01A状态。",
+      "actual_target": "设备运行状态良好",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "近2小时无振动报警记录",
+      "expected_status": "UNKNOWN",
+      "rationale": "报警查的是01B，01A报警历史缺失。",
+      "actual_target": "近2小时无振动报警记录",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "近期也无相关维修工单",
+      "expected_status": "UNKNOWN",
+      "rationale": "c5调用参数asset_id=CMP-01B，结果虽空仍是01B范围，不能证明01A无维修。必须重查01A且保留30天窗口。",
+      "actual_target": "近期也无相关维修工单",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "现场声音可能由其他原因引起",
+      "expected_status": "UNKNOWN",
+      "rationale": "01A基础数据未查到，原因未定。",
+      "actual_target": "现场声音可能由其他原因引起",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "压缩机 CMP-01A 近30分钟振动数据正常",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 1.0,
+      "unit": "A",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 1.0,
+            "unit": "A",
+            "raw": "01A",
+            "upper": null
+          },
+          {
+            "value": 30.0,
+            "unit": "分钟",
+            "raw": "30分钟",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "CMP-01A"
+        ],
+        "covers_goals": [],
+        "source_span": "压缩机 CMP-01A 近30分钟振动数据正常",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-001",
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "振动值在 2.0～2.4 mm/s 之间",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 2.4,
+      "unit": "mm",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 2.4,
+            "unit": "mm",
+            "raw": "2.4 mm",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "振动值在 2.0～2.4 mm/s 之间",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "远低于报警阈值 7.1 mm/s",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 7.1,
+      "unit": "mm",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 7.1,
+            "unit": "mm",
+            "raw": "7.1 mm",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "远低于报警阈值 7.1 mm/s",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "设备运行状态良好",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "设备运行状态良好",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "近2小时无振动报警记录",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 2.0,
+      "unit": "小时",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 2.0,
+            "unit": "小时",
+            "raw": "2小时",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "近2小时无振动报警记录",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "近期也无相关维修工单",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "近期也无相关维修工单",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "现场声音可能由其他原因引起",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "现场声音可能由其他原因引起",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-021-r1.json"
+}

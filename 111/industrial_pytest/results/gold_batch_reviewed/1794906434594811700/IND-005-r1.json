@@ -1,0 +1,505 @@
+{
+  "case_id": "IND-005",
+  "run_id": "IND-005-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 7,
+  "aligned_gold_claim_count": 3,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 5,
+    "MATCH": 1,
+    "NEEDS_ALIGNMENT": 4
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "M12×50不锈钢螺栓库存2400只",
+      "expected_status": "SUPPORT",
+      "rationale": "库存2400。",
+      "actual_target": "M12×50不锈钢螺栓库存2400只",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "已录入系统的预留800只（给WO-28508），按此计算可用1600只",
+      "expected_status": "SUPPORT",
+      "rationale": "2400-800=1600，范围明确限定已录入预留。",
+      "actual_target": "已录入系统的预留800只（给WO-28508）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "已录入系统的预留800只（给WO-28508），按此计算可用1600只",
+      "expected_status": "SUPPORT",
+      "rationale": "2400-800=1600，范围明确限定已录入预留。",
+      "actual_target": "按此计算可用1600只",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "共(60×15+32×8)=1156只",
+      "expected_status": "MISSING_RULE",
+      "rationale": "算术1156正确，但bom字段未明示单件还是整单用量；按单件BOM理解才成立，需确认字段口径。",
+      "actual_target": "共(60×15+32×8)=1156只",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "M12×80库存1800只，已录入预留500只，可用1300只",
+      "expected_status": "SUPPORT",
+      "rationale": "1800-500=1300，仅按已录入记录。",
+      "actual_target": "M12×80库存1800只",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "M12×80库存1800只，已录入预留500只，可用1300只",
+      "expected_status": "SUPPORT",
+      "rationale": "1800-500=1300，仅按已录入记录。",
+      "actual_target": "已录入预留500只",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "M12×80库存1800只，已录入预留500只，可用1300只",
+      "expected_status": "SUPPORT",
+      "rationale": "1800-500=1300，仅按已录入记录。",
+      "actual_target": "可用1300只",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "明天共需(45×15+24×8)=867只",
+      "expected_status": "MISSING_RULE",
+      "rationale": "算术867正确；同样需要确认BOM用量为单件口径。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "BOM单件/整单语义未明确，算术与需求口径应拆开；不直接记工程缺陷。"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "实际可用量可能比计算值低",
+      "expected_status": "UNKNOWN",
+      "rationale": "PARTIAL且预留未全录入，实际可用量未确定。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "建议领料前与仓库确认实际可用数",
+      "expected_status": "SUPPORT",
+      "rationale": "与未录入预留风险相符。",
+      "actual_target": "建议领料前与仓库确认实际可用数",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "M12×50不锈钢螺栓库存2400只",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 2400.0,
+      "unit": "只",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 2400.0,
+            "unit": "只",
+            "raw": "2400只",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "M12×50不锈钢螺栓库存2400只",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "已录入系统的预留800只（给WO-28508）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 800.0,
+      "unit": "只",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 800.0,
+            "unit": "只",
+            "raw": "800只",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "已录入系统的预留800只（给WO-28508）",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "按此计算可用1600只",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 1600.0,
+      "unit": "只",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 1600.0,
+            "unit": "只",
+            "raw": "1600只",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "按此计算可用1600只",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "明天WO-28510和WO-28511共需M12×50共(60×15+32×8)=1156只",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 1156.0,
+      "unit": "只",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 1156.0,
+            "unit": "只",
+            "raw": "1156只",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "WO-28510",
+          "WO-28511"
+        ],
+        "covers_goals": [],
+        "source_span": "明天WO-28510和WO-28511共需M12×50共(60×15+32×8)=1156只",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "M12×80库存1800只",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 1800.0,
+      "unit": "只",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 1800.0,
+            "unit": "只",
+            "raw": "1800只",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "M12×80库存1800只",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "已录入预留500只",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 500.0,
+      "unit": "只",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 500.0,
+            "unit": "只",
+            "raw": "500只",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "已录入预留500只",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "可用1300只",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 1300.0,
+      "unit": "只",
+      "meta": {
+        "order": 6,
+        "numerals": [
+          {
+            "value": 1300.0,
+            "unit": "只",
+            "raw": "1300只",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "可用1300只",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "明天共需(45×15+24×8)=867只",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 867.0,
+      "unit": "只",
+      "meta": {
+        "order": 7,
+        "numerals": [
+          {
+            "value": 867.0,
+            "unit": "只",
+            "raw": "867只",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "明天共需(45×15+24×8)=867只",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "不过系统提示部分工单的领料预留尚未录入",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 8,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "不过系统提示部分工单的领料预留尚未录入",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-010",
+      "type": "claim",
+      "content": "实际可用量可能比计算值低",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 9,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "实际可用量可能比计算值低",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-005-r1.json"
+}

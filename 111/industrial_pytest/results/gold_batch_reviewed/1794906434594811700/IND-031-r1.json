@@ -1,0 +1,450 @@
+{
+  "case_id": "IND-031",
+  "run_id": "IND-031-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 7,
+  "aligned_gold_claim_count": 6,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 4,
+    "MATCH": 4,
+    "NEEDS_ALIGNMENT": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "总用电量 45200 kWh",
+      "expected_status": "SUPPORT",
+      "rationale": "11月1-14日总量。",
+      "actual_target": "焊接车间本月（11月1日至14日）用电情况：总用电量 45200 kWh",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "本月电费约 31640 万元",
+      "expected_status": "REFUTE",
+      "rationale": "按综合价45200×0.7=31640元=3.164万元，单位误放大一万倍。",
+      "actual_target": "本月电费约 31640 万元",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "焊接工位1-10用电 28500 kWh，工位11-20用电 12200 kWh，辅助设备用电 4500 kWh",
+      "expected_status": "SUPPORT",
+      "rationale": "三项相加45200。",
+      "actual_target": "其中焊接工位1-10用电 28500 kWh",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "焊接工位1-10用电 28500 kWh，工位11-20用电 12200 kWh，辅助设备用电 4500 kWh",
+      "expected_status": "SUPPORT",
+      "rationale": "三项相加45200。",
+      "actual_target": "工位11-20用电 12200 kWh",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "焊接工位1-10用电 28500 kWh，工位11-20用电 12200 kWh，辅助设备用电 4500 kWh",
+      "expected_status": "SUPPORT",
+      "rationale": "三项相加45200。",
+      "actual_target": "辅助设备用电 4500 kWh",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "上月全月电费 64470 元",
+      "expected_status": "SUPPORT",
+      "rationale": "10月费用64470元。",
+      "actual_target": "对比上月全月电费 64470 元",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "本月全月电费预计在 65000 万元左右",
+      "expected_status": "REFUTE",
+      "rationale": "即便线性外推也约6.78万元，并非65000万元；外推还需明确生产天数假设。",
+      "actual_target": "本月全月电费预计在 65000 万元左右",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-009",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "按综合电价 0.70 元/kWh 计算",
+      "expected_status": "SUPPORT",
+      "rationale": "综合估算价0.7明确；分时精算还需计费规则。",
+      "actual_target": "按综合电价 0.70 元/kWh 计算",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "本月（11月1日至14日）",
+      "expected_status": "SUPPORT",
+      "rationale": "实际查询截至11月14日，不应将当前31640元估算误说整月最终账单。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "焊接车间本月（11月1日至14日）用电情况：总用电量 45200 kWh",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 45200.0,
+      "unit": "kWh",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 45200.0,
+            "unit": "kWh",
+            "raw": "45200 kWh",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "焊接车间"
+        ],
+        "covers_goals": [],
+        "source_span": "焊接车间本月（11月1日至14日）用电情况：总用电量 45200 kWh",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-001",
+          "CHK-002",
+          "CHK-007"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "按综合电价 0.70 元/kWh 计算",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "按综合电价 0.70 元/kWh 计算",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "本月电费约 31640 万元",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "本月电费约 31640 万元",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-007",
+          "CHK-008"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "其中焊接工位1-10用电 28500 kWh",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 28500.0,
+      "unit": "kWh",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 28500.0,
+            "unit": "kWh",
+            "raw": "28500 kWh",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "其中焊接工位1-10用电 28500 kWh",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "工位11-20用电 12200 kWh",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 12200.0,
+      "unit": "kWh",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 12200.0,
+            "unit": "kWh",
+            "raw": "12200 kWh",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "工位11-20用电 12200 kWh",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "辅助设备用电 4500 kWh",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 4500.0,
+      "unit": "kWh",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 4500.0,
+            "unit": "kWh",
+            "raw": "4500 kWh",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "辅助设备用电 4500 kWh",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "对比上月全月电费 64470 元",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "对比上月全月电费 64470 元",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "按当前用电趋势",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "按当前用电趋势",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "本月全月电费预计在 65000 万元左右",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 8,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "本月全月电费预计在 65000 万元左右",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-007"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-031-r1.json"
+}

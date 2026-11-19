@@ -1,0 +1,207 @@
+{
+  "case_id": "IND-060",
+  "run_id": "IND-060-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 5,
+  "aligned_gold_claim_count": 3,
+  "result": "NEEDS_ALIGNMENT",
+  "counts": {
+    "MATCH": 3,
+    "NEEDS_ALIGNMENT": 2
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "E-407错误代码表示主轴编码器故障",
+      "expected_status": "UNKNOWN",
+      "rationale": "手册适用CK6150/6163，不是CK6140；所问型号含义尚无证据。",
+      "actual_target": "E-407错误代码表示主轴编码器故障",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "MISSING_RULE",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": true,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "编码器信号丢失或损坏导致的",
+      "expected_status": "UNKNOWN",
+      "rationale": "同样来自异型号手册，未证明本机原因。",
+      "actual_target": "这是编码器信号丢失或损坏导致的",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "属于高优先级故障",
+      "expected_status": "UNKNOWN",
+      "rationale": "严重度也来自异型号，不可直接迁移。",
+      "actual_target": "属于高优先级故障",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "MISSING_RULE",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": true,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "如果线路正常则需要更换主轴编码器",
+      "expected_status": "MISSING_RULE",
+      "rationale": "缺CK6140现行故障诊断及维修规程，不应凭其他型号直接换件。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "建议联系沈阳机床售后服务",
+      "expected_status": "SUPPORT",
+      "rationale": "厂家沈阳机床，联系厂家获取对应手册合理。",
+      "actual_target": "建议联系沈阳机床售后服务",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "E-407错误代码表示主轴编码器故障",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "MISSING_RULE",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "E-407"
+        ],
+        "covers_goals": [],
+        "source_span": "E-407错误代码表示主轴编码器故障",
+        "verdict_reason": "缺少判定所必需的适用规则或授权依据",
+        "checks": [
+          "CHK-001",
+          "CHK-003",
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "这是编码器信号丢失或损坏导致的",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "这是编码器信号丢失或损坏导致的",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "属于高优先级故障",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "MISSING_RULE",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "属于高优先级故障",
+        "verdict_reason": "缺少判定所必需的适用规则或授权依据",
+        "checks": [
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "处理方法是：先检查编码器连接线是否松动或损坏",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "处理方法是：先检查编码器连接线是否松动或损坏",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-060-r1.json"
+}

@@ -1,0 +1,521 @@
+{
+  "case_id": "IND-003",
+  "run_id": "IND-003-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 7,
+  "aligned_gold_claim_count": 4,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 4,
+    "STATUS_MISMATCH": 3,
+    "NEEDS_ALIGNMENT": 3
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "当前班次抛料率1.4%，超过0.5%的控制标准",
+      "expected_status": "SUPPORT",
+      "rationale": "1.4>0.5。",
+      "actual_target": "B线贴片机当前班次抛料率1.4%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "当前班次抛料率1.4%，超过0.5%的控制标准",
+      "expected_status": "SUPPORT",
+      "rationale": "1.4>0.5。",
+      "actual_target": "超过0.5%的控制标准",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "主要集中在3号吸嘴，抛料率5.1%",
+      "expected_status": "SUPPORT",
+      "rationale": "N3为387件、5.1%，高于N7。",
+      "actual_target": "主要集中在3号吸嘴",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "主要集中在3号吸嘴，抛料率5.1%",
+      "expected_status": "SUPPORT",
+      "rationale": "N3为387件、5.1%，高于N7。",
+      "actual_target": "抛料率5.1%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "真空度-45kPa，偏离规格-60kPa约25%",
+      "expected_status": "SUPPORT",
+      "rationale": "绝对偏差15/60=25%。",
+      "actual_target": "真空度-45kPa",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "真空度-45kPa，偏离规格-60kPa约25%",
+      "expected_status": "SUPPORT",
+      "rationale": "绝对偏差15/60=25%。",
+      "actual_target": "偏离规格-60kPa约25%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "3号吸嘴可能有问题",
+      "expected_status": "UNKNOWN",
+      "rationale": "能提示排查方向，未确诊堵塞、磨损或其他根因。",
+      "actual_target": "真空度异常说明3号吸嘴可能有问题",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-008",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "需要现场停机检查后才能确认",
+      "expected_status": "UNKNOWN",
+      "rationale": "具体根因未查；此处为不确定性声明。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "7号吸嘴可继续观察",
+      "expected_status": "SUPPORT",
+      "rationale": "1.8%未超过手册单吸嘴2%排查线；仅支持观察建议，不代表全面许可。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "观察建议是否适合纳入证据状态，应统一建议类命题口径；未超过2%不自动构成正式观察/放行规则。"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "7号吸嘴也有轻微偏离",
+      "expected_status": "SUPPORT",
+      "rationale": "真空-58与规格-60差2kPa，约3.33%，需限定为真空偏离。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "“轻微”没有定量界定，数值差2kPa可核；轻微评价标准待确认。"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "B线贴片机当前班次抛料率1.4%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 1.4,
+      "unit": "%",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 1.4,
+            "unit": "%",
+            "raw": "1.4%",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "B线贴片机"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "B线贴片机当前班次抛料率1.4%",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "超过0.5%的控制标准",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 0.5,
+      "unit": "%",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 0.5,
+            "unit": "%",
+            "raw": "0.5%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "超过0.5%的控制标准",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "主要集中在3号吸嘴",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "主要集中在3号吸嘴",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "抛料率5.1%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 5.1,
+      "unit": "%",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 5.1,
+            "unit": "%",
+            "raw": "5.1%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "抛料率5.1%",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-003",
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "真空度-45kPa",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 45.0,
+      "unit": "kPa",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 45.0,
+            "unit": "kPa",
+            "raw": "45kPa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "真空度-45kPa",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "偏离规格-60kPa约25%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 60.0,
+      "unit": "kPa",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 60.0,
+            "unit": "kPa",
+            "raw": "60kPa",
+            "upper": null
+          },
+          {
+            "value": 25.0,
+            "unit": "%",
+            "raw": "25%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "偏离规格-60kPa约25%",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "7号吸嘴也有轻微偏离",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "7号吸嘴也有轻微偏离",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "真空度异常说明3号吸嘴可能有问题",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "inference",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "真空度异常说明3号吸嘴可能有问题",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-009",
+      "type": "claim",
+      "content": "但具体是吸嘴堵塞",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 8,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "但具体是吸嘴堵塞",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-010",
+      "type": "claim",
+      "content": "磨损还是其他原因",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 9,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "磨损还是其他原因",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-012",
+      "type": "claim",
+      "content": "7号吸嘴可继续观察",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 11,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "7号吸嘴可继续观察",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-003-r1.json"
+}

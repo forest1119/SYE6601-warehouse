@@ -1,0 +1,370 @@
+{
+  "case_id": "IND-002",
+  "run_id": "IND-002-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 8,
+  "aligned_gold_claim_count": 7,
+  "result": "NEEDS_ALIGNMENT",
+  "counts": {
+    "MATCH": 7,
+    "NEEDS_ALIGNMENT": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "保养工单WO-28501已于13:45完成",
+      "expected_status": "SUPPORT",
+      "rationale": "工单COMPLETED且完成时刻13:45。",
+      "actual_target": "二号冷水机组保养工单WO-28501已于13:45完成",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "技术员和主管均已签字确认",
+      "expected_status": "SUPPORT",
+      "rationale": "两项signoff均为true。",
+      "actual_target": "技术员和主管均已签字确认",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "设备锁定已解除",
+      "expected_status": "SUPPORT",
+      "rationale": "CLEARED。",
+      "actual_target": "设备锁定已解除",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "油温42℃",
+      "expected_status": "SUPPORT",
+      "rationale": "只支持读数42℃。",
+      "actual_target": "油温42℃",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "油温42℃正常",
+      "expected_status": "MISSING_RULE",
+      "rationale": "没有油温正常区间；工单历史描述不能替代当前阈值。",
+      "actual_target": "油温42℃正常",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": true,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "冷媒压力680kPa在正常范围",
+      "expected_status": "MISSING_RULE",
+      "rationale": "读数680kPa，但没有适用正常区间。",
+      "actual_target": "冷媒压力680kPa在正常范围",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": true,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "系统显示可以启动",
+      "expected_status": "SUPPORT",
+      "rationale": "ready_to_start=true，仅为系统状态。",
+      "actual_target": "系统显示可以启动",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g8",
+      "gold_text": "可以开机",
+      "expected_status": "MISSING_RULE",
+      "rationale": "未提供完整放行规程和授权要求，系统ready不能直接等同安全许可。",
+      "actual_target": "可以开机",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "MISSING_RULE",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "二号冷水机组保养工单WO-28501已于13:45完成",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "WO-28501",
+          "二号冷水机组"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "二号冷水机组保养工单WO-28501已于13:45完成",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-005",
+          "CHK-006"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "技术员和主管均已签字确认",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "技术员和主管均已签字确认",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-008"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "设备锁定已解除",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "设备锁定已解除",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-007"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "油温42℃正常",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 42.0,
+      "unit": "℃",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 42.0,
+            "unit": "℃",
+            "raw": "42℃",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "油温42℃正常",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-001",
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "冷媒压力680kPa在正常范围",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 680.0,
+      "unit": "kPa",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 680.0,
+            "unit": "kPa",
+            "raw": "680kPa",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "冷媒压力680kPa在正常范围",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-002",
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "系统显示可以启动",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "approval",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "系统显示可以启动",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-009"
+        ]
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "可以开机",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "MISSING_RULE",
+      "assertion_strength": "approval",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "可以开机",
+        "verdict_reason": "缺少判定所必需的适用规则或授权依据",
+        "checks": [
+          "CHK-010"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-002-r1.json"
+}

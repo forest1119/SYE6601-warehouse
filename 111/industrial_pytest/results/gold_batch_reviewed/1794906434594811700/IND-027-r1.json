@@ -1,0 +1,293 @@
+{
+  "case_id": "IND-027",
+  "run_id": "IND-027-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 4,
+  "aligned_gold_claim_count": 3,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "NEEDS_ALIGNMENT": 1,
+    "STATUS_MISMATCH": 1,
+    "MATCH": 2
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "14:05:12 变频器 VFD-102 发生重启事件，导致压缩机转速波动，进而于 14:05:08 触发喘振报警 ALM-445",
+      "expected_status": "REFUTE",
+      "rationale": "所引重启完成事件晚于喘振4秒，不能按该事件构造先因后果；重启开始时刻另缺。",
+      "actual_target": "14:05:12 变频器 VFD-102 发生重启事件，导致压缩机转速波动，进而于 14:05:08 触发喘振报警 ALM-445",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "喘振保护动作后于 14:05:18 联锁跳车",
+      "expected_status": "SUPPORT",
+      "rationale": "TRIP明确因喘振保护。",
+      "actual_target": "喘振保护动作后于 14:05:18 联锁跳车",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "根本原因为变频器异常重启引起喘振",
+      "expected_status": "UNKNOWN",
+      "rationale": "没有重启开始/转速记录证明根因，且更早出现进气阀故障。",
+      "actual_target": "根本原因为变频器异常重启引起喘振",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "确认变频器控制回路稳定性后恢复运行",
+      "expected_status": "MISSING_RULE",
+      "rationale": "进气阀仍FAULT，缺完整复机检查及授权规则，不能只查变频器。",
+      "actual_target": "确认变频器控制回路稳定性后恢复运行",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-008",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": true,
+      "result": "MATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "K-102 压缩机跳车原因分析：根据事件日志",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "K-102"
+        ],
+        "covers_goals": [],
+        "source_span": "K-102 压缩机跳车原因分析：根据事件日志",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "14:05:12 变频器 VFD-102 发生重启事件",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [
+          "VFD-102"
+        ],
+        "covers_goals": [],
+        "source_span": "14:05:12 变频器 VFD-102 发生重启事件",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-002",
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "导致压缩机转速波动",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "导致压缩机转速波动",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "进而于 14:05:08 触发喘振报警 ALM-445",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [
+          "ALM-445"
+        ],
+        "covers_goals": [],
+        "source_span": "进而于 14:05:08 触发喘振报警 ALM-445",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-003",
+          "CHK-005"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "喘振保护动作后于 14:05:18 联锁跳车",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "喘振保护动作后于 14:05:18 联锁跳车",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "根本原因为变频器异常重启引起喘振",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "根本原因为变频器异常重启引起喘振",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "确认变频器控制回路稳定性后恢复运行",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "确认变频器控制回路稳定性后恢复运行",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-027-r1.json"
+}

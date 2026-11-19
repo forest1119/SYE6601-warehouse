@@ -1,0 +1,403 @@
+{
+  "case_id": "IND-020",
+  "run_id": "IND-020-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 8,
+  "aligned_gold_claim_count": 4,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "NEEDS_ALIGNMENT": 4,
+    "STATUS_MISMATCH": 3,
+    "MATCH": 2
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "良率整体在97.5%-98.5%之间",
+      "expected_status": "SUPPORT",
+      "rationale": "结合下一句明确指出11月11日96.1%的例外，“整体”按多数生产日概况理解可支持。非11日生产日为97.5%-98.5%；全周严格极值应为96.1%-98.5%，不将该概况误当全周最小最大。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "11月10日计划保养停产",
+      "expected_status": "SUPPORT",
+      "rationale": "output=0且计划保养。",
+      "actual_target": "11月10日计划保养停产",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "11月11日良率降到96.1%，是整周最低",
+      "expected_status": "SUPPORT",
+      "rationale": "各有产出日中最低96.1%。",
+      "actual_target": "11月11日良率降到96.1%",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "11月11日良率降到96.1%，是整周最低",
+      "expected_status": "SUPPORT",
+      "rationale": "各有产出日中最低96.1%。",
+      "actual_target": "是整周最低",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "78件，占当日不良品60.5%",
+      "expected_status": "SUPPORT",
+      "rationale": "78/129≈60.47%。",
+      "actual_target": "78件，占当日不良品60.5%",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "系统已生成了异常报告AR-261111-003",
+      "expected_status": "SUPPORT",
+      "rationale": "明确生成异常报告。",
+      "actual_target": "系统已生成了异常报告AR-261111-003",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "其余几天良率正常",
+      "expected_status": "MISSING_RULE",
+      "rationale": "未提供良率合格阈值；可报告实际数值，不能补造标准。",
+      "actual_target": "其余几天良率正常",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-008",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": true,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g7",
+      "gold_text": "具体虚焊原因需要看那份异常报告的分析",
+      "expected_status": "UNKNOWN",
+      "rationale": "只知不良分布，未读取根因报告。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g8",
+      "gold_text": "主要原因是当天虚焊不良占比异常偏高",
+      "expected_status": "SUPPORT",
+      "rationale": "这里限定为不良类别对良率下降的贡献：虚焊78/129≈60.5%，是最大不良类别；回答另明确具体虚焊根因待异常报告，不将其当已确诊物理根因。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "上周C线良率整体在97.5%-98.5%之间",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 97.5,
+      "unit": "%",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 97.5,
+            "unit": "%",
+            "raw": "97.5%",
+            "upper": null
+          },
+          {
+            "value": 98.5,
+            "unit": "%",
+            "raw": "98.5%",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "C线"
+        ],
+        "covers_goals": [],
+        "source_span": "上周C线良率整体在97.5%-98.5%之间",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002",
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "11月10日计划保养停产",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "11月10日计划保养停产",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "11月11日良率降到96.1%",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 96.1,
+      "unit": "%",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 96.1,
+            "unit": "%",
+            "raw": "96.1%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "11月11日良率降到96.1%",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "是整周最低",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "是整周最低",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "主要原因是当天虚焊不良占比异常偏高（78件",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 78.0,
+      "unit": "件",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 78.0,
+            "unit": "件",
+            "raw": "78件",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "主要原因是当天虚焊不良占比异常偏高（78件",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "占当日不良品60.5%）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 60.5,
+      "unit": "%",
+      "meta": {
+        "order": 5,
+        "numerals": [
+          {
+            "value": 60.5,
+            "unit": "%",
+            "raw": "60.5%",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "占当日不良品60.5%）",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "系统已生成了异常报告AR-261111-003",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "系统已生成了异常报告AR-261111-003",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "其余几天良率正常",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "其余几天良率正常",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-020-r1.json"
+}

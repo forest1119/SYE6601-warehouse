@@ -1,0 +1,194 @@
+{
+  "case_id": "IND-051",
+  "run_id": "IND-051-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 3,
+  "aligned_gold_claim_count": 1,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "NEEDS_ALIGNMENT": 2,
+    "STATUS_MISMATCH": 2
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "MES系统配方库的记录，产品X的固化温度为180±5℃",
+      "expected_status": "SUPPORT",
+      "rationale": "准确转述MES字段，不表示该记录已正确同步。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "自2026年10月1日生效，由工艺部王工审批",
+      "expected_status": "SUPPORT",
+      "rationale": "MES记录这样声明。",
+      "actual_target": "该配方自2026年10月1日生效",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "自2026年10月1日生效，由工艺部王工审批",
+      "expected_status": "SUPPORT",
+      "rationale": "MES记录这样声明。",
+      "actual_target": "由工艺部王工审批",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "请按180℃设定固化温度即可",
+      "expected_status": "REFUTE",
+      "rationale": "客户最终验收175±5且批准变更目标175、MES待同步；应核实同步并按有效变更设定175，不可只信MES。",
+      "actual_target": "请按180℃设定固化温度即可",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "根据MES系统配方库的记录",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "根据MES系统配方库的记录",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "产品X的固化温度为180±5℃",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 5.0,
+      "unit": "℃",
+      "meta": {
+        "order": 1,
+        "numerals": [
+          {
+            "value": 5.0,
+            "unit": "℃",
+            "raw": "5℃",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "产品X的固化温度为180±5℃",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "该配方自2026年10月1日生效",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "该配方自2026年10月1日生效",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "由工艺部王工审批",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 3,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "由工艺部王工审批",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-051-r1.json"
+}

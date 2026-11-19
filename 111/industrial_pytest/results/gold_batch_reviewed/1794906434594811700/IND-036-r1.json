@@ -1,0 +1,340 @@
+{
+  "case_id": "IND-036",
+  "run_id": "IND-036-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 6,
+  "aligned_gold_claim_count": 6,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 2,
+    "STATUS_MISMATCH": 5
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "联锁旁路已获批（IB-261114-003，值班长刘强批准）",
+      "expected_status": "SUPPORT",
+      "rationale": "批准事实成立，但仅限停工检修期间。",
+      "actual_target": "HW-261114-005 动火作业证联锁旁路已获批（IB-261114-003",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "联锁旁路已获批（IB-261114-003，值班长刘强批准）",
+      "expected_status": "SUPPORT",
+      "rationale": "批准事实成立，但仅限停工检修期间。",
+      "actual_target": "值班长刘强批准）",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "动火条件基本满足",
+      "expected_status": "REFUTE",
+      "rationale": "运行中易燃介质设备、气检未做，批准旁路条件不适用。",
+      "actual_target": "动火条件基本满足",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "气体检测，确认合格后方可开始动火作业",
+      "expected_status": "SUPPORT",
+      "rationale": "合格气检是必要条件，但非唯一条件。",
+      "actual_target": "确认合格后方可开始动火作业",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "现场已安排专职监护人",
+      "expected_status": "SUPPORT",
+      "rationale": "true。",
+      "actual_target": "现场已安排专职监护人",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-006",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "消防器材已到位",
+      "expected_status": "UNKNOWN",
+      "rationale": "规程要求器材到位，但无实际到位回执。",
+      "actual_target": "消防器材已到位",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-007",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g6",
+      "gold_text": "可以进行动火作业",
+      "expected_status": "REFUTE",
+      "rationale": "未气检且运行期间禁止旁路，当前不得放行。",
+      "actual_target": "可以进行动火作业",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-008",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "HW-261114-005 动火作业证联锁旁路已获批（IB-261114-003",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "HW-261114-005",
+          "IB-261114-003"
+        ],
+        "covers_goals": [
+          0
+        ],
+        "source_span": "HW-261114-005 动火作业证联锁旁路已获批（IB-261114-003",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001",
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "值班长刘强批准）",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "值班长刘强批准）",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "动火条件基本满足",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "动火条件基本满足",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "确认合格后方可开始动火作业",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "确认合格后方可开始动火作业",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002"
+        ]
+      }
+    },
+    {
+      "id": "CLM-006",
+      "type": "claim",
+      "content": "现场已安排专职监护人",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 5,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "现场已安排专职监护人",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-007",
+      "type": "claim",
+      "content": "消防器材已到位",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 6,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "消防器材已到位",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-008",
+      "type": "claim",
+      "content": "可以进行动火作业",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 7,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "可以进行动火作业",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-005"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-036-r1.json"
+}

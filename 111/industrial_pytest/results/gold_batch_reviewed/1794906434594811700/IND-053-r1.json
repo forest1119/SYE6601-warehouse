@@ -1,0 +1,273 @@
+{
+  "case_id": "IND-053",
+  "run_id": "IND-053-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 4,
+  "aligned_gold_claim_count": 4,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "MATCH": 5,
+    "STATUS_MISMATCH": 1
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "11月1日通过市特检院的定期检验，检验结果为合格",
+      "expected_status": "SUPPORT",
+      "rationale": "合格附带15吨限制，不等于额定20吨无限制。",
+      "actual_target": "CRANE-02桥式起重机已于2026年11月1日通过市特检院的定期检验",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "11月1日通过市特检院的定期检验，检验结果为合格",
+      "expected_status": "SUPPORT",
+      "rationale": "合格附带15吨限制，不等于额定20吨无限制。",
+      "actual_target": "检验结果为合格",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "证书有效期至2027年5月",
+      "expected_status": "UNKNOWN",
+      "rationale": "仅有下次检验日期2027-05-01，证书有效期原文未提供。",
+      "actual_target": "证书有效期至2027年5月",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-003",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "UNKNOWN",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "今天吊装18吨设备没有问题，可以正常作业",
+      "expected_status": "REFUTE",
+      "rationale": "18>降级限制15吨，且许可证待审批、载荷待审核；当前不得放行。",
+      "actual_target": "今天吊装18吨设备没有问题",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-004",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "今天吊装18吨设备没有问题，可以正常作业",
+      "expected_status": "REFUTE",
+      "rationale": "18>降级限制15吨，且许可证待审批、载荷待审核；当前不得放行。",
+      "actual_target": "可以正常作业",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-005",
+      "actual_status": "REFUTE",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "REFUTE",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "检验结果为合格",
+      "expected_status": "SUPPORT",
+      "rationale": "结果合格是有15吨限制的合格；该词本身不表示可用额定20吨负载。",
+      "actual_target": "检验结果为合格",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "SUPPORT",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "SUPPORT",
+      "equivalent_by_mapping": false,
+      "result": "MATCH"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "CRANE-02桥式起重机已于2026年11月1日通过市特检院的定期检验",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 0,
+        "numerals": [],
+        "entities": [
+          "CRANE-02",
+          "定期检验",
+          "市特检院"
+        ],
+        "covers_goals": [],
+        "source_span": "CRANE-02桥式起重机已于2026年11月1日通过市特检院的定期检验",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-002",
+          "CHK-003"
+        ]
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "检验结果为合格",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "检验结果为合格",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-004"
+        ]
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "证书有效期至2027年5月",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 2,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "证书有效期至2027年5月",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "今天吊装18吨设备没有问题",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "SUPPORT",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 18.0,
+      "unit": "吨",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 18.0,
+            "unit": "吨",
+            "raw": "18吨",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "今天吊装18吨设备没有问题",
+        "verdict_reason": "现有证据条件全部满足",
+        "checks": [
+          "CHK-001"
+        ]
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "可以正常作业",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "REFUTE",
+      "assertion_strength": "approval",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 4,
+        "numerals": [],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "可以正常作业",
+        "verdict_reason": "存在与结论直接矛盾的可复算检查结果",
+        "checks": [
+          "CHK-005",
+          "CHK-006"
+        ]
+      }
+    }
+  ],
+  "report_file": "IND-053-r1.json"
+}

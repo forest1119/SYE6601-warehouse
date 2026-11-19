@@ -1,0 +1,258 @@
+{
+  "case_id": "IND-044",
+  "run_id": "IND-044-r1",
+  "evaluation_kind": "development_semantic_check",
+  "formal_acceptance": false,
+  "model_called": false,
+  "comparison_mode": "four_state",
+  "gold_review_status": "DRAFT",
+  "gold_claim_count": 5,
+  "aligned_gold_claim_count": 2,
+  "result": "STATUS_MISMATCH",
+  "counts": {
+    "STATUS_MISMATCH": 2,
+    "NEEDS_ALIGNMENT": 3
+  },
+  "checks": [
+    {
+      "gold_claim_id": "g1",
+      "gold_text": "共有20个待处理工单",
+      "expected_status": "REFUTE",
+      "rationale": "total=47，20仅第一页。",
+      "actual_target": "目前CNC车间共有20个待处理工单",
+      "alignment_method": "explicit_context_review",
+      "actual_claim_id": "CLM-001",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "REFUTE",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g2",
+      "gold_text": "涉及12台CNC机床",
+      "expected_status": "SUPPORT",
+      "rationale": "当前页出现全部12个机床ID；不等于已核对47单全量分布。",
+      "actual_target": "涉及12台CNC机床",
+      "alignment_method": "unique_exact_text",
+      "actual_claim_id": "CLM-002",
+      "actual_status": "UNKNOWN",
+      "compared_expected_status": "SUPPORT",
+      "compared_actual_status": "UNKNOWN",
+      "equivalent_by_mapping": false,
+      "result": "STATUS_MISMATCH"
+    },
+    {
+      "gold_claim_id": "g3",
+      "gold_text": "高优先级7个，中优先级7个，低优先级6个",
+      "expected_status": "REFUTE",
+      "rationale": "第一页实际高6、中7、低7；全量优先级分布还缺后页。",
+      "actual_target": "高优先级7个，中优先级7个，低优先级6个",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g4",
+      "gold_text": "建议优先安排高优先级工单的生产排程",
+      "expected_status": "SUPPORT",
+      "rationale": "优先处理高优先级为与字段一致的排序建议，不承诺具体排期。",
+      "actual_target": "建议优先安排高优先级工单的生产排程",
+      "alignment_method": "unique_exact_text",
+      "result": "NEEDS_ALIGNMENT",
+      "candidate_count": 0
+    },
+    {
+      "gold_claim_id": "g5",
+      "gold_text": "待处理工单",
+      "expected_status": "SUPPORT",
+      "rationale": "查询过滤status=PENDING且total=47，正确待处理总数为47，不是页长20。",
+      "result": "NEEDS_ALIGNMENT",
+      "reason": "范围、条件或评价对象待确认"
+    }
+  ],
+  "actual_claims": [
+    {
+      "id": "CLM-001",
+      "type": "claim",
+      "content": "目前CNC车间共有20个待处理工单",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": 20.0,
+      "unit": "个",
+      "meta": {
+        "order": 0,
+        "numerals": [
+          {
+            "value": 20.0,
+            "unit": "个",
+            "raw": "20个",
+            "upper": null
+          }
+        ],
+        "entities": [
+          "CNC"
+        ],
+        "covers_goals": [],
+        "source_span": "目前CNC车间共有20个待处理工单",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-002",
+      "type": "claim",
+      "content": "涉及12台CNC机床",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "assertion",
+      "related_goals": [
+        "GOAL-001"
+      ],
+      "scope_limited": false,
+      "value": null,
+      "unit": null,
+      "meta": {
+        "order": 1,
+        "numerals": [],
+        "entities": [
+          "CNC"
+        ],
+        "covers_goals": [],
+        "source_span": "涉及12台CNC机床",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-003",
+      "type": "claim",
+      "content": "其中高优先级7个",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 7.0,
+      "unit": "个",
+      "meta": {
+        "order": 2,
+        "numerals": [
+          {
+            "value": 7.0,
+            "unit": "个",
+            "raw": "7个",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "其中高优先级7个",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-004",
+      "type": "claim",
+      "content": "中优先级7个",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 7.0,
+      "unit": "个",
+      "meta": {
+        "order": 3,
+        "numerals": [
+          {
+            "value": 7.0,
+            "unit": "个",
+            "raw": "7个",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "中优先级7个",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    },
+    {
+      "id": "CLM-005",
+      "type": "claim",
+      "content": "低优先级6个",
+      "created_by": "rule",
+      "review_status": "proposed",
+      "source_id": null,
+      "record_id": null,
+      "locator": null,
+      "excerpt": null,
+      "tool": null,
+      "arguments": null,
+      "doc_version": null,
+      "evidence_status": "UNKNOWN",
+      "assertion_strength": "reading",
+      "related_goals": [],
+      "scope_limited": false,
+      "value": 6.0,
+      "unit": "个",
+      "meta": {
+        "order": 4,
+        "numerals": [
+          {
+            "value": 6.0,
+            "unit": "个",
+            "raw": "6个",
+            "upper": null
+          }
+        ],
+        "entities": [],
+        "covers_goals": [],
+        "source_span": "低优先级6个",
+        "verdict_reason": "日志未给出足以判定的依据，按规则保留未知",
+        "checks": []
+      }
+    }
+  ],
+  "report_file": "IND-044-r1.json"
+}
